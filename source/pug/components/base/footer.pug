@@ -1,3 +1,37 @@
 mixin footer(footerMods)
+  -
+    const socialLinks = [
+      {
+        href: "#",
+        classMod: "--telegram",
+        icon: "socials-telegram",
+      },
+      {
+        href: "#",
+        classMod: "--vk",
+        icon: "socials-vkontakte",
+      },
+      {
+        href: "#",
+        classMod: "--youtube",
+        icon: "socials-youtube",
+      },
+    ]
+
   footer.footer(class=footerMods)
     .container
+      if(currentUrl === "index.html")
+        //- lighthouse снимает 10 баллов SEO за <a> без href
+        .footer__logo
+          .footer__icon
+            +logo("svg", "logo", "svg", "-footer-full.", 96, 15, 166, 42, "Логотип сайта Погнали.")
+      else
+        a.footer__logo(href="index.html", aria-label="Переход на главную страницу.")
+          .footer__icon
+            +logo("svg", "logo", "svg", "-footer-full.", 96, 15, 166, 42, "Логотип сайта Погнали.")
+      .footer__socials-wrapper
+        ul.footer__socials-list
+          each item in socialLinks
+            li.footer__socials-item
+              a.footer__socials-link(href=item.href, class=`footer__socials-link${item.classMod}`)
+                +icon(item.icon, 32, 32)

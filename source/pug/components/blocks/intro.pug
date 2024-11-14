@@ -1,10 +1,35 @@
 mixin intro()
-  .intro
+  -
+    const introList = [
+      {
+        text: "Выберите направление"
+      },
+      {
+        text: "Изучите идеи путешественников"
+      },
+      {
+        text: "Находите тех, кто похож на вас"
+      },
+      {
+        text: "Путешествуйтевместе!"
+      },
+    ]
+
+  section.intro
+    h2.visually-hidden Промо-блок главной страницы.
     //- вставлять блоки во внешний контейнер неверно
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    .intro__image
+      .intro__background
+        +picture("content", "hero-background", "jpg", 1440, 750, "")
+      .intro__picture
+        +picture-adaptive("content", "hero-image", "png", 431, 640, 437, 530, 192, 255, "")
     .container
-      p(style="margin-top: 40px;") Текст&nbsp;с&nbsp;мнемониками
+      .intro__wrapper
+        .intro__text
+          p В путешествие с крутыми попутчиками!
+        .intro__process-wrapper
+          ul.intro__process-list
+            each item in introList
+              li.intro__process-item!= item.text
 
-      p(style="margin-top: 40px;") Пример использования +img()
-      p(style="margin-bottom: 40px;")
-        +img("content", "placeholder", "png", 120, 120, "Пример")

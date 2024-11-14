@@ -17,12 +17,16 @@ block main
         name: "Главная — index.html",
         src: "index.html"
       },
+      {
+        name: "Попутчики — catalog.html",
+        src: "catalog.html"
+      },
     ]
 
   main
     .sitemap
       .container
-        img(src="https://via.placeholder.com/300x150", width="300", alt="Логотип проекта")
+        img(src="img/svg/logo-footer-full.svg", width="300", alt="Логотип проекта")
         h1 Список страниц
         ol
           each page in pages

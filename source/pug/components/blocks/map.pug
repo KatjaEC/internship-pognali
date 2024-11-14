@@ -1,0 +1,17 @@
+mixin map()
+  section.map
+    h2.visually-hidden Как нас найти.
+    .map__image-wrapper
+      noscript
+        +picture-adaptive("maps", "map", "jpg", 1440, 584, 768, 581, 320, 424, "Наше местоположение на карте.")
+      iframe(class="map__live-map", src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7994.415024106482!2d30.323046999999995!3d59.938717000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1694079343837!5m2!1sru!2sru",
+        width="1440", height="584", title="Наш адрес: Санкт-Петербург, ул. Большая Конюшенная, д. 19/8", style="border: 0;", allowfullscreen="", loading="lazy", referrerpolicy="no-referrer-when-downgrade")
+      +icon("icon-map-pin", 56, 56)
+    .container
+      .map__text-wrapper
+        .map__address-wrapper
+          address ул. Большая Конюшенная, 19/8
+          +icon("icon-location-pin", 42, 42)
+        .map__button-wrapper
+          +btn({href: "#", text: "Проложить маршрут"})(class="map__button")
+            +icon("arrow-filled", 15, 15)

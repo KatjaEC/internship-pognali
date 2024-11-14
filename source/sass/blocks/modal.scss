@@ -113,7 +113,8 @@
     transition: none;
   }
 
-  &.is-active {
+  &.is-active
+  &--is-active {
     transform: scale(1);
     visibility: visible;
     opacity: 1;

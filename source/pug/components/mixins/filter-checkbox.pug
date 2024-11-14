@@ -1,0 +1,5 @@
+mixin filter-checkbox(className, filterName, id, name)
+  div(class=`${className}__filter-checkbox`)
+    input(class="visually-hidden", type="checkbox", id=id, name=name)&attributes(attributes)
+    label(for=id)!= filterName
+      block

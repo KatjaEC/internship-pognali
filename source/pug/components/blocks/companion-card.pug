@@ -1,0 +1,46 @@
+mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNumber)
+  .companions__card-wrapper
+    .companions__card-image
+      +picture("slides", image, "jpg", 285, 286, "Изображение пользователя.")
+    .companions__card-stats
+      if(currentUrl === "catalog.html")
+        span Левел:
+        .companions__card-level
+          span!= level
+          span!= "level"
+      else
+        .companions__card-level
+          span!= level
+          span!= "level"
+    .companions__card-content(class=`companions__card-content${statusMod}`)
+      h3!= name
+      p!= tags
+    .companions__card-countries
+      if(currentUrl === "catalog.html")
+        span Хочет посетить:
+        ul.companions__countries-list
+          each country in countries
+            li.companions__countries-item
+              .companions__countries-icon
+                +img("content", country.icon, "jpg", 35, 24, country.alt)
+              .companions__countries-name
+                span!= country.countryName
+      else
+        ul.companions__countries-list
+          each country in countries
+            li.companions__countries-item
+              +img("content", country.icon, "jpg", 35, 24, country.alt)
+  if(currentUrl === "catalog.html")
+    .companions__buttons-wrapper
+      .companions__invite-button-wrapper
+        +btn({href: "#", text: "Позвать!"})(class="companions__invite-button")
+      .companions__likes-wrapper
+        +btn({type: "button"})(class="companions__like-button")
+          +icon("icon-heart", 20, 20)
+        span!= likesNumber
+    .companions__transportation-wrapper
+      if(currentUrl === "catalog.html")
+        span Транспорт:
+        block
+      else
+        block

@@ -1,0 +1,106 @@
+mixin search-form(className)
+  -
+    const filtersList = [
+      {
+        title: "Хобби",
+        options: [],
+        mods: "--hobby",
+      },
+      {
+        title: "Музыка",
+        options: [
+          {
+            subtitle: "Тяжелый рок",
+            id: "hard-rock",
+            attribute: "checked",
+          },
+          {
+            subtitle: "Русский рэп",
+            id: "russian-rap",
+            attribute: "",
+          },
+          {
+            subtitle: "Евроденс",
+            id: "eurodance",
+            attribute: "",
+          },
+        ],
+        mods: "--music",
+      },
+      {
+        title: "Еда",
+        options: [],
+        mods: "--food",
+      },
+      {
+        title: "Транспорт",
+        options: [
+          {
+            text: "Авиаперелет",
+            icon: "icon-plane",
+            width: 23,
+            height: 22,
+            mods: "plane",
+          },
+          {
+            text: "Автотранспорт",
+            icon: "icon-bus",
+            width: 18,
+            height: 20,
+            mods: "car",
+          },
+          {
+            text: "Велосипед",
+            icon: "icon-bicycle",
+            width: 25,
+            height: 25,
+            mods: "bicycle",
+          },
+          {
+            text: "Пешком",
+            icon: "icon-run",
+            width: 22,
+            height: 24,
+            mods: "on-foot",
+          },
+        ],
+        mods: "--transport",
+      },
+      {
+        title: "Левел",
+        options: [],
+        minLength: "0",
+        maxLength: 3,
+        currentMaxValue: 100,
+        currentMinValue: 30,
+        idMin: "level-min-input",
+        idMax: "level-max-input",
+        mods: "--level",
+      },
+    ]
+
+  div(class=`${className}__form-wrapper`)
+    form(action="#", method="get")
+      each item in filtersList
+        fieldset
+          legend
+            +btn({text: item.title, type: "button"})(class=`${className}__form-button`)
+              +icon("arrow-filled", 10, 6)
+          if(item.title !== "Левел")
+            ul(class=`${className}__group-list ${className}__group-list${item.mods}`)
+              each subitem in item.options
+                if(subitem.icon)
+                  li(class=`${className}__group-item ${className}__group-item--${subitem.mods}`)
+                    +filter-checkbox(className, "", subitem.mods, subitem.mods)
+                      +transportation-icon(className, subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
+                else
+                  li(class=`${className}__group-item`)
+                    if(subitem.attribute)
+                      +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)(checked)
+                    else
+                      +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)
+          else
+            div(class=`${className}__group-list ${className}__group-list${item.mods}`)
+              +range-input(className, item.idMin, item.idMax, item.idMin, item.idMax, item.minLength, item.maxLength, item.currentMinValue, item.currentMaxValue)
+      div(class=`${className}__form-button-wrapper`)
+        +btn({text: "Показать", type: "submit"})(class=`${className}__form-button`)

@@ -1,0 +1,16 @@
+mixin about-us()
+  section.about-us
+    .about-us__image
+      +picture-adaptive("content", "about-us-image", "png", 655, 665, 368, 546, 292, 353, "")
+    .container
+      .about-us__wrapper
+        .about-us__text
+          h2 О сервисе
+          p
+            | Любое путешествие веселее с попутчиками, которые на одной
+            | волне с тобой! Делитесь своими идеями путешествий и черпайте вдохновение в чужих.
+          span
+            | А если найдете кого-то близкого по духу — скорее зовите в совместный трип!
+
+        +btn({href: "#", text: "Подробнее"})(class="about-us__button")
+          +icon("arrow-filled", 14, 14)

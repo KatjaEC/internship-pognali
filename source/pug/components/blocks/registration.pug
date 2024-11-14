@@ -1,0 +1,58 @@
+mixin registration()
+  -
+    const optionsList = [
+      {
+        text: "Базовое размещение",
+        price: "Бесплатно",
+      },
+      {
+        text: "Вывод на первых позициях",
+        price: "99 руб./мес",
+      },
+      {
+        text: "Кастомный цвет карточки",
+        price: "59 руб./мес",
+      },
+    ]
+
+  -
+    const contactsList = [
+      {
+        icon: "icon-contacts-phone",
+        text: "8 800 555-86-28",
+        href: "tel:+78005558628",
+        width: 36,
+        height: 34,
+      },
+      {
+        icon: "icon-contacts-mail",
+        text: "mail@htmlacademy.ru",
+        href: "mailto:mail@htmlacademy.ru",
+        width: 37,
+        height: 25,
+      },
+    ]
+
+  section.registration
+    h2.visually-hidden Регистрация на сайте.
+    .container
+      .registration__wrapper
+        p Заинтересовались?
+        p
+          | Зарегистрируйтесь, это быстро и бесплатно!
+          | Уже зарегистрированы? Тогда скорее
+          a(href="#", class="registration__login-link")!= авторизуйтесь
+          | .
+        .registration__form-wrapper
+          form.registration__form
+            +custom-input({inputType: "email", inputPlaceholder: "E-mail", inputName: "user-mail", inputId: "user-mail"})
+            +btn({type: "submit", text: "Регистрация"})(class="registration__button")
+              +icon("arrow-filled", 14, 16)
+        p Остались вопросы? Мы с радостью на них ответим!
+        .registration__contacts-wrapper
+          ul.registration__contacts-list
+            each item in contactsList
+              li.registration__contacts-item
+                a.registration__contacts-link(href=item.href)
+                  +icon(item.icon, item.width, item.height)
+                  span!= item.text
