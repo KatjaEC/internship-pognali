@@ -1,0 +1,89 @@
+.transportation-list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 25px);
+  gap: 9px;
+  list-style: none;
+
+  &__item {
+    position: relative;
+    text-align: center;
+
+    &--plane .transportation-list__item-tooltip-wrapper {
+      left: calc(50% - 75px);
+    }
+
+    &--car .transportation-list__item-tooltip-wrapper {
+      left: calc(50% - 83px);
+    }
+
+    &--bicycle .transportation-list__item-tooltip-wrapper {
+      left: calc(50% - 64px);
+    }
+
+    &--on-foot .transportation-list__item-tooltip-wrapper {
+      left: calc(50% - 54px);
+    }
+
+    & svg {
+      color: rgba(29, 46, 91, 0.15);
+    }
+
+    &[data-status="is-enabled"] svg {
+      color: #1d2e5b;
+    }
+
+    &[data-status="is-disabled"] svg {
+      color: rgba(29, 46, 91, 0.15);
+    }
+  }
+
+  &__item-icon {
+
+    &:hover + .transportation-list__item-tooltip-wrapper {
+      display: block;
+    }
+  }
+
+  &__item-tooltip-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    min-width: 110px;
+    max-width: 200px;
+    width: fit-content;
+    display: none;
+  }
+
+  &__item-tooltip {
+    position: relative;
+    padding: 15px 13px 18px 13px;
+    background-color: #101d41;
+    border-radius: 4px;
+
+    &::before {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 10px solid #101d41;
+      content: "";
+    }
+
+    & > span {
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 400;
+      text-align: center;
+      color: $color-default-white;
+    }
+  }
+}

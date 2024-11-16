@@ -1,123 +1,18 @@
 mixin companions()
-  //- -
-  //-   const companionsList = [
-  //-     {
-  //-       name: "Таня Фирсова",
-  //-       level: "99",
-  //-       image: "cards-photo-1",
-  //-       flags: [
-  //-         {
-  //-           icon: "flag-sri-lanka",
-  //-           alt: "Флаг Шри-Ланки.",
-  //-         },
-  //-         {
-  //-           icon: "flag-thailand",
-  //-           alt: "Флаг Таиланда.",
-  //-         },
-  //-         {
-  //-           icon: "flag-seychelles",
-  //-           alt: "Флаг Сейшельских Островов.",
-  //-         },
-  //-       ],
-  //-       tags: ["#ЗОЖ #ПП #Фитнес #пляж #авокадо #смузи"],
-  //-       transport: [
-  //-         {
-  //-           statusAttr: "is-enabled",
-  //-         },
-  //-         {
-  //-           statusAttr: "is-disabled",
-  //-         },
-  //-         {
-  //-           statusAttr: "is-disabled",
-  //-         },
-  //-         {
-  //-           statusAttr: "is-disabled",
-  //-         },
-  //-       ],
-  //-       statusMods: "--is-offline",
-  //-     },
-  //-     {
-  //-       name: "Петя Демин",
-  //-       level: "80",
-  //-       image: "cards-photo-2",
-  //-       flags: [
-  //-         {
-  //-           icon: "flag-belgium",
-  //-           alt: "Флаг Бельгии.",
-  //-         },
-  //-         {
-  //-           icon: "flag-czechia",
-  //-           alt: "Флаг Чехии.",
-  //-         },
-  //-       ],
-  //-       tags: ["#бургер #бар #футбол #концерт #крафт"],
-  //-       transport: [
-  //-         {
-  //-           statusAttr: "is-enabled",
-  //-         },
-  //-         {
-  //-           statusAttr: "is-enabled",
-  //-         },
-  //-         {
-  //-           statusAttr: "is-disabled",
-  //-         },
-  //-         {
-  //-           statusAttr: "is-enabled",
-  //-         },
-  //-       ],
-  //-       statusMods: "--is-online",
-  //-     },
-  //-   ]
-
   section.companions
     .container
       .companions__wrapper
-        .companions__text
-          h2 Попутчики
-          p
-            | Все мы индивидуальны и у каждого свой взгляд на идеальный отдых.
-          p
-            | Одному нужен пляж и коктейль, а другому маршрут для хайкинга.
-          span
-            | Теперь можно легко найти единомышленников!
-        .companions__button-wrapper
+        .companions__text-wrapper
+          .companions__text
+            h2 Попутчики
+            p
+              | Все мы индивидуальны и у каждого свой взгляд на идеальный отдых.
+            p
+              | Одному нужен пляж и коктейль, а другому маршрут для хайкинга.
+            span
+              | Теперь можно легко найти единомышленников!
           +btn({href: "catalog.html", text: "Показать всех"})(class="companions__button")
-            +icon("arrow-filled", 14, 14)
+            span.companions__button-icon
+              +icon("arrow-filled", 14, 14)
         .companions__cards-wrapper
           +companions-list()
-          //- ul.companions__cards-list
-            each item in companionsList
-              //- li.companions__cards-item
-              //-   //- +companion-card(item.image, item.level, item.name, item.tags, item.flags, item.transport)
-
-              //-   .companions__card-image
-              //-     +picture("slides", item.image, "jpg", 285, 286, "Изображение пользователя.")
-              //-   .companions__card-stats
-              //-     span!= item.level
-              //-     span!= "level"
-              //-   .companions__card-content(class=`companions__card-content${item.statusMods}`)
-              //-     h3!= item.name
-              //-     p!= item.tags
-              //-   .companions__card-flags
-              //-     each flag in item.flags
-              //-       .companions__flag-image
-              //-         +img("content", flag.icon, "jpg", 35, 24, flag.alt)
-              //-   ul.companions__transportation-list
-              //-     li.companions__transportation-item.companions__transportation-item--plane(data-status=item.transport[0].statusAttr)
-              //-       +transportation-icon("icon-plane", 23, 22, "Авиаперелет")
-              //-     li.companions__transportation-item.companions__transportation-item--car(data-status=item.transport[1].statusAttr)
-              //-       +transportation-icon("icon-bus", 18, 20, "Автотранспорт")
-              //-     li.companions__transportation-item.companions__transportation-item--bicycle(data-status=item.transport[2].statusAttr)
-              //-       +transportation-icon("icon-bicycle", 25, 25, "Велосипед")
-              //-     li.companions__transportation-item.companions__transportation-item--on-foot(data-status=item.transport[3].statusAttr)
-              //-       +transportation-icon("icon-run", 22, 24, "Пешком")
-              +companion-card(item.name, item.image, item.level, item.statusMods, item.flags, item.tags)
-                ul.companions__transportation-list
-                  li.companions__transportation-item.companions__transportation-item--plane(data-status=item.transport[0].statusAttr)
-                    +transportation-icon("icon-plane", 23, 22, "Авиаперелет")
-                  li.companions__transportation-item.companions__transportation-item--car(data-status=item.transport[1].statusAttr)
-                    +transportation-icon("icon-bus", 18, 20, "Автотранспорт")
-                  li.companions__transportation-item.companions__transportation-item--bicycle(data-status=item.transport[2].statusAttr)
-                    +transportation-icon("icon-bicycle", 25, 25, "Велосипед")
-                  li.companions__transportation-item.companions__transportation-item--on-foot(data-status=item.transport[3].statusAttr)
-                    +transportation-icon("icon-run", 22, 24, "Пешком")

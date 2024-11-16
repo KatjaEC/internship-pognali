@@ -8,6 +8,7 @@ mixin destinations()
         flagIcon: "flag-thailand",
         usersNumber: "18321",
         altText: "Вид на пляж в Таиланде сверху.",
+        mods: "",
       },
       {
         name: "Франция",
@@ -16,6 +17,7 @@ mixin destinations()
         flagIcon: "flag-france",
         usersNumber: "12518",
         altText: "Вид на улицу во Франции.",
+        mods: "destinations__slider-item--active",
       },
       {
         name: "Чехия",
@@ -24,30 +26,33 @@ mixin destinations()
         flagIcon: "flag-czechia",
         usersNumber: "5326",
         altText: "Вид на город в Чехии.",
+        mods: "",
       },
     ]
 
   section.destinations
     .container
       .destinations__wrapper
-        .destinations__text
-          h2 Направления
-          p
-            | Мы не продаем туры и ничего не рекламируем.
-          p
-            | Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
-        .destinations__button-wrapper
+        .destinations__text-wrapper
+          .destinations__text
+            h2 Направления
+            p
+              | Мы не продаем туры и ничего не рекламируем.
+            p
+              | Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
           +btn({href: "catalog.html", text: "Показать все"})(class="destinations__button")
-            +icon("arrow-filled", 14, 14)
+            span.destinations__button-icon
+              +icon("arrow-filled", 14, 14)
         .destinations__slider-wrapper
           ul.destinations__slider-list
             each item in destinationsList
-              li.destinations__slider-item
+              li.destinations__slider-item(class=`${item.mods}`)
                 .destinations__slider-item-content
                   h3!= item.name
                   p!= item.text
                   .destinations__slider-item-stats
-                    +icon("icon-user", 20, 20)
+                    span.destinations__slider-item-icon
+                      +icon("icon-user", 20, 20)
                     span!= item.usersNumber
                 .destinations__slider-images
                   .destinations__slider-flag-image

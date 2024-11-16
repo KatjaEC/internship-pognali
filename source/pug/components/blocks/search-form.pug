@@ -85,7 +85,8 @@ mixin search-form(className)
         fieldset
           legend
             +btn({text: item.title, type: "button"})(class=`${className}__form-button`)
-              +icon("arrow-filled", 10, 6)
+              span(class=`${className}__form-icon`)
+                +icon("arrow-filled", 10, 6)
           if(item.title !== "Левел")
             ul(class=`${className}__group-list ${className}__group-list${item.mods}`)
               each subitem in item.options

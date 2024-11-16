@@ -133,7 +133,8 @@ mixin filters()
     .container
       .filters__wrapper
         .filters__header
-          +icon("icon-filters", 23, 15)
+          span.filters__icon
+            +icon("icon-filters", 23, 15)
           p Фильтрация по странам:
           ul.filters__list
             each item in filters
@@ -152,4 +153,5 @@ mixin filters()
                     a.filters__countries-link(href="#")!= country
           .filters__button-wrapper
             +btn({type: "button", text: "Свернуть"})(class="filters__link")
-              +icon("icon-close", 22, 24)
+              span.filters__link-icon
+                +icon("icon-close", 22, 24)

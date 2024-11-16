@@ -1,0 +1,127 @@
+.companions {
+  position: relative;
+  padding: 70px 0 119px 0;
+
+  &::before {
+    position: absolute;
+    top: -63px;
+    right: 0;
+    width: calc(50% + 30px);
+    height: calc(100% + 63px);
+    background-color: $color-accent-second;
+    border-radius: 56px 0 56px 56px;
+    z-index: -10;
+    content: "";
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 629px 690px;
+  }
+
+  &__text-wrapper {
+    padding: 25px 100px 40px 12px;
+  }
+
+  &__text {
+    margin-bottom: 108px;
+
+    & h2 {
+      margin: 0 0 45px;
+      font-size: 95px;
+      line-height: 45px;
+      font-weight: 700;
+      font-variant: all-small-caps;
+      color: $color-midnight-express-lighter;
+    }
+
+    & p {
+      margin: 0;
+      padding-left: 1px;
+      font-size: 24px;
+      line-height: 33px;
+      font-weight: 500;
+      color: $color-midnight-express-lighter;
+    }
+
+    & span {
+      margin: 53px 0 0 0;
+      display: block;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: -1.37px;
+      color: $color-midnight-express-lighter;
+    }
+  }
+
+  &__button.btn {
+    margin: 0 0 0 2px;
+    padding: 29px 93px 27px 35px;
+
+    &:not(:last-of-type) {
+      margin: 0 12px 14px 2px;
+    }
+
+    & > span {
+      right: 36px;
+    }
+  }
+
+  &__cards-wrapper {
+    padding: 0 0 4px 77px;
+  }
+
+  &__cards-list {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    min-height: fit-content;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  &__cards-item {
+    width: 285px;
+    border-radius: 22px;
+
+    & .companions-card--index {
+      min-height: 479px;
+    }
+
+    &:nth-of-type(2n) .companions-card--index {
+      margin-top: 69px;
+
+      & .companions-card__countries {
+        top: -12px;
+      }
+
+      & .companions-card__transportation-wrapper {
+        margin: auto 60px 0 70px;
+      }
+
+      & .transportation-list {
+        gap: 10px;
+      }
+
+      & .transportation-list__item--car {
+        padding-left: 1.5px;
+      }
+    }
+
+    &:nth-of-type(1) .companions-card__text {
+      & h3 {
+        margin-left: -21px;
+      }
+    }
+
+    &:nth-of-type(2) .companions-card__text {
+      & p {
+        padding: 0 0 0 13px;
+      }
+    }
+  }
+}

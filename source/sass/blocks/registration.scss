@@ -1,0 +1,49 @@
+.registration {
+  background-color: $color-accent-second;
+
+  &__wrapper {
+    padding: 175px 132px 103px;
+  }
+
+  &__text {
+    margin-bottom: 47px;
+
+    & p {
+      margin: 0 auto 46px;
+      font-size: 95px;
+      line-height: 45px;
+      font-weight: 700;
+      text-align: center;
+      color: $color-default-white;
+    }
+
+    & p + p {
+      margin: 0 auto;
+      padding: 0 89px 0 83px;
+      font-size: 28px;
+      line-height: 31px;
+      font-weight: 300;
+      text-align: center;
+      color: $color-default-white;
+    }
+
+    & p + p + p {
+      padding: 0 200px 0 201px;
+    }
+  }
+
+  &__login-link {
+    display: inline-block;
+    color: $color-pale-cornflowep-blue;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: $color-pale-cornflowep-blue;
+  }
+
+  &__form {
+    display: flex;
+    height: 81px;
+  }
+}

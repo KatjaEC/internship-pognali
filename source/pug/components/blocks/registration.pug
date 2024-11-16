@@ -37,22 +37,24 @@ mixin registration()
     h2.visually-hidden Регистрация на сайте.
     .container
       .registration__wrapper
-        p Заинтересовались?
-        p
-          | Зарегистрируйтесь, это быстро и бесплатно!
-          | Уже зарегистрированы? Тогда скорее
-          a(href="#", class="registration__login-link")!= авторизуйтесь
-          | .
+        .registration__text
+          p Заинтересовались?
+          p Зарегистрируйтесь, это быстро и бесплатно!
+          p Уже&nbsp;зарегистрированы? Тогда скорее
+            a(href="#", class="registration__login-link")!= "авторизуйтесь"
+            | .
         .registration__form-wrapper
           form.registration__form
             +custom-input({inputType: "email", inputPlaceholder: "E-mail", inputName: "user-mail", inputId: "user-mail"})
             +btn({type: "submit", text: "Регистрация"})(class="registration__button")
-              +icon("arrow-filled", 14, 16)
+              span.registration__button-icon
+               +icon("arrow-filled", 14, 16)
         p Остались вопросы? Мы с радостью на них ответим!
         .registration__contacts-wrapper
           ul.registration__contacts-list
             each item in contactsList
               li.registration__contacts-item
                 a.registration__contacts-link(href=item.href)
-                  +icon(item.icon, item.width, item.height)
+                  span.registration__contacts-icon
+                    +icon(item.icon, item.width, item.height)
                   span!= item.text

@@ -1,0 +1,142 @@
+.companions-card {
+  position: relative;
+  background-color: $color-default-white;
+  border-radius: 22px;
+
+  &--index {
+    width: 285px;
+    display: flex;
+    flex-direction: column;
+
+    & .companions-card__image {
+      height: 285px;
+      border-radius: 22px 22px 0 0;
+
+      & img {
+        border-radius: 22px 22px 0 0;
+      }
+    }
+
+    & .companions-card__stats {
+      position: absolute;
+      top: 20px;
+      left: 22px;
+      width: 60px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 4px solid $color-picton-blue;
+      border-radius: 50%;
+    }
+
+    & .companions-card__level{
+      padding: 11px 10px 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      & span {
+        font-size: 24px;
+        font-weight: 700;
+        color: $color-default-white;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-decoration-color: rgba(255, 255, 255, 0.3);
+      }
+
+      & span + span {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 400;
+        text-decoration: none;
+      }
+    }
+
+    & .companions-card__content {
+      position: relative;
+      padding: 31px 15px 19px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      font-size: 24px;
+      line-height: 22px;
+      font-weight: 700;
+      color: #1d2e5b;
+      background-color: $color-default-white;
+      border-radius: 0 0 17px 17px;
+
+      &--is-offline > .companions-card__text > h3::before {
+        background-color: #f97676;
+      }
+    }
+
+    & .companions-card__text {
+      text-align: center;
+
+      & h3 {
+        position: relative;
+        margin: 0 0 23px -8px;
+        padding-left: 22px;
+        display: inline-flex;
+        font-size: 24px;
+        font-weight: 700;
+
+        &::before {
+          position: absolute;
+          top: 7px;
+          left: 0;
+          width: 8px;
+          height: 8px;
+          border-radius: 50px;
+          background-color: #81e31e;
+          content: "";
+        }
+      }
+
+      & p {
+        margin: 0;
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: 400;
+        color: $color-charcoal;
+      }
+    }
+
+    & .companions-card__countries {
+      position: absolute;
+      top: -32px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 0 30px;
+      width: 224px;
+    }
+
+    & .companions-card__countries-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+
+  &__countries-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__countries-item {
+    border-radius: 4px;
+
+    & img {
+      border-radius: 4px;
+    }
+  }
+
+  &__transportation-wrapper {
+    margin: auto 63px 0 65px;
+    width: 132px;
+  }
+}

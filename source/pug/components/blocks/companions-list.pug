@@ -5,6 +5,7 @@ mixin companions-list()
         name: "Таня Фирсова",
         level: "99",
         image: "cards-photo-1",
+        imageForIndex: "companions-card-1-desktop",
         flags: [
           {
             icon: "flag-sri-lanka",
@@ -45,6 +46,7 @@ mixin companions-list()
         name: "Петя Демин",
         level: "80",
         image: "cards-photo-2",
+        imageForIndex: "companions-card-2-desktop",
         flags: [
           {
             icon: "flag-belgium",
@@ -158,27 +160,27 @@ mixin companions-list()
       ul.companions__cards-list
         each item of activeCards
           li.companions__cards-item
-            +companion-card(item.name, item.image, item.level, item.statusMods, item.flags, item.tags)
-              ul.companions__transportation-list
-                li.companions__transportation-item.companions__transportation-item--plane(data-status=item.transport[0].statusAttr)
-                  +transportation-icon("companions", "icon-plane", 23, 22, "Авиаперелет")
-                li.companions__transportation-item.companions__transportation-item--car(data-status=item.transport[1].statusAttr)
-                  +transportation-icon("companions", "icon-bus", 18, 20, "Автотранспорт")
-                li.companions__transportation-item.companions__transportation-item--bicycle(data-status=item.transport[2].statusAttr)
-                  +transportation-icon("companions", "icon-bicycle", 25, 25, "Велосипед")
-                li.companions__transportation-item.companions__transportation-item--on-foot(data-status=item.transport[3].statusAttr)
-                  +transportation-icon("companions", "icon-run", 22, 24, "Пешком")
+            +companion-card(item.name, item.imageForIndex, item.level, item.statusMods, item.flags, item.tags, "", "index")
+              ul.transportation-list
+                li.transportation-list__item.transportation-list__item--plane(data-status=item.transport[0].statusAttr)
+                  +transportation-icon("icon-plane", 24, 22, "Авиаперелет")
+                li.transportation-list__item.transportation-list__item--car(data-status=item.transport[1].statusAttr)
+                  +transportation-icon("icon-bus", 19, 22, "Автотранспорт")
+                li.transportation-list__item.transportation-list__item--bicycle(data-status=item.transport[2].statusAttr)
+                  +transportation-icon("icon-bicycle", 25, 25, "Велосипед")
+                li.transportation-list__item.transportation-list__item--on-foot(data-status=item.transport[3].statusAttr)
+                  +transportation-icon("icon-run", 22, 24, "Пешком")
   else
     ul.catalog__cards-list
       each item of companionsList
         li.catalog__cards-item(class=`catalog__cards-item${item.availabilityMods}`)
-          +companion-card(item.name, item.image, item.level, item.statusMods, item.flags, item.tags, item.likesNumber)
-            ul.catalog__transportation-list
-              li.catalog__transportation-item.catalog__transportation-item--plane(data-status=item.transport[0].statusAttr)
-                +transportation-icon("catalog", "icon-plane", 23, 22, "Авиаперелет")
-              li.catalog__transportation-item.catalog__transportation-item--car(data-status=item.transport[1].statusAttr)
-                +transportation-icon("catalog", "icon-bus", 18, 20, "Автотранспорт")
-              li.catalog__transportation-item.catalog__transportation-item--bicycle(data-status=item.transport[2].statusAttr)
-                +transportation-icon("catalog", "icon-bicycle", 25, 25, "Велосипед")
-              li.catalog__transportation-item.catalog__transportation-item--on-foot(data-status=item.transport[3].statusAttr)
-                +transportation-icon("catalog", "icon-run", 22, 24, "Пешком")
+          +companion-card(item.name, item.image, item.level, item.statusMods, item.flags, item.tags, item.likesNumber, "catalog")
+            ul.transportation-list
+              li.transportation-list__item.transportation-list__item--plane(data-status=item.transport[0].statusAttr)
+                +transportation-icon("icon-plane", 24, 22, "Авиаперелет")
+              li.transportation-list__item.transportation-list__item--car(data-status=item.transport[1].statusAttr)
+                +transportation-icon("icon-bus", 19, 22, "Автотранспорт")
+              li.transportation-list__item.transportation-list__item--bicycle(data-status=item.transport[2].statusAttr)
+                +transportation-icon("icon-bicycle", 25, 25, "Велосипед")
+              li.transportation-list__item.transportation-list__item--on-foot(data-status=item.transport[3].statusAttr)
+                +transportation-icon("icon-run", 22, 24, "Пешком")

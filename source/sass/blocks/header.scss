@@ -1,13 +1,92 @@
 .header {
-  padding: 28px 0;
+  position: relative;
+  padding: 46px 0;
+  background-color: $color-midnight-express-lighter;
+  z-index: 5;
 
-  background-color: $color-neon-blue;
+  &--index {
+    background-color: #516172;
+  }
 
   .container {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__logo {
+    padding-top: 1px;
+    width: 202px;
     color: $color-default-white;
+  }
+
+  &__nav {
+    position: relative;
+    padding-left: 143px;
+
+    &::before {
+      position: absolute;
+      top: 28px;
+      left: 38px;
+      width: 60px;
+      height: 2px;
+      background-color: $color-default-white;
+      content: "";
+    }
+  }
+
+  &__nav-toggle {
+    display: none;
+  }
+
+  &__nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  &__nav-list {
+    margin: 0;
+    padding: 21px 0 12px;
+    width: 655px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    list-style: none;
+  }
+
+  // &__nav-item {
+  //   color: $color-default-white;
+  //   text-transform: uppercase;
+  // }
+
+  &__nav-link {
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+    color: $color-default-white;
+    text-transform: uppercase;
+  }
+
+  &__contacts {
+    margin: 0;
+    padding: 3px 0 0;
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 7px;
+    list-style: none;
+  }
+
+  &__contacts-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-midnight-express-darker;
+    background-color: $color-jordy-blue;
+    border-radius: 50%;
   }
 }

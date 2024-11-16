@@ -23,7 +23,8 @@ mixin catalog()
         +companions-list()
         .catalog__button-wrapper
           +btn({href: "#", text: "Показать еще"})(class="catalog__button catalog__button--show-more")
-            +icon("icon-plus", 26, 26)
+            span.catalog__button-icon
+              +icon("icon-plus", 26, 26)
         .catalog__pagination-wrapper
           .catalog__pagination
             ul.catalog__pagination-list
@@ -37,10 +38,12 @@ mixin catalog()
             .catalog__navigation-buttons
               .catalog__navigation-button.catalog__navigation-button--prev
                 +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev", aria-label="Предыдущая страница.")
-                  +icon("arrow-filled", 13, 20)
+                  span.catalog__navigation-button-icon
+                    +icon("arrow-filled", 13, 20)
               .catalog__navigation-button.catalog__navigation-button--next
                 +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--next", aria-label="Следующая страница.")
-                  +icon("arrow-filled", 13, 20)
+                  span.catalog__navigation-button-icon
+                    +icon("arrow-filled", 13, 20)
         .catalog__search-form
           h2 Подберите идеального попутчика
           +search-form("catalog")

@@ -1,46 +1,47 @@
-mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNumber)
-  .companions__card-wrapper
-    .companions__card-image
+mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNumber, cardMods)
+  .companions-card(class=`companions-card--${cardMods}`)
+    .companions-card__image
       +picture("slides", image, "jpg", 285, 286, "Изображение пользователя.")
-    .companions__card-stats
+    .companions-card__stats
       if(currentUrl === "catalog.html")
         span Левел:
-        .companions__card-level
+        .companions-card__level
           span!= level
           span!= "level"
       else
-        .companions__card-level
+        .companions-card__level
           span!= level
           span!= "level"
-    .companions__card-content(class=`companions__card-content${statusMod}`)
-      h3!= name
-      p!= tags
-    .companions__card-countries
-      if(currentUrl === "catalog.html")
-        span Хочет посетить:
-        ul.companions__countries-list
-          each country in countries
-            li.companions__countries-item
-              .companions__countries-icon
-                +img("content", country.icon, "jpg", 35, 24, country.alt)
-              .companions__countries-name
-                span!= country.countryName
-      else
-        ul.companions__countries-list
-          each country in countries
-            li.companions__countries-item
-              +img("content", country.icon, "jpg", 35, 24, country.alt)
-  if(currentUrl === "catalog.html")
-    .companions__buttons-wrapper
-      .companions__invite-button-wrapper
-        +btn({href: "#", text: "Позвать!"})(class="companions__invite-button")
-      .companions__likes-wrapper
-        +btn({type: "button"})(class="companions__like-button")
-          +icon("icon-heart", 20, 20)
-        span!= likesNumber
-    .companions__transportation-wrapper
-      if(currentUrl === "catalog.html")
-        span Транспорт:
+    .companions-card__content(class=`companions-card__content${statusMod}`)
+      .companions-card__text
+        h3!= name
+        p!= tags
+      .companions-card__countries
+        if(currentUrl === "catalog.html")
+          span Хочет посетить:
+          ul.companions-card__countries-list
+            each country in countries
+              li.companions-card__countries-item
+                .companions-card__countries-icon
+                  +picture("content", country.icon, "jpg", 35, 24, country.alt)
+                .companions-card__countries-name
+                  span!= country.countryName
+        else
+          ul.companions-card__countries-list
+            each country in countries
+              li.companions-card__countries-item
+                +picture("content", country.icon, "jpg", 35, 24, country.alt)
+      .companions-card__transportation-wrapper
         block
-      else
+    if(currentUrl === "catalog.html")
+      .companions-card__buttons-wrapper
+        .companions-card__invite-button-wrapper
+          +btn({href: "#", text: "Позвать!"})(class="companions-card__invite-button")
+        .companions-card__likes-wrapper
+          +btn({type: "button"})(class="companions-card__like-button")
+            span.companions-card__like-button-icon
+              +icon("icon-heart", 20, 20)
+          span!= likesNumber
+      .companions-card__transportation-wrapper
+        span Транспорт:
         block

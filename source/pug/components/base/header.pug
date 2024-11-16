@@ -39,28 +39,28 @@ mixin header(headerMods, currentUrl)
         //- lighthouse снимает 10 баллов SEO за <a> без href
         .header__logo
           .header__icon
-            +logo("svg", "logo", "svg", "-header-full.", 96, 15, 166, 42, "Логотип сайта Погнали.")
+            +logo("svg", "logo", "svg", "-header-full.", 96, 15, 166, 42, 202, 50, "Логотип сайта Погнали.")
       else
         a.header__logo(href="index.html", aria-label="Переход на главную страницу.")
           .header__icon
-            +logo("svg", "logo", "svg", "-header-full.", 96, 15, 166, 42, "Логотип сайта Погнали.")
-      nav.main-nav
-        button.main-nav__toggle.main-nav__toggle--is-open(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          span.main-nav__toggle-icon.main-nav__toggle-icon--menu-is-hidden
+            +logo("svg", "logo", "svg", "-header-full.", 96, 15, 166, 42, 202, 50, "Логотип сайта Погнали.")
+      nav.header__nav
+        button.header__nav-toggle.header__nav-toggle--is-open(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+          span.header__nav-toggle-icon.header__nav-toggle-icon--menu-is-hidden
             +icon("icon-menu-tablet", 25, 25)(id="icon-menu-is-hidden")
-          span.main-nav__toggle-icon.main-nav__toggle-icon--menu-is-shown
+          span.header__nav-toggle-icon.header__nav-toggle-icon--menu-is-shown
             +icon("icon-close", 25, 25)(id="icon-menu-is-shown")
-        .main-nav__wrapper
-          ul.main-nav__nav-list
+        .header__nav-wrapper
+          ul.header__nav-list
             each link in headerLinks
               - const activeState = currentUrl === link.href
-              li.main-nav__nav-item
+              li.header__nav-item
                 if(activeState)
-                  span.main-nav__nav-link.main-nav__nav-link--is-active= link.text
+                  span.header__nav-link.header__nav-link--is-active= link.text
                 else
-                  a.main-nav__nav-link(href=link.href)= link.text
-          ul.main-nav__contacts-list
+                  a.header__nav-link(href=link.href)= link.text
+          ul.header__contacts
             each item in contactsLinks
-              li.main-nav__contacts-item
-                a.main-nav__contacts-link(href=item.href, class=`main-nav__contacts-link${item.classMod}`)
+              li.header__contacts-item
+                a.header__contacts-link(href=item.href, class=`header__contacts-link${item.classMod}`)
                   +icon(item.icon, item.width, item.height)

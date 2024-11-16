@@ -4,14 +4,17 @@ mixin add-profile()
       {
         text: "Базовое размещение",
         price: "Бесплатно",
+        mods: "--free",
       },
       {
         text: "Вывод на первых позициях",
         price: "99 руб./мес",
+        mods: "--first-priority",
       },
       {
         text: "Кастомный цвет карточки",
         price: "59 руб./мес",
+        mods: "--custom-color",
       },
     ]
 
@@ -20,14 +23,17 @@ mixin add-profile()
       .add-profile__wrapper
         h2 Добавьте свой профиль
         .add-profile__content
-          ul.add-profile__options-list
-            each item in optionsList
-              li.add-profile__content-item!= item.text
-          ul.add-profile__prices-list
-            each item in optionsList
-              li.add-profile__content-item!= item.price
-            .add-profile__prices-image
-              +picture-semi-adaptive("content", "rates", "png", 200, 202, 81, 81, "")
+          .add-profile__options-wrapper
+            ul.add-profile__options-list
+              each item in optionsList
+                li.add-profile__options-list-item!= item.text
+          .add-profile__prices-wrapper
+            ul.add-profile__prices-list
+              each item in optionsList
+                li.add-profile__prices-list-item(class=`add-profile__prices-list-item${item.mods}`)!= item.price
+              .add-profile__prices-image
+                +picture-semi-adaptive("content", "rates", "png", 200, 202, 81, 81, "")
         .add-profile__button-wrapper
           +btn({href: "#", text: "Показать тарифы для бизнеса"})(class="add-profile__button")
-            +icon("icon-businessman", 29, 28)
+            span.add-profile__button-icon
+              +icon("icon-businessman", 29, 28)
