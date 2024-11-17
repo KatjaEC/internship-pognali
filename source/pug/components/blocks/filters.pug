@@ -130,9 +130,12 @@ mixin filters()
     ]
 
   section.filters
-    .container
-      .filters__wrapper
-        .filters__header
+    .filters__page-title
+      .filters__title-wrapper
+        h1 Попутчики
+    .filters__wrapper
+      .container
+        .filters__options-wrapper
           span.filters__icon
             +icon("icon-filters", 23, 15)
           p Фильтрация по странам:

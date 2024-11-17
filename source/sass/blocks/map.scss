@@ -1,0 +1,106 @@
+.map {
+  position: relative;
+
+  &__image-wrapper {
+    position: relative;
+    margin-top: -262px;
+    width: 100%;
+    height: 704px;
+    background-color: $color-jordy-blue;
+
+    &::before {
+      position: absolute;
+      top: -30px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 160px;
+      background-color: $color-jordy-blue;
+      content: "";
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__live-map {
+    width: 100%;
+  }
+
+  &__map-pin-icon {
+    position: absolute;
+    bottom: 270px;
+    left: calc(50% - 86px);
+    width: 56px;
+    height: 56px;
+  }
+
+  &__wrapper {
+    position: relative;
+    padding: 55px 135px;
+    width: 100%;
+    min-height: 201px;
+    background-color: $color-jordy-blue;
+    border-radius: 0 0 60px 60px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
+    clip-path: inset(0 0 -40px 0);
+    z-index: 5;
+  }
+
+  &__text-wrapper {
+    padding: 0 75px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 40px 89px;
+  }
+
+  &__address-wrapper {
+    position: relative;
+    padding: 32px 20px 31px 121px;
+
+    & address {
+      font-size: 28px;
+      line-height: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-style: normal;
+      color: #1d2e5b;
+    }
+  }
+
+  &__location-pin-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #cce5fa;
+    background-color: #121936;
+    border-radius: 50%;
+  }
+
+  &__button.btn {
+    margin-top: 5px;
+    padding: 26px 45px 24px 34px;
+    color: #1d2e5b;
+    background-color: transparent;
+    border: 3px solid $color-midnight-express-lighter;
+
+    &:not(:last-of-type) {
+      margin: 5px 12px 14px 0;
+    }
+
+    & .map__button-icon {
+      top: 25px;
+      right: 14px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+}

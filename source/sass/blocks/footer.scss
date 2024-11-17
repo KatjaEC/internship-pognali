@@ -1,5 +1,52 @@
 .footer {
-  padding: 40px 0;
-
+  position: relative;
+  padding: 1px 0 42px;
   background-color: $color-default-white;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100% + 46px);
+    background-color: $color-default-white;
+    border-radius: 60px 60px 0 0;
+    box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
+    content: "";
+  }
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 210px auto;
+    gap: 30px 357px;
+    z-index: 5;
+  }
+
+  &__logo {
+    margin: 6px 0 0 -2px;
+  }
+
+  &__socials-wrapper {
+    max-width: 500px;
+  }
+
+  &__socials-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  &__socials-link {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-pale-cornflowep-blue;
+    border-radius: 50%;
+  }
 }

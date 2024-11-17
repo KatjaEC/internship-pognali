@@ -23,6 +23,7 @@ mixin registration()
         href: "tel:+78005558628",
         width: 36,
         height: 34,
+        mods: "--phone",
       },
       {
         icon: "icon-contacts-mail",
@@ -30,6 +31,7 @@ mixin registration()
         href: "mailto:mail@htmlacademy.ru",
         width: 37,
         height: 25,
+        mods: "--mail",
       },
     ]
 
@@ -44,17 +46,18 @@ mixin registration()
             a(href="#", class="registration__login-link")!= "авторизуйтесь"
             | .
         .registration__form-wrapper
-          form.registration__form
+          form
             +custom-input({inputType: "email", inputPlaceholder: "E-mail", inputName: "user-mail", inputId: "user-mail"})
             +btn({type: "submit", text: "Регистрация"})(class="registration__button")
               span.registration__button-icon
                +icon("arrow-filled", 14, 16)
-        p Остались вопросы? Мы с радостью на них ответим!
         .registration__contacts-wrapper
+          .registration__contacts-heading
+            p Остались вопросы? Мы с радостью на них ответим!
           ul.registration__contacts-list
             each item in contactsList
               li.registration__contacts-item
                 a.registration__contacts-link(href=item.href)
-                  span.registration__contacts-icon
+                  span.registration__contacts-icon(class=`registration__contacts-icon${item.mods}`)
                     +icon(item.icon, item.width, item.height)
                   span!= item.text

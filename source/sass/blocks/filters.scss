@@ -1,0 +1,40 @@
+.filters {
+  background-color: $color-accent-main;
+
+  &__page-title {
+    background-color: $color-midnight-express-lighter;
+    border-radius: 0 0 58px 58px;
+  }
+
+  &__title-wrapper {
+    margin: 0 auto;
+    padding: 78px 126px 67px;
+    max-width: 1440px;
+
+    & h1 {
+      position: relative;
+      margin: 0;
+      display: inline-block;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 700;
+      font-variant: all-small-caps;
+      color: $color-default-white;
+
+      &::before {
+        position: absolute;
+        bottom: -72px;
+        left: 0;
+        width: calc(100% - 27px);
+        height: 8px;
+        background-color: $color-picton-blue;
+        border-radius: 4px;
+        content: "";
+      }
+    }
+  }
+
+  &__wrapper {
+    padding: 58px 0 102px;
+  }
+}
