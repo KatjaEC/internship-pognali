@@ -1,5 +1,32 @@
 .add-profile {
+  position: relative;
   padding: 121px 0 66px;
+
+  @include vp-1023 {
+    padding: 37px 0 57px;
+    background-color: $color-accent-main;
+    border-radius: 0 0 58px 58px;
+
+    &::before {
+      position: absolute;
+      top: -100px;
+      right: 0;
+      width: 100%;
+      height: 200px;
+      background-color: $color-accent-main;
+      z-index: -10;
+      content: "";
+    }
+  }
+
+  @include vp-767 {
+    padding: 36px 0 15px;
+    border-radius: 0 0 29px 31px;
+
+    & .container {
+      padding: 0 23px;
+    }
+  }
 
   &__wrapper {
     & h2 {
@@ -10,17 +37,45 @@
       font-weight: 700;
       font-variant: all-small-caps;
       color: $color-midnight-express-lighter;
+
+      @include vp-1023 {
+        margin: 0 0 27px -4px;
+        padding-left: 0;
+        line-height: 89px;
+        text-align: center;
+      }
+
+      @include vp-767 {
+        font-size: 37px;
+        line-height: 28px;
+        color: #272b3b;
+      }
     }
   }
 
   &__content {
     display: flex;
     flex-wrap: wrap;
+
+    @include vp-767 {
+      margin-bottom: 17px;
+      display: block;
+    }
   }
 
   &__options-wrapper {
     padding: 62px 0 32px;
     width: calc(56% - 4px);
+
+    @include vp-1023 {
+      padding: 0;
+      width: calc(72% - 6px);
+    }
+
+    @include vp-767 {
+      margin-bottom: 31px;
+      width: 100%;
+    }
   }
 
   &__options-list {
@@ -28,6 +83,14 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include vp-1023 {
+      padding: 35px 0 22px;
+    }
+
+    @include vp-767 {
+      padding: 4px 0;
+    }
 
     &::after {
       position: absolute;
@@ -37,6 +100,18 @@
       height: 1px;
       background-color: #e1e3e9;
       content: "";
+
+      @include vp-1023 {
+        width: calc(100% - 92px);
+        bottom: 22px;
+      }
+
+      @include vp-767 {
+        right: auto;
+        left: 0;
+        bottom: 7px;
+        width: calc(100% - 55px);
+      }
     }
   }
 
@@ -49,11 +124,22 @@
     line-height: 28px;
     color: $color-charcoal;
 
+    @include vp-1023 {
+      padding: 27px 0 18px 90px;
+    }
+
+    @include vp-767 {
+      padding: 12px 44px 18px 1px;
+      min-height: 35px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
     &::before {
       position: absolute;
       top: 0;
       left: 14px;
-      padding: 24px 0;
+      padding: 24px 14px;
       width: 73px;
       height: 71px;
       font-size: 28px;
@@ -63,6 +149,47 @@
       background-color: $color-jordy-blue;
       border-radius: 50%;
       content: "";
+
+      @include vp-1023 {
+        top: 4px;
+        left: 1px;
+        padding: 22px 11px 20px 16px;
+        width: 68px;
+        height: 68px;
+      }
+
+      @include vp-767 {
+        top: 3px;
+        left: auto;
+        right: 6px;
+        padding: 10px 8px;
+        width: 37px;
+        height: 35px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: calc(100% - 111px);
+      height: 1px;
+      background-color: #e1e3e9;
+      content: "";
+
+      @include vp-1023 {
+        top: 2px;
+        width: calc(100% - 92px);
+      }
+
+      @include vp-767 {
+        top: -2px;
+        left: 0;
+        right: auto;
+        width: calc(100% - 55px);
+      }
     }
 
     &:nth-of-type(1)::before {
@@ -73,19 +200,43 @@
     &:nth-of-type(2) {
       padding: 20px 0 30px 111px;
 
+      @include vp-1023 {
+        padding: 20px 0 18px 90px;
+      }
+
       &::before {
         top: 4px;
         content: "2";
+      }
+
+      @include vp-767 {
+        padding: 12px 44px 18px 1px;
+
+        &::before {
+          top: 3px;
+        }
       }
     }
 
     &:nth-of-type(3) {
       padding: 10px 0 38px 111px;
 
+      @include vp-1023 {
+        padding: 15px 0 21px 90px;
+      }
+
       &::before {
         top: 5px;
         background-color: $color-pale-cornflowep-blue;
         content: "3";
+      }
+
+      @include vp-767 {
+        padding: 12px 44px 18px 1px;
+
+        &::before {
+          top: 3px;
+        }
       }
     }
 
@@ -102,28 +253,50 @@
       background-color: $color-pale-cornflowep-blue;
       content: "6";
     }
-
-    &::after {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: calc(100% - 111px);
-      height: 1px;
-      background-color: #e1e3e9;
-      content: "";
-    }
   }
 
-  &__prices-list {
+  &__prices-wrapper {
+    margin: 0 auto;
+    width: calc(100% - 11px);
+  }
+
+  &__list-wrapper {
     position: relative;
-    margin: 0;
     padding: 84px 286px 84px 81px;
     width: 584px;
     min-height: 333px;
     background-color: $color-accent-second;
     border-radius: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    @include vp-1023 {
+      padding: 24px 25px 10px;
+      width: 198px;
+      min-height: 285px;
+    }
+
+    @include vp-767 {
+      padding: 16px 18px 16px 15px;
+      width: 100%;
+      min-height: 113px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  &__prices-list {
+    margin: 0;
+    padding: 0;
     list-style: none;
+
+    @include vp-1023 {
+      margin: 0 0 30px;
+    }
+
+    @include vp-767 {
+      margin: 0;
+    }
   }
 
   &__prices-list-item {
@@ -131,20 +304,56 @@
     line-height: 28px;
     color: $color-default-white;
 
+    @include vp-1023 {
+      font-size: 24px;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 16px;
+      text-align: left;
+    }
+
     &--free {
       margin-bottom: 26px;
       font-size: 41px;
       font-weight: 700;
       font-variant: all-small-caps;
+
+      @include vp-1023 {
+        margin-bottom: 19px;
+        font-size: 28px;
+      }
+
+      @include vp-767 {
+        margin-bottom: 24px;
+        font-size: 20px;
+        line-height: 16px;
+      }
     }
 
     &--first-priority {
       margin-bottom: 12px;
       padding-left: 30px;
+
+      @include vp-1023 {
+        margin-bottom: 10px;
+        padding-left: 0;
+      }
+
+      @include vp-767 {
+        margin-bottom: 4px;
+      }
     }
 
     &--custom-color {
       padding-left: 29px;
+
+      @include vp-1023 {
+        padding-left: 0;
+      }
     }
   }
 
@@ -155,6 +364,21 @@
     width: 201px;
     height: 202px;
 
+    @include vp-1023 {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 0 auto;
+      width: 100px;
+      height: 100px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 0 auto;
+      width: 81px;
+      height: 81px;
+    }
+
     & img {
       height: 100%;
     }
@@ -163,6 +387,11 @@
   &__button-wrapper {
     margin-top: -9px;
     max-width: 600px;
+
+    @include vp-767 {
+      margin-top: 0;
+      max-width: 100%;
+    }
   }
 
   &__button.btn {
@@ -173,22 +402,90 @@
     line-height: 20px;
     font-weight: 700;
     color: $color-accent-second;
-    background-color: transparent;
+    background-color: $color-transparent;
+
+    @include vp-1023 {
+      padding: 21px 20px 24px 89px;
+      color: $color-midnight-express-lighter;
+    }
+
+    @include vp-767 {
+      padding: 10px 18px 10px 23px;
+      min-height: auto;
+      font-size: 16px;
+      line-height: 16px;
+      color: #272b3b;
+    }
+
+    & .add-profile__button-icon {
+      position: absolute;
+      top: 1px;
+      left: 14px;
+      padding: 21.5px 22px;
+      width: 73px;
+      height: 71px;
+      color: $color-accent-second;
+      background-color: #e2e5f2;
+      border-radius: 50%;
+
+      @include vp-1023 {
+        top: -5px;
+        left: 0;
+        padding: 23px 21px 21px;
+        width: 68px;
+        height: 68px;
+
+        & > svg {
+          width: 27px;
+          height: 27px;
+        }
+      }
+
+      @include vp-767 {
+        display: none;
+      }
+    }
 
     &:not(:last-of-type) {
       margin: 0 12px 14px 0;
     }
+
+    &:hover,
+    &:focus{
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 
-  &__button.btn .add-profile__button-icon {
-    position: absolute;
-    top: 1px;
-    left: 14px;
-    padding: 21.5px 22px;
-    width: 73px;
-    height: 71px;
-    color: $color-accent-second;
-    background-color: #e2e5f2;
-    border-radius: 50%;
-  }
+  // &__button.btn .add-profile__button-icon {
+  //   position: absolute;
+  //   top: 1px;
+  //   left: 14px;
+  //   padding: 21.5px 22px;
+  //   width: 73px;
+  //   height: 71px;
+  //   color: $color-accent-second;
+  //   background-color: #e2e5f2;
+  //   border-radius: 50%;
+
+  //   @include vp-1023 {
+  //     top: -5px;
+  //     left: 0;
+  //     padding: 23px 21px 21px;
+  //     width: 68px;
+  //     height: 68px;
+
+  //     & > svg {
+  //       width: 27px;
+  //       height: 27px;
+  //     }
+  //   }
+
+  //   @include vp-767 {
+  //     display: none;
+  //   }
+  // }
 }

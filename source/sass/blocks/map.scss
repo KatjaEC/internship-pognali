@@ -1,12 +1,38 @@
 .map {
   position: relative;
 
+  @include vp-1023 {
+    &::before {
+      position: absolute;
+      top: -100px;
+      right: 0;
+      width: 100%;
+      height: 200px;
+      background-color: $color-jordy-blue;
+      z-index: -5;
+      content: "";
+    }
+
+    & .container {
+      padding: 0 27px 0 25px;
+    }
+  }
+
   &__image-wrapper {
     position: relative;
     margin-top: -262px;
     width: 100%;
-    height: 704px;
+    height: 658px;
     background-color: $color-jordy-blue;
+
+    @include vp-1023 {
+      margin-top: -58px;
+      height: 574px;
+    }
+
+    @include vp-767 {
+      height: 424px;
+    }
 
     &::before {
       position: absolute;
@@ -17,6 +43,10 @@
       height: 160px;
       background-color: $color-jordy-blue;
       content: "";
+
+      @include vp-1023 {
+        display: none;
+      }
     }
 
     & img {
@@ -27,14 +57,35 @@
 
   &__live-map {
     width: 100%;
+
+    @include vp-1023 {
+      height: 100%;
+    }
   }
 
   &__map-pin-icon {
     position: absolute;
-    bottom: 270px;
+    bottom: 225px;
     left: calc(50% - 86px);
     width: 56px;
     height: 56px;
+
+    & > svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include vp-1023 {
+      bottom: 277px;
+      left: calc(50% - 39px);
+    }
+
+    @include vp-767 {
+      bottom: 95px;
+      left: calc(50% - 2px);
+      width: 41px;
+      height: 41px;
+    }
   }
 
   &__wrapper {
@@ -47,6 +98,19 @@
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.25);
     clip-path: inset(0 0 -40px 0);
     z-index: 5;
+
+    @include vp-1023 {
+      padding: 48px 35px 84px;
+    }
+
+    @include vp-767 {
+      padding: 25px 0 33px;
+      border-radius: 0 0 29px 31px;
+
+      & .container {
+        padding: 0 25px;
+      }
+    }
   }
 
   &__text-wrapper {
@@ -55,6 +119,17 @@
     flex-wrap: wrap;
     justify-content: flex-end;
     gap: 40px 89px;
+
+    @include vp-1023 {
+      padding: 0;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 38px;
+    }
+
+    @include vp-767 {
+      gap: 18px;
+    }
   }
 
   &__address-wrapper {
@@ -67,7 +142,20 @@
       font-weight: 700;
       text-transform: uppercase;
       font-style: normal;
-      color: #1d2e5b;
+      color: $color-catalina-blue;
+    }
+
+    @include vp-1023 {
+      padding: 23px 20px 18px 109px;
+    }
+
+    @include vp-767 {
+      padding: 9px 20px 9px 62px;
+
+      & address {
+        font-size: 16px;
+        line-height: 22px;
+      }
     }
   }
 
@@ -83,14 +171,56 @@
     color: #cce5fa;
     background-color: #121936;
     border-radius: 50%;
+
+    @include vp-1023 {
+      left: 15px;
+      width: 68px;
+      height: 68px;
+
+      & > svg {
+        width: 32px;
+        height: 32px;
+      }
+    }
+
+    @include vp-767 {
+      top: 7px;
+      left: 1px;
+      width: 45px;
+      height: 45px;
+
+      & > svg {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+
+  &__button-wrapper {
+    padding: 0 13px 0 15px;
+
+    @include vp-767 {
+      padding: 0;
+    }
   }
 
   &__button.btn {
     margin-top: 5px;
     padding: 26px 45px 24px 34px;
-    color: #1d2e5b;
-    background-color: transparent;
+    color: $color-catalina-blue;
+    background-color: $color-transparent;
     border: 3px solid $color-midnight-express-lighter;
+
+    @include vp-1023 {
+      width: 100%;
+    }
+
+    @include vp-767 {
+      padding: 19px 45px 19px 13px;
+      font-size: 18px;
+      line-height: 18px;
+      border-radius: 10px;
+    }
 
     &:not(:last-of-type) {
       margin: 5px 12px 14px 0;
@@ -101,6 +231,32 @@
       right: 14px;
       width: 15px;
       height: 15px;
+
+      @include vp-767 {
+        top: 21px;
+        right: 10px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-default-white;
+      background-color: $color-midnight-express-lighter;
+      opacity: 1;
+
+      & svg {
+        color: $color-default-white;
+      }
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+      background-color: $color-midnight-express-lighter;
+      opacity: 1;
+
+      & svg {
+        color: rgba(255, 255, 255, 0.3);
+      }
     }
   }
 }

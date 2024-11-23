@@ -3,7 +3,23 @@ mixin search-form(className)
     const filtersList = [
       {
         title: "Хобби",
-        options: [],
+        options: [
+          {
+            subtitle: "Спортзал",
+            id: "gym",
+            attribute: "checked",
+          },
+          {
+            subtitle: "Кальян",
+            id: "hookah",
+            attribute: "",
+          },
+          {
+            subtitle: "Диван",
+            id: "couch",
+            attribute: "",
+          },
+        ],
         mods: "--hobby",
       },
       {
@@ -29,7 +45,23 @@ mixin search-form(className)
       },
       {
         title: "Еда",
-        options: [],
+        options: [
+          {
+            subtitle: "Мясоед",
+            id: "meat",
+            attribute: "checked",
+          },
+          {
+            subtitle: "Сидит на ПП",
+            id: "healthy",
+            attribute: "",
+          },
+          {
+            subtitle: "Веган-сыроед",
+            id: "raw-vegan",
+            attribute: "",
+          },
+        ],
         mods: "--food",
       },
       {
@@ -41,13 +73,15 @@ mixin search-form(className)
             width: 23,
             height: 22,
             mods: "plane",
+            attribute: "checked",
           },
           {
             text: "Автотранспорт",
             icon: "icon-bus",
-            width: 18,
-            height: 20,
+            width: 20,
+            height: 22,
             mods: "car",
+            attribute: "checked",
           },
           {
             text: "Велосипед",
@@ -55,6 +89,7 @@ mixin search-form(className)
             width: 25,
             height: 25,
             mods: "bicycle",
+            attribute: "",
           },
           {
             text: "Пешком",
@@ -62,6 +97,7 @@ mixin search-form(className)
             width: 22,
             height: 24,
             mods: "on-foot",
+            attribute: "checked",
           },
         ],
         mods: "--transport",
@@ -80,28 +116,39 @@ mixin search-form(className)
     ]
 
   div(class=`${className}__form-wrapper`)
-    form(action="#", method="get")
+    form(action="https://echo.htmlacademy.ru/", method="get")
       each item in filtersList
         fieldset
           legend
-            +btn({text: item.title, type: "button"})(class=`${className}__form-button`)
+            +btn({text: item.title, type: "button"})(class=`${className}__form-button ${className}__form-button${item.mods}`)
               span(class=`${className}__form-icon`)
-                +icon("arrow-filled", 10, 6)
+                +icon("arrow-down-filled", 10, 6)
           if(item.title !== "Левел")
-            ul(class=`${className}__group-list ${className}__group-list${item.mods}`)
-              each subitem in item.options
-                if(subitem.icon)
-                  li(class=`${className}__group-item ${className}__group-item--${subitem.mods}`)
-                    +filter-checkbox(className, "", subitem.mods, subitem.mods)
-                      +transportation-icon(className, subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
-                else
-                  li(class=`${className}__group-item`)
+            div(class=`${className}__group-wrapper ${className}__group-wrapper${item.mods}`)
+              if(item.title !== "Транспорт")
+                ul(class=`${className}__group-list ${className}__group-list${item.mods}`)
+                  each subitem in item.options
                     if(subitem.attribute)
-                      +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)(checked)
+                      li(class=`${className}__group-item`)
+                        +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)(checked)
+                          +icon("icon-checkmark", 11, 12)
                     else
-                      +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)
+                      li(class=`${className}__group-item`)
+                        +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)
+                          +icon("icon-checkmark", 11, 12)
+              else
+                ul(class="transportation-list")
+                  each subitem in item.options
+                    if(subitem.attribute)
+                      li(class=`transportation-list__item transportation-list__item--${subitem.mods}`)
+                        +custom-input("transportation-list__checkbox", {hiddenClass: true, isChecked: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods})
+                          +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
+                    else
+                      li(class=`transportation-list__item transportation-list__item--${subitem.mods}`)
+                        +custom-input("transportation-list__checkbox", {hiddenClass: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods})
+                          +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
           else
             div(class=`${className}__group-list ${className}__group-list${item.mods}`)
               +range-input(className, item.idMin, item.idMax, item.idMin, item.idMax, item.minLength, item.maxLength, item.currentMinValue, item.currentMaxValue)
       div(class=`${className}__form-button-wrapper`)
-        +btn({text: "Показать", type: "submit"})(class=`${className}__form-button`)
+        +btn({text: "Показать", type: "submit"})(class=`${className}__form-button ${className}__submit-button`)

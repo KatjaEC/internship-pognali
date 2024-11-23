@@ -3,6 +3,30 @@
   background-color: #516172;
   border-radius: 0 0 58px 58px;
 
+  @include vp-1023 {
+    &::before {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 203px;
+      background-color: #272b3b;
+      z-index: 3;
+      content: "";
+    }
+  }
+
+  @include vp-767 {
+    & .container {
+      padding: 0 25px 0 26px;
+    }
+
+    &::before {
+      height: 229px;
+    }
+  }
+
   &__image {
     position: absolute;
     top: 0;
@@ -12,6 +36,11 @@
     margin: 0 auto;
     max-width: 1440px;
     height: 100%;
+
+    @include vp-767 {
+      height: calc(100% - 340px);
+      overflow: hidden;
+    }
   }
 
   &__background {
@@ -39,7 +68,7 @@
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      border-radius: 0 0 58px 58px;
+      border-radius: 0 0 65px 62px;
     }
   }
 
@@ -51,16 +80,52 @@
     width: 432px;
     height: 640px;
     z-index: 10;
+
+    @include vp-1023 {
+      right: 52px;
+      bottom: 172px;
+
+      & img {
+        max-width: 439px;
+      }
+    }
+
+    @include vp-767 {
+      width: 100%;
+      height: auto;
+      right: -85px;
+      bottom: 0;
+
+      & img {
+        max-width: 100%;
+      }
+    }
   }
 
   &__wrapper {
     position: relative;
     padding: 0 0 115px;
     z-index: 10;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+
+    @include vp-767 {
+      padding: 28px 0;
+    }
   }
 
   &__text {
     padding: 44px 789px 121px 12px;
+
+    @include vp-1023 {
+      padding: 3px 234px 459px 14px;
+    }
+
+    @include vp-767 {
+      padding: 0;
+    }
 
     & p {
       margin: 0;
@@ -69,22 +134,45 @@
       font-weight: 700;
       font-variant: all-small-caps;
       color: $color-default-white;
+
+      @include vp-1023 {
+        font-size: 60px;
+      }
+
+      @include vp-767 {
+        font-size: 36px;
+        line-height: 40px;
+      }
     }
   }
 
   &__process-wrapper {
     position: relative;
     z-index: 5;
+
+    // @include vp-1023 {
+    //   margin-top: auto;
+    // }
+    @include vp-767 {
+      margin-top: 290px;
+    }
   }
 
   &__process-list {
     position: relative;
     margin: 0;
     padding: 0;
-    // display: flex;
     display: grid;
     grid-template-columns: 345px 375px 375px 315px;
     list-style: none;
+
+    @include vp-1023 {
+      grid-template-columns: 55% 45%;
+    }
+
+    @include vp-767 {
+      display: block;
+    }
   }
 
   &__process-item {
@@ -100,6 +188,21 @@
     background-color: $color-picton-blue;
     border-radius: 20px;
 
+    @include vp-1023 {
+      padding: 31px 80px 61px 32px;
+      max-width: calc(100% + 34px);
+      font-size: 24px;
+    }
+
+    @include vp-767 {
+      padding: 22px 50px 24px 24px;
+      max-width: 100%;
+      min-width: 100%;
+      font-size: 18px;
+      line-height: 18px;
+      border-radius: 10px;
+    }
+
     &::before {
       position: absolute;
       top: 29px;
@@ -109,19 +212,65 @@
       text-align: end;
       color: $color-default-white;
       content: "";
+
+      @include vp-1023 {
+        top: auto;
+        right: auto;
+        left: 33px;
+        bottom: 21px;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: start;
+      }
+
+      @include vp-767 {
+        top: 21px;
+        right: 20px;
+        left: auto;
+        width: 40px;
+        font-size: 18px;
+        line-height: 18px;
+        text-align: end;
+      }
     }
 
     &--step-one {
       padding-left: 34px;
       background-color: $color-picton-blue;
+
+      @include vp-1023 {
+        padding-left: 33px;
+        border-radius: 20px 0 0 0;
+      }
+
+      @include vp-767 {
+        padding-left: 24px;
+        border-radius: 10px 10px 0 0;
+      }
     }
 
     &--step-two {
       margin-left: -30px;
       background-color: $color-jordy-blue;
 
+      @include vp-1023 {
+        margin-left: -34px;
+        border-radius: 20px 20px 0 0;
+      }
+
+      @include vp-767 {
+        margin: -3px 0 0;
+        padding: 22px 50px 30px 24px;
+        border-radius: 10px 10px 0 0;
+      }
+
       &::before {
         right: 61px;
+
+        @include vp-767 {
+          top: 22px;
+          right: 20px;
+        }
       }
     }
 
@@ -130,8 +279,24 @@
       padding-left: 31px;
       background-color: $color-pale-cornflowep-blue;
 
+      @include vp-1023 {
+        margin-left: 0;
+        padding: 30px 80px 62px 33px;
+        border-radius: 0 0 0 20px;
+      }
+
+      @include vp-767 {
+        margin: -12px 0 0;
+        padding: 22px 50px 30px 24px;
+        border-radius: 10px 10px 0 0;
+      }
+
       &::before {
         right: 61px;
+
+        @include vp-767 {
+          right: 20px;
+        }
       }
     }
 
@@ -140,13 +305,34 @@
       max-width: 315px;
       background-color: #cce5fa;
 
+      @include vp-1023 {
+        margin-left: -34px;
+        padding: 30px 80px 62px 32px;
+        max-width: calc(100% + 34px);
+        border-radius: 0 0 20px 20px;
+      }
+
+      @include vp-767 {
+        margin: -8px 0 0;
+        padding: 22px 50px 22px 24px;
+        border-radius: 10px;
+      }
+
       &::before {
         right: 32px;
+
+        @include vp-767 {
+          right: 20px;
+        }
       }
     }
 
     &:not(:first-of-type) {
       box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.25);
+
+      @include vp-1023 {
+        box-shadow: none;
+      }
     }
 
     &:nth-of-type(1)::before {

@@ -2,53 +2,128 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, 25px);
-  gap: 9px;
+  // grid-template-columns: repeat(4, 25px);
+  grid-template-columns: repeat(4, 28px);
+  // gap: 9px;
+  gap: 6px;
   list-style: none;
+
+  @include vp-767 {
+    gap: 5.5px;
+  }
 
   &__item {
     position: relative;
     text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
 
-    &--plane .transportation-list__item-tooltip-wrapper {
-      left: calc(50% - 75px);
+    &--plane {
+      // & svg {
+      //   width: 26px;
+      //   height: 29px;
+      // }
+
+      & .transportation-list__tooltip-wrapper {
+        left: calc(50% - 72px);
+      }
     }
 
-    &--car .transportation-list__item-tooltip-wrapper {
-      left: calc(50% - 83px);
+    &--car .transportation-list__tooltip-wrapper {
+      left: calc(50% - 81px);
     }
 
-    &--bicycle .transportation-list__item-tooltip-wrapper {
-      left: calc(50% - 64px);
+    &--bicycle .transportation-list__tooltip-wrapper {
+      left: calc(50% - 62px);
     }
 
-    &--on-foot .transportation-list__item-tooltip-wrapper {
-      left: calc(50% - 54px);
+    &--on-foot .transportation-list__tooltip-wrapper {
+      left: calc(50% - 52px);
     }
 
     & svg {
       color: rgba(29, 46, 91, 0.15);
     }
 
-    &[data-status="is-enabled"] svg {
-      color: #1d2e5b;
+    &:hover,
+    & input:focus {
+      & .transportation-list__item-icon {
+        box-shadow: 0 2px 6px 0 rgba(22, 28, 53, 0.17);
+      }
+
+      & .transportation-list__item-icon > svg {
+        color: #b2b2b2;
+      }
     }
 
-    &[data-status="is-disabled"] svg {
-      color: rgba(29, 46, 91, 0.15);
+    &:hover .transportation-list__tooltip-wrapper,
+    & input:focus ~ .transportation-list__tooltip-wrapper {
+      display: block;
+    }
+
+    & input:focus:not(:hover) ~ .transportation-list__tooltip-wrapper {
+      display: none;
+    }
+
+    // & input:focus:not(:focus-visible) ~ .transportation-list__tooltip-wrapper {
+    //   display: none;
+    // }
+
+    // & input:focus-visible ~ .transportation-list__tooltip-wrapper {
+    //   display: block;
+    // }
+
+    & input:active ~ .transportation-list__item-icon {
+      background-color: #e2e5f1;
+      box-shadow: none;
+
+      & > svg {
+        color: rgba(29, 46, 91, 0.1);
+      }
+    }
+
+    & input:checked {
+      &  ~ .transportation-list__item-icon > svg {
+        color: $color-catalina-blue;
+      }
+
+      &:hover ~ .transportation-list__item-icon > svg,
+      &:focus ~ .transportation-list__item-icon > svg {
+        color: rgba(29, 46, 91, 0.7);
+      }
+
+      &:active ~ .transportation-list__item-icon {
+        background-color: #e2e5f1;
+        box-shadow: none;
+
+        & > svg {
+          color: rgba(29, 46, 91, 0.3);
+        }
+      }
+    }
+
+    &:hover input:checked ~ .transportation-list__item-icon > svg {
+      color: rgba(29, 46, 91, 0.7);
     }
   }
 
   &__item-icon {
-
-    &:hover + .transportation-list__item-tooltip-wrapper {
-      display: block;
-    }
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    // width: 31px;
+    // height: 31px;
+    width: 28px;
+    height: 28px;
+    background-color: $color-default-white;
+    border: none;
+    border-radius: 50%;
   }
 
-  &__item-tooltip-wrapper {
+  &__tooltip-wrapper {
     position: absolute;
-    top: 100%;
+    top: calc(100% + 8px);
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -56,9 +131,10 @@
     max-width: 200px;
     width: fit-content;
     display: none;
+    z-index: 15;
   }
 
-  &__item-tooltip {
+  &__tooltip {
     position: relative;
     padding: 15px 13px 18px 13px;
     background-color: #101d41;
@@ -66,14 +142,14 @@
 
     &::before {
       position: absolute;
-      top: -10px;
+      top: -9px;
       left: 0;
       right: 0;
       margin: 0 auto;
       width: 0;
       height: 0;
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
+      border-left: 8px solid $color-transparent;
+      border-right: 8px solid $color-transparent;
       border-bottom: 10px solid #101d41;
       content: "";
     }

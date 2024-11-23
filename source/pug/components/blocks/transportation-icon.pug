@@ -1,10 +1,8 @@
-mixin transportation-icon(name, width, height, text)
-  .transportation-list__item-icon
+mixin transportation-icon(className, name, width, height, text)
+  div(class=`${className}__item-icon`)
     svg(width=width, height=height, aria-hidden="true")
       use(xlink:href="img/sprite.svg#" + name)
-  .transportation-list__item-tooltip-wrapper
-    .transportation-list__item-tooltip
-      span!= text
+  +tooltip("transportation-list", text)
 
 mixin transportation-list()
   -
@@ -18,8 +16,8 @@ mixin transportation-list()
       {
         text: "Автотранспорт",
         icon: "icon-bus",
-        width: 18,
-        height: 20,
+        width: 19,
+        height: 22,
       },
       {
         text: "Велосипед",

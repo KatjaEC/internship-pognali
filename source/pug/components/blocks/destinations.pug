@@ -36,11 +36,9 @@ mixin destinations()
         .destinations__text-wrapper
           .destinations__text
             h2 Направления
-            p
-              | Мы не продаем туры и ничего не рекламируем.
-            p
-              | Люди сами пишут о странах, куда хотели бы отправиться и чем можно там заняться.
-          +btn({href: "catalog.html", text: "Показать все"})(class="destinations__button")
+            p Мы не продаем туры и ничего не рекламируем.
+              span Люди сами пишут о&nbsp;странах, куда хотели бы отправиться и&nbsp;чем можно там заняться.
+          +btn({href: "catalog.html", text: "Показать все"})(class="btn--primary destinations__button")
             span.destinations__button-icon
               +icon("arrow-filled", 14, 14)
         .destinations__slider-wrapper

@@ -39,11 +39,11 @@ mixin header(headerMods, currentUrl)
         //- lighthouse снимает 10 баллов SEO за <a> без href
         .header__logo
           .header__icon
-            +logo("svg", "logo", "svg", "-header-full.", 96, 15, 166, 42, 202, 50, "Логотип сайта Погнали.")
+            +logo("svg", "logo", "svg", "-header-full.", "-header", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
       else
         a.header__logo(href="index.html", aria-label="Переход на главную страницу.")
           .header__icon
-            +logo("svg", "logo", "svg", "-header-full.", 96, 15, 166, 42, 202, 50, "Логотип сайта Погнали.")
+            +logo("svg", "logo", "svg", "-header-full.", "-header", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
       nav.header__nav
         button.header__nav-toggle.header__nav-toggle--is-open(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           span.header__nav-toggle-icon.header__nav-toggle-icon--menu-is-hidden

@@ -1,4 +1,4 @@
-mixin custom-input(options = {})
+mixin custom-input(className, options = {})
   - const inputLabel = options.inputLabel ? options.inputLabel : false
   - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
   - const inputType = options.inputType ? options.inputType : "text"
@@ -8,9 +8,12 @@ mixin custom-input(options = {})
   - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
   - const inputAccept = options.inputAccept ? options.inputAccept : false
+  - const hiddenClass = options.hiddenClass ? "visually-hidden" : false
+  - const checkedStatus = options.isChecked ? "checked" : false
 
-  .custom-input&attributes(attributes)
-    label
+  div(class=`${className}`)&attributes(attributes)
+    input(class=hiddenClass, type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept, checked=checkedStatus)
+    label(for=inputId)
       if inputLabel
-        span.custom-input__label!= inputLabel
-      input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept)
+        span(class=`${className}__label`)!= inputLabel
+    block

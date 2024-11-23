@@ -41,19 +41,19 @@ mixin registration()
       .registration__wrapper
         .registration__text
           p Заинтересовались?
-          p Зарегистрируйтесь, это быстро и бесплатно!
+          p Зарегистрируйтесь, это быстро и&nbsp;бесплатно!
           p Уже&nbsp;зарегистрированы? Тогда скорее
             a(href="#", class="registration__login-link")!= "авторизуйтесь"
             | .
         .registration__form-wrapper
           form
-            +custom-input({inputType: "email", inputPlaceholder: "E-mail", inputName: "user-mail", inputId: "user-mail"})
-            +btn({type: "submit", text: "Регистрация"})(class="registration__button")
+            +custom-input("registration__form-input", {inputType: "email", inputPlaceholder: "E-mail", inputName: "user-mail", inputId: "user-mail"})
+            +btn({type: "submit", text: "Регистрация"})(class="btn--primary registration__button")
               span.registration__button-icon
                +icon("arrow-filled", 14, 16)
         .registration__contacts-wrapper
           .registration__contacts-heading
-            p Остались вопросы? Мы с радостью на них ответим!
+            p Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!
           ul.registration__contacts-list
             each item in contactsList
               li.registration__contacts-item

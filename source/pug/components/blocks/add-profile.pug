@@ -28,9 +28,10 @@ mixin add-profile()
               each item in optionsList
                 li.add-profile__options-list-item!= item.text
           .add-profile__prices-wrapper
-            ul.add-profile__prices-list
-              each item in optionsList
-                li.add-profile__prices-list-item(class=`add-profile__prices-list-item${item.mods}`)!= item.price
+            .add-profile__list-wrapper
+              ul.add-profile__prices-list
+                each item in optionsList
+                  li.add-profile__prices-list-item(class=`add-profile__prices-list-item${item.mods}`)!= item.price
               .add-profile__prices-image
                 +picture-semi-adaptive("content", "rates", "png", 200, 202, 81, 81, "")
         .add-profile__button-wrapper

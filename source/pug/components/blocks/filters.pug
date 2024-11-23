@@ -3,108 +3,132 @@ mixin filters()
     const countriesList = [
       {
         letter: "А",
+        mods: "--a",
+        modsActiveClass: "--is-active",
         countries: [["Австралия"], ["Австрия"], ["Азербайджан"], ["Албания"], ["Алжир"], ["Ангола"], ["Андорра"], ["Антигуа и Барбуда"], ["Аргентина"], ["Армения"], ["Афганистан"]],
       },
       {
         letter: "Б",
+        mods: "--b",
         countries: [["Багамские Острова"], ["Бангладеш"], ["Барбадос"], ["Бахрейн"], ["Белоруссия"], ["Белиз"], ["Бельгия"], ["Бенин"], ["Болгария"], ["Боливия"], ["Босния и Герцеговина"], ["Ботсвана"], ["Бразилия"], ["Бруней"], ["Буркина-Фасо"], ["Бурунди"], ["Бутан"]],
       },
       {
         letter: "В",
+        mods: "--v",
         countries: [["Вануату"], ["Великобритания"], ["Венгрия"], ["Венесуэла"], ["Восточный Тимор"], ["Вьетнам"]],
       },
       {
         letter: "Г",
+        mods: "--g",
         countries: [["Габон"], ["Гаити"], ["Гайана"], ["Гамбия"], ["Гана"], ["Гватемала"], ["Гвинея"], ["Гвинея-Бисау"], ["Германия"], ["Гондурас"], ["Гренада"], ["Греция"], ["Грузия"]],
       },
       {
         letter: "Д",
+        mods: "--d",
         countries: [["Дания"], ["Джибути"], ["Доминика"], ["Доминикана"]],
       },
       {
         letter: "Е",
+        mods: "--ye",
         countries: [["Египет"]],
       },
       {
         letter: "З",
+        mods: "--z",
         countries: [["Замбия"], ["Зимбабве"]],
       },
       {
         letter: "И",
+        mods: "--i",
         countries: [["Израиль"], ["Индия"], ["Индонезия"], ["Иордания"], ["Ирак"], ["Иран"], ["Ирландия"], ["Исландия"], ["Испания"], ["Италия"]],
       },
       {
         letter: "К",
+        mods: "--k",
         countries: [["Кабо-Верде"], ["Казахстан"], ["Камбоджа"], ["Камерун"], ["Канада"], ["Катар"], ["Кения"], ["Кипр"], ["Киргизия"], ["Кирибати"], ["Китай"], ["Колумбия"]],
       },
       {
         letter: "Л",
+        mods: "--l",
         countries: [["Лаос"], ["Латвия"], ["Лесото"], ["Либерия"], ["Ливан"], ["Ливия"], ["Литва"], ["Лихтенштейн"], ["Люксембург"]],
       },
       {
         letter: "М",
+        mods: "--m",
         countries: [["Маврикий"], ["Мавритания"], ["Мадагаскар"], ["Малави"], ["Малайзия"], ["Мали"], ["Мальдивы"], ["Мальта"], ["Марокко"]],
       },
       {
         letter: "Н",
+        mods: "--n",
         countries: [["Намибия"], ["Науру"], ["Непал"], ["Нигер"], ["Нигерия"], ["Нидерланды"], ["Никарагуа"], ["Новая Зеландия"], ["Норвегия"]],
       },
       {
         letter: "О",
+        mods: "--o",
         countries: [["ОАЭ"], ["Оман"]],
       },
       {
         letter: "П",
-        countries: [["Пакистан"], ["Палау"], ["Панама"], ["Папуа - Новая Гвинея"], ["Парагвай"], ["Перу"], ["Польша"], ["Португалия"]],
+        mods: "--p",
+        countries: [["Пакистан"], ["Палау"], ["Панама"], ["Папуа&nbsp;&#8209;&nbsp;Новая&nbsp;Гвинея"], ["Парагвай"], ["Перу"], ["Польша"], ["Португалия"]],
       },
       {
         letter: "Р",
+        mods: "--r",
         countries: [["Руанда"], ["Румыния"], ["Россия"]],
       },
       {
         letter: "С",
+        mods: "--s",
         countries: [["Сальвадор"], ["Самоа"], ["Сан-Марино"], ["Саудовская Аравия"], ["Сейшелы"], ["Сенегал"], ["Сербия"], ["Сингапур"], ["Сирия"], ["Словакия"], ["Словения"], ["США"]],
       },
       {
         letter: "Т",
+        mods: "--t",
         countries: [["Таджикистан"], ["Таиланд"], ["Танзания"], ["Того"], ["Тонга"], ["Тринидад и Тобаго"], ["Тувалу"], ["Тунис"], ["Туркмения"], ["Турция"]],
       },
       {
         letter: "У",
+        mods: "--u",
         countries: [["Уганда"], ["Узбекистан"], ["Украина"], ["Уругвай"]],
       },
       {
         letter: "Ф",
+        mods: "--f",
         countries: [["Фиджи"], ["Филиппины"], ["Финляндия"], ["Франция"]],
       },
       {
         letter: "Х",
+        mods: "--kh",
         countries: [["Хорватия"]],
       },
       {
         letter: "Ч",
+        mods: "--ch",
         countries: [["Чад"], ["Черногория"], ["Чехия"], ["Чили"]],
       },
       {
         letter: "Ш",
+        mods: "--sh",
         countries: [["Швейцария"], ["Швеция"], ["Шри-Ланка"]],
       },
       {
         letter: "Э",
+        mods: "--e",
         countries: [["Эквадор"], ["Эритрея"], ["Эсватини"], ["Эстония"], ["Эфиопия"]],
       },
       {
         letter: "Ю",
+        mods: "--yu",
         countries: [["ЮАР"], ["Южный Судан"]],
       },
       {
         letter: "Я",
+        mods: "--ya",
         countries: [["Ямайка"], ["Япония"]],
       },
     ]
 
-  //- -
-  //-   const filters = [["Европа"], ["Азия"], ["Америка"], ["Острова"]]
   -
     const filters = [
       {
@@ -130,31 +154,45 @@ mixin filters()
     ]
 
   section.filters
-    .filters__page-title
-      .filters__title-wrapper
-        h1 Попутчики
+    +page-title("Попутчики")
     .filters__wrapper
       .container
         .filters__options-wrapper
-          span.filters__icon
-            +icon("icon-filters", 23, 15)
-          p Фильтрация по странам:
+          p
+            span.filters__icon
+              +icon("icon-filters", 23, 15)
+            | Фильтрация по странам:
           ul.filters__list
             each item in filters
-              li.filters__item
+              li.filters__item(class=`filters__item--${item.id}`)
                 if(item.attribute)
                   +filter-checkbox("filters", item.filterName, item.id, item.id)(checked)
                 else
                   +filter-checkbox("filters", item.filterName, item.id, item.id)
-        .filters__countries-wrapper
-          ul.filters__countries-list
-            each item in countriesList
-              li.filters__countries-item
-                p!= item.letter
-                .filters__countries-group
-                  each country in item.countries
-                    a.filters__countries-link(href="#")!= country
-          .filters__button-wrapper
-            +btn({type: "button", text: "Свернуть"})(class="filters__link")
-              span.filters__link-icon
+          .filters__options-button-wrapper
+            +btn({type: "button"})(class="filters__options-button filters__options-button--filter-is-hidden")
+              span.filters__options-button-text Показать все
+              span.filters__options-button-icon.filters__options-button-icon--is-shown
                 +icon("icon-close", 22, 24)
+              span.filters__options-button-icon.filters__options-button-icon--is-hidden
+                +icon("icon-dots-button", 34, 6)
+        .filters__countries-wrapper.filters__countries-wrapper--is-hidden
+          ol.filters__countries-list
+            each item in countriesList
+              if(item.modsActiveClass)
+                li.filters__countries-item(class=`filters__countries-item${item.mods} filters__countries-item${item.modsActiveClass}`)
+                  p!= item.letter
+                  .filters__countries-group
+                    each country in item.countries
+                      a.filters__countries-link(href="#")!= country
+              else
+                li.filters__countries-item(class=`filters__countries-item${item.mods}`)
+                  p!= item.letter
+                  .filters__countries-group
+                    each country in item.countries
+                      a.filters__countries-link(href="#")!= country
+          .filters__button-wrapper
+            +btn({type: "button"})(class="filters__button")
+              span.filters__button-text Свернуть
+              span.filters__button-icon
+                +icon("icon-close-bold", 22, 24)

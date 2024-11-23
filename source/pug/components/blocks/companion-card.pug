@@ -1,7 +1,10 @@
-mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNumber, cardMods)
-  .companions-card(class=`companions-card--${cardMods}`)
+mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNumber)
+  .companions-card&attributes(attributes)
     .companions-card__image
-      +picture("slides", image, "jpg", 285, 286, "Изображение пользователя.")
+      if(currentUrl === "index.html")
+        +picture-adaptive("slides", image, "jpg", 285, 286, 285, 286, 270, 270, "Изображение пользователя.")
+      else
+        +picture("slides", image, "jpg", 285, 286, "Изображение пользователя.")
     .companions-card__stats
       if(currentUrl === "catalog.html")
         span Левел:
@@ -18,10 +21,11 @@ mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNum
         p!= tags
       .companions-card__countries
         if(currentUrl === "catalog.html")
-          span Хочет посетить:
+          .companions-card__countries-heading
+            span Хочет посетить:
           ul.companions-card__countries-list
             each country in countries
-              li.companions-card__countries-item
+              li.companions-card__countries-item(class=`companions-card__countries-item--${country.icon}`)
                 .companions-card__countries-icon
                   +picture("content", country.icon, "jpg", 35, 24, country.alt)
                 .companions-card__countries-name
@@ -29,19 +33,24 @@ mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNum
         else
           ul.companions-card__countries-list
             each country in countries
-              li.companions-card__countries-item
-                +picture("content", country.icon, "jpg", 35, 24, country.alt)
-      .companions-card__transportation-wrapper
-        block
-    if(currentUrl === "catalog.html")
-      .companions-card__buttons-wrapper
-        .companions-card__invite-button-wrapper
-          +btn({href: "#", text: "Позвать!"})(class="companions-card__invite-button")
-        .companions-card__likes-wrapper
-          +btn({type: "button"})(class="companions-card__like-button")
-            span.companions-card__like-button-icon
-              +icon("icon-heart", 20, 20)
-          span!= likesNumber
-      .companions-card__transportation-wrapper
-        span Транспорт:
-        block
+              li.companions-card__countries-item(class=`companions-card__countries-item--${country.icon}`)
+                .companions-card__picture-wrapper
+                  +picture("content", country.icon, "jpg", 35, 24, country.alt)
+                +tooltip("companions-card", country.countryName)
+      if(currentUrl === "catalog.html")
+        .companions-card__buttons-wrapper
+          .companions-card__invite-button-wrapper
+            +btn({href: "#", text: "Позвать!"})(class="companions-card__invite-button")
+          .companions-card__likes-wrapper
+            +btn({type: "button"})(class="companions-card__like-button")
+              span.companions-card__like-button-icon
+                +icon("icon-heart", 20, 20)
+              span.companions-card__like-button-icon.companions-card__like-button-icon--is-pressed
+                +icon("icon-heart-filled", 20, 20)
+            span!= likesNumber
+        .companions-card__transportation-wrapper
+          span Транспорт:
+          block
+      else
+        .companions-card__transportation-wrapper
+          block

@@ -2,6 +2,21 @@
   position: relative;
   padding: 0 0 75px;
 
+  @include vp-1023 {
+    padding: 0 0 100px;
+    background-color: $color-accent-main;
+    border-radius: 0 0 58px 58px;
+  }
+
+  @include vp-767 {
+    padding: 0 0 52px;
+    border-radius: 0 0 29px 31px;
+
+    & .container {
+      padding: 0 16px 0 24px;
+    }
+  }
+
   &::before {
     position: absolute;
     top: -150px;
@@ -12,6 +27,13 @@
     border-radius: 56px;
     z-index: -5;
     content: "";
+
+    @include vp-1023 {
+      top: -120px;
+      width: 100%;
+      height: 200px;
+      border-radius: 0;
+    }
   }
 
   &__wrapper {
@@ -20,12 +42,28 @@
     display: grid;
     grid-template-columns: 749px auto;
     grid-auto-flow: column;
+
+    @include vp-1023 {
+      position: relative;
+      padding: 61px 33px 105px;
+      grid-template-columns: 100%;
+    }
+
+    @include vp-767 {
+      padding: 54px 0 66px;
+    }
   }
 
   &__text-wrapper {
     padding-left: 53px;
     grid-column: 2/3;
     width: 570px;
+
+    @include vp-1023 {
+      padding-left: 0;
+      grid-column: 1/2;
+      width: 100%;
+    }
   }
 
   &__text {
@@ -47,6 +85,46 @@
       font-weight: 500;
       color: $color-charcoal;
     }
+
+    & p > span {
+      display: inline-block;
+    }
+
+    @include vp-1023 {
+      padding: 0;
+
+      & h2 {
+        margin: 0 0 55px;
+        font-size: 95px;
+      }
+
+      & p {
+        margin-left: 2px;
+        font-size: 24px;
+      }
+    }
+
+    @include vp-767 {
+      & h2 {
+        margin: 0 0 25px 1px;
+        font-size: 44px;
+        line-height: 24px;
+        color: $color-catalina-blue;
+      }
+
+      & p {
+        margin: 0 0 0 1px;
+        display: flow-root;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+
+      & p > span {
+        padding-left: 3.5px;
+        display: inline;
+      }
+    }
   }
 
   &__button.btn {
@@ -61,11 +139,48 @@
     & span {
       right: 37px;
     }
+
+    @include vp-1023 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      padding: 30px 63px 26px 34px;
+      width: calc(100% - 70px);
+
+      & span {
+        top: 30px;
+        right: 16px;
+      }
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: 24px 63px 24px 24px;
+      width: calc(100% - 8px);
+      // font-size: 18px;
+      // line-height: 18px;
+      // border-radius: 10px;
+
+      & span {
+        top: 25px;
+        right: 22px;
+      }
+    }
   }
 
   &__slider-wrapper {
     width: 748px;
     grid-column: 1/2;
+
+    @include vp-1023 {
+      width: 100%;
+    }
+
+    @include vp-767 {
+      padding: 42px 9px 25px 0;
+    }
   }
 
   &__slider-list {
@@ -74,6 +189,16 @@
     padding: 93px 61px 93px 12px;
     list-style: none;
 
+    @include vp-1023 {
+      margin-top: 7px;
+      padding: 67px 0;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: 0;
+    }
+
     &::before {
       position: absolute;
       top: 0;
@@ -81,9 +206,18 @@
       right: 0;
       width: calc(100% - 129px);
       height: 180px;
-      background: linear-gradient(180deg, $color-accent-main 0%, $color-accent-main 55%, transparent 95%);
+      background: linear-gradient(180deg, $color-accent-main 0%, $color-accent-main 55%, $color-transparent 95%);
       z-index: 5;
       content: "";
+
+      @include vp-1023 {
+        left: 0;
+        width: calc(100% - 3px);
+      }
+
+      @include vp-767 {
+        display: none;
+      }
     }
 
     &::after {
@@ -93,9 +227,18 @@
       right: 0;
       width: calc(100% - 129px);
       height: 180px;
-      background: linear-gradient(360deg, $color-accent-main 0%, $color-accent-main 55%, transparent 95%);
+      background: linear-gradient(360deg, $color-accent-main 0%, $color-accent-main 55%, $color-transparent 95%);
       z-index: 5;
       content: "";
+
+      @include vp-1023 {
+        left: 0;
+        width: calc(100% - 3px);
+      }
+
+      @include vp-767 {
+        display: none;
+      }
     }
   }
 
@@ -111,6 +254,33 @@
     border-radius: 22px;
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
 
+    @include vp-1023 {
+      padding: 28px 273px 19px 32px;
+      width: calc(100% - 3px);
+    }
+
+    @include vp-767 {
+      margin-bottom: 12px;
+      padding: 104px 0 0;
+      display: block;
+      min-width: 100%;
+      width: 100%;
+      border-radius: 11px;
+
+      & .destinations__slider-images {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: calc(50% + 12px);
+        width: 100%;
+      }
+
+      &:first-of-type .destinations__slider-flag-image {
+        bottom: -5px;
+      }
+    }
+
     &--active {
       margin-left: -7px;
       padding: 24px 300px 19px 34px;
@@ -124,6 +294,44 @@
       & .destinations__slider-flag-image {
         left: -36px;
       }
+
+      @include vp-1023 {
+        margin-left: -8px;
+        padding: 28px 300px 15px 31px;
+        width: calc(100% + 16px);
+
+        & .destinations__slider-images {
+          right: 0;
+          width: 193px;
+        }
+
+        & .destinations__slider-flag-image {
+          top: calc(50% - 55px);
+          left: -47px;
+        }
+      }
+
+      @include vp-767 {
+        margin-left: 0;
+        padding: 104px 0 0;
+        width: 100%;
+
+        & .destinations__slider-images {
+          // position: absolute;
+          // top: 0;
+          // left: 0;
+          // right: 0;
+          width: 100%;
+          // height: calc(50% + 12px);
+        }
+
+        & .destinations__slider-flag-image {
+          top: auto;
+          left: 25px;
+          // bottom: 0;
+          border-radius: 3px;
+        }
+      }
     }
 
     &:last-of-type {
@@ -134,6 +342,11 @@
       margin: 0 0 4px;
       font-size: 24px;
       font-weight: 700;
+
+      @include vp-767 {
+        font-size: 21px;
+        line-height: 21px;
+      }
     }
 
     & p {
@@ -142,6 +355,48 @@
       font-weight: 500;
       color: $color-charcoal;
       opacity: 0.3;
+
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  &__slider-item-content {
+    @include vp-767 {
+      position: relative;
+      padding: 28.5px 17px 23px 25px;
+      display: grid;
+      grid-template-columns: 68% auto;
+      background-color: $color-default-white;
+      border-radius: 11px;
+      z-index: 5;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 10px;
+        background-color: $color-default-white;
+        border-radius: 10px 10px 0 0;
+        z-index: -5;
+        content: "";
+      }
+    }
+
+    & h3 {
+      margin: 0 0 2px;
+      grid-column: 1/2;
+      order: 0;
+    }
+
+    & p {
+      margin: 0 0 0 1px;
+      grid-column: 1/-1;
+      order: 2;
     }
   }
 
@@ -159,6 +414,30 @@
         opacity: 0.1;
       }
     }
+
+    @include vp-1023 {
+      margin-top: 19px;
+      gap: 9px 11px;
+    }
+
+    @include vp-767 {
+      margin: -2px 0 0;
+      display: inline-block;
+      grid-column: -1/-2;
+      order: 1;
+
+      & span {
+        margin-left: 6px;
+        padding-right: 1px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      & svg {
+        width: 13px;
+        height: 12px;
+      }
+    }
   }
 
   &__slider-images {
@@ -168,6 +447,10 @@
     bottom: 0;
     width: 203px;
     height: 100%;
+
+    @include vp-1023 {
+      width: 186px;
+    }
   }
 
   &__slider-flag-image {
@@ -177,6 +460,24 @@
 
     & img {
       border-radius: 7px;
+    }
+
+    @include vp-1023 {
+      top: calc(50% - 55px);
+    }
+
+    @include vp-767 {
+      top: auto;
+      left: 25px;
+      bottom: 0;
+      width: 37px;
+      height: 25px;
+      z-index: 5;
+
+      & img {
+        clip-path: inset(1px 1px 0 1px);
+        border-radius: 2px;
+      }
     }
   }
 
@@ -188,6 +489,13 @@
       display: flex;
       height: 100%;
       border-radius: 0 21px 21px 0;
+    }
+
+    @include vp-767 {
+      & img {
+        width: 100%;
+        border-radius: 11px 11px 0 0;
+      }
     }
   }
 
