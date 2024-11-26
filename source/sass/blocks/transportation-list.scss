@@ -1,10 +1,8 @@
 .transportation-list {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   display: grid;
-  // grid-template-columns: repeat(4, 25px);
   grid-template-columns: repeat(4, 28px);
-  // gap: 9px;
   gap: 6px;
   list-style: none;
 
@@ -19,11 +17,6 @@
     cursor: pointer;
 
     &--plane {
-      // & svg {
-      //   width: 26px;
-      //   height: 29px;
-      // }
-
       & .transportation-list__tooltip-wrapper {
         left: calc(50% - 72px);
       }
@@ -65,14 +58,6 @@
       display: none;
     }
 
-    // & input:focus:not(:focus-visible) ~ .transportation-list__tooltip-wrapper {
-    //   display: none;
-    // }
-
-    // & input:focus-visible ~ .transportation-list__tooltip-wrapper {
-    //   display: block;
-    // }
-
     & input:active ~ .transportation-list__item-icon {
       background-color: #e2e5f1;
       box-shadow: none;
@@ -83,7 +68,7 @@
     }
 
     & input:checked {
-      &  ~ .transportation-list__item-icon > svg {
+      & ~ .transportation-list__item-icon > svg {
         color: $color-catalina-blue;
       }
 
@@ -112,8 +97,6 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    // width: 31px;
-    // height: 31px;
     width: 28px;
     height: 28px;
     background-color: $color-default-white;

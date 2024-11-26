@@ -2,7 +2,11 @@ import {mobileVhFix} from './utils/mobile-vh-fix.js';
 import {initModals} from './modules/modals/init-modals';
 import {Form} from './modules/form-validate/form';
 import {CustomSelect} from './modules/select/custom-select';
-import {uploadFile, uploadImageDrop} from './modules/input-file/init-upload';
+import {toggleModalWindow} from './modules/modal-window/modal-window.js';
+import {initSlider} from './modules/destinations-slider/destinations-slider.js';
+import {setLevelRange} from './modules/range-slider/range-slider.js';
+import {initCategoryToggles} from './modules/search-filter/search-filter.js';
+import {showCountriesList} from './modules/countries-filter/countries-filter-show.js';
 
 // ---------------------------------
 
@@ -19,9 +23,12 @@ window.addEventListener('DOMContentLoaded', () => {
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
+    initSlider();
+    toggleModalWindow();
+    setLevelRange();
     initModals();
-    uploadFile();
-    uploadImageDrop();
+    initCategoryToggles();
+    showCountriesList();
     const select = new CustomSelect();
     select.init();
     const form = new Form();

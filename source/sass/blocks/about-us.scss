@@ -51,6 +51,13 @@
     width: 655px;
     height: 665px;
 
+    @include vp-1279 {
+      right: 0;
+      bottom: 0;
+      width: 454px;
+      height: auto;
+    }
+
     @include vp-1023 {
       right: 8px;
       bottom: 89px;
@@ -70,13 +77,17 @@
   &__wrapper {
     padding: 93px 654px 163px 12px;
 
+    @include vp-1279 {
+      padding: 118px 370px 89px 0;
+    }
+
     @include vp-1023 {
       padding: 118px 226px 89px 0;
     }
 
     @include vp-767 {
       position: relative;
-      padding: 20px 0 26px;
+      padding: 48px 0 26px;
       z-index: 10;
     }
   }
@@ -84,7 +95,7 @@
   &__text {
     margin-bottom: 135px;
 
-    @include vp-1023 {
+    @include vp-1279 {
       margin-bottom: 147px;
     }
 
@@ -100,7 +111,7 @@
       font-variant: all-small-caps;
       color: $color-default-white;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin-bottom: 42px;
       }
 
@@ -119,7 +130,7 @@
       letter-spacing: -0.02px;
       color: $color-default-white;
 
-      @include vp-1023 {
+      @include vp-1279 {
         padding: 0 40px 0 7px;
         line-height: 33px;
 
@@ -148,7 +159,7 @@
       color: $color-default-white;
       text-shadow: 0 0 1px $color-default-white, 0 0 1px $color-default-white, 0 0 1px $color-default-white;
 
-      @include vp-1023 {
+      @include vp-1279 {
         padding: 0 95px 0 7px;
         display: block;
         font-size: 21px;
@@ -182,7 +193,7 @@
       margin: 0 12px 14px 0;
     }
 
-    @include vp-1023 {
+    @include vp-1279 {
       margin-left: 7px;
     }
 

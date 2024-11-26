@@ -1,3 +1,13 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .intro {
   position: relative;
   background-color: #516172;
@@ -23,7 +33,7 @@
     }
 
     &::before {
-      height: 229px;
+      height: 201px;
     }
   }
 
@@ -38,8 +48,12 @@
     height: 100%;
 
     @include vp-767 {
-      height: calc(100% - 340px);
       overflow: hidden;
+
+      & img {
+        margin: 0 auto;
+        object-position: -14px center;
+      }
     }
   }
 
@@ -51,35 +65,33 @@
     bottom: 0;
     background-color: #516172;
     border-radius: 0 0 58px 58px;
-    // z-index: -5;
-    // overflow: hidden;
-
-    // &::before {
-    //   padding-bottom: calc(1440 / 750 * 100%);
-    //   display: block;
-    //   content: "";
-    // }
 
     & img {
-      // position: absolute;
-      // top: 0;
-      // left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
       border-radius: 0 0 65px 62px;
     }
+
+    @include vp-767 {
+      & img {
+        object-position: 50% 66px;
+      }
+    }
   }
 
   &__picture {
     position: absolute;
-    // top: -43px;
     bottom: 0;
     right: 274px;
     width: 432px;
     height: 640px;
     z-index: 10;
+
+    @include vp-1279 {
+      right: 50px;
+    }
 
     @include vp-1023 {
       right: 52px;
@@ -91,14 +103,19 @@
     }
 
     @include vp-767 {
-      width: 100%;
+      top: 0;
+      right: 43px;
+      padding-top: 186px;
+      width: 60%;
       height: auto;
-      right: -85px;
-      bottom: 0;
 
       & img {
         max-width: 100%;
       }
+    }
+
+    @include vp-374 {
+      right: 29px;
     }
   }
 
@@ -112,12 +129,20 @@
     }
 
     @include vp-767 {
-      padding: 28px 0;
+      padding: 28px 0 0;
     }
   }
 
   &__text {
     padding: 44px 789px 121px 12px;
+
+    @include vp-1439 {
+      padding-right: 640px;
+    }
+
+    @include vp-1279 {
+      padding-right: 400px;
+    }
 
     @include vp-1023 {
       padding: 3px 234px 459px 14px;
@@ -150,9 +175,6 @@
     position: relative;
     z-index: 5;
 
-    // @include vp-1023 {
-    //   margin-top: auto;
-    // }
     @include vp-767 {
       margin-top: 290px;
     }
@@ -166,8 +188,15 @@
     grid-template-columns: 345px 375px 375px 315px;
     list-style: none;
 
-    @include vp-1023 {
+    @include vp-1439 {
+      margin: 0 auto;
+      width: fit-content;
+      grid-template-columns: 286px 312px 344px 285px;
+    }
+
+    @include vp-1279 {
       grid-template-columns: 55% 45%;
+      width: 100%;
     }
 
     @include vp-767 {
@@ -187,20 +216,33 @@
     color: $color-midnight-express-darker;
     background-color: $color-picton-blue;
     border-radius: 20px;
+    opacity: 0;
+    animation: fade-in 1s linear forwards;
 
-    @include vp-1023 {
+    @include vp-1439 {
+      padding: 30px 109px 29px 30px;
+      min-width: 270px;
+      max-width: 344px;
+    }
+
+    @include vp-1279 {
       padding: 31px 80px 61px 32px;
       max-width: calc(100% + 34px);
+      min-height: 140px;
       font-size: 24px;
     }
 
     @include vp-767 {
-      padding: 22px 50px 24px 24px;
+      padding: 22px 50px 34px 24px;
       max-width: 100%;
       min-width: 100%;
       font-size: 18px;
       line-height: 18px;
       border-radius: 10px;
+    }
+
+    @include vp-374 {
+      min-height: 80px;
     }
 
     &::before {
@@ -213,7 +255,7 @@
       color: $color-default-white;
       content: "";
 
-      @include vp-1023 {
+      @include vp-1279 {
         top: auto;
         right: auto;
         left: 33px;
@@ -238,7 +280,7 @@
       padding-left: 34px;
       background-color: $color-picton-blue;
 
-      @include vp-1023 {
+      @include vp-1279 {
         padding-left: 33px;
         border-radius: 20px 0 0 0;
       }
@@ -252,20 +294,25 @@
     &--step-two {
       margin-left: -30px;
       background-color: $color-jordy-blue;
+      animation-delay: 1s;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin-left: -34px;
         border-radius: 20px 20px 0 0;
       }
 
       @include vp-767 {
-        margin: -3px 0 0;
+        margin: -13px 0 0;
         padding: 22px 50px 30px 24px;
         border-radius: 10px 10px 0 0;
       }
 
       &::before {
         right: 61px;
+
+        @include vp-1439 {
+          right: 73px;
+        }
 
         @include vp-767 {
           top: 22px;
@@ -278,8 +325,9 @@
       margin-left: -60px;
       padding-left: 31px;
       background-color: $color-pale-cornflowep-blue;
+      animation-delay: 2s;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin-left: 0;
         padding: 30px 80px 62px 33px;
         border-radius: 0 0 0 20px;
@@ -304,8 +352,9 @@
       margin-left: -90px;
       max-width: 315px;
       background-color: #cce5fa;
+      animation-delay: 3s;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin-left: -34px;
         padding: 30px 80px 62px 32px;
         max-width: calc(100% + 34px);

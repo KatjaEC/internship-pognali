@@ -47,10 +47,12 @@ mixin registration()
             | .
         .registration__form-wrapper
           form
-            +custom-input("registration__form-input", {inputType: "email", inputPlaceholder: "E-mail", inputName: "user-mail", inputId: "user-mail"})
+            div(class="registration__form-input")
+              input(type="email", placeholder="E-mail", name="user-mail", id="user-mail", pattern="[^@\s]+@[^@\s]+\.[^@\s]+", required)
+              label(for="user-mail")
             +btn({type: "submit", text: "Регистрация"})(class="btn--primary registration__button")
               span.registration__button-icon
-               +icon("arrow-filled", 14, 16)
+                +icon("arrow-filled", 14, 16)
         .registration__contacts-wrapper
           .registration__contacts-heading
             p Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!

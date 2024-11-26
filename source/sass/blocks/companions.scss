@@ -2,10 +2,13 @@
   position: relative;
   padding: 70px 0 119px 0;
 
-  @include vp-1023 {
+  @include vp-1279 {
     padding: 77px 0 227px 0;
-    background-color: $color-midnight-express-lighter;
     border-radius: 0 0 58px 58px;
+  }
+
+  @include vp-1023 {
+    background-color: $color-midnight-express-lighter;
   }
 
   @include vp-767 {
@@ -28,9 +31,14 @@
     z-index: -10;
     content: "";
 
+    @include vp-1279 {
+      display: none;
+    }
+
     @include vp-1023 {
       width: 100%;
       height: 180px;
+      display: block;
       background-color: $color-midnight-express-lighter;
       border-radius: 0;
     }
@@ -42,7 +50,11 @@
     display: grid;
     grid-template-columns: 629px 690px;
 
-    @include vp-1023 {
+    @include vp-1439 {
+      grid-template-columns: 45% auto;
+    }
+
+    @include vp-1279 {
       padding: 0 2px 0 0;
       grid-template-columns: 100%;
     }
@@ -51,7 +63,7 @@
   &__text-wrapper {
     padding: 25px 100px 40px 12px;
 
-    @include vp-1023 {
+    @include vp-1279 {
       margin-bottom: 93px;
       padding: 0;
     }
@@ -64,7 +76,7 @@
   &__text {
     margin-bottom: 108px;
 
-    @include vp-1023 {
+    @include vp-1279 {
       margin-bottom: 0;
     }
 
@@ -76,8 +88,11 @@
       font-variant: all-small-caps;
       color: $color-midnight-express-lighter;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin: 0 0 54px -2px;
+      }
+
+      @include vp-1023 {
         color: $color-default-white;
       }
 
@@ -105,15 +120,21 @@
         color: $color-midnight-express-lighter;
       }
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin: 0;
         padding-right: 92px;
         line-height: 34px;
-        color: $color-default-white;
 
         & > span {
           display: inline;
           line-height: 34px;
+        }
+      }
+
+      @include vp-1023 {
+        color: $color-default-white;
+
+        & > span {
           color: $color-default-white;
         }
       }
@@ -143,9 +164,12 @@
       letter-spacing: -1.37px;
       color: $color-midnight-express-lighter;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin: 74px 0 0 0;
         letter-spacing: -1.41px;
+      }
+
+      @include vp-1023 {
         color: $color-default-white;
       }
 
@@ -171,7 +195,7 @@
       right: 36px;
     }
 
-    @include vp-1023 {
+    @include vp-1279 {
       position: absolute;
       bottom: 69px;
       left: -4px;
@@ -193,9 +217,6 @@
       padding: 21px 63px 21px 23px;
       min-width: 270px;
       width: calc(100% - 51px);
-      // font-size: 18px;
-      // line-height: 18px;
-      // border-radius: 10px;
 
       & span {
         top: 23px;
@@ -207,8 +228,28 @@
   &__cards-wrapper {
     padding: 0 0 4px 77px;
 
+    @include vp-1279 {
+      position: relative;
+      padding: 50px 0;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: -44px;
+        right: 0;
+        width: calc(100% + 90px);
+        height: 100%;
+        background-color: $color-accent-second;
+        content: "";
+      }
+    }
+
     @include vp-1023 {
       padding: 0;
+
+      &::before {
+        display: none;
+      }
     }
 
     @include vp-767 {
@@ -226,9 +267,15 @@
     flex-wrap: wrap;
     list-style: none;
 
+    @include vp-1279 {
+      margin: 0 auto;
+      width: 70%;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
     @include vp-1023 {
       width: 100%;
-      justify-content: space-between;
       gap: 50px 76px;
     }
 
@@ -252,33 +299,17 @@
     }
 
     & .companions-card {
-      min-height: 100%;
+      min-height: 480px;
+
+      @include vp-767 {
+        min-height: 428px;
+      }
     }
-
-    // &:nth-of-type(1) .companions-card__image {
-    //   clip-path: inset(0 0 22px 0);
-
-    //   // &::before {
-    //   //   position: absolute;
-    //   //   bottom: -2px;
-    //   //   left: 0;
-    //   //   right: 0;
-    //   //   width: 100%;
-    //   //   height: 22px;
-    //   //   background-color: $color-default-white;
-    //   //   content: "";
-
-    //     @include vp-1023 {
-    //       // display: none;
-    //       clip-path: none;
-    //     }
-    //   }
-    // }
 
     &:nth-of-type(2n) .companions-card {
       margin-top: 69px;
 
-      @include vp-1023 {
+      @include vp-1279 {
         margin-top: 0;
       }
 
@@ -290,7 +321,7 @@
         margin: auto 50px 0 68px;
 
         @include vp-1023 {
-          margin: auto 44px 0 62px;
+          margin: auto 60px 0 63px;
         }
 
         @include vp-767 {
@@ -320,7 +351,6 @@
     &:nth-of-type(2) .companions-card__text {
       & p {
         padding: 0 0 0 13px;
-
       }
 
       @include vp-1023 {

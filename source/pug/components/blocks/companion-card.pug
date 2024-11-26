@@ -8,13 +8,15 @@ mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNum
     .companions-card__stats
       if(currentUrl === "catalog.html")
         span Левел:
-        .companions-card__level
+        .companions-card__level(class=`companions-card__level--${level}`)
           span!= level
           span!= "level"
+          +icon("icon-level", 64, 64)
       else
-        .companions-card__level
+        .companions-card__level(class=`companions-card__level--${level}`)
           span!= level
           span!= "level"
+          +icon("icon-level", 64, 64)
     .companions-card__content(class=`companions-card__content${statusMod}`)
       .companions-card__text
         h3!= name
@@ -49,7 +51,8 @@ mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNum
                 +icon("icon-heart-filled", 20, 20)
             span!= likesNumber
         .companions-card__transportation-wrapper
-          span Транспорт:
+          .companions-card__transportation-heading
+            span Транспорт:
           block
       else
         .companions-card__transportation-wrapper

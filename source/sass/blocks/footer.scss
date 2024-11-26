@@ -23,12 +23,12 @@
       margin-top: -52px;
       padding: 46px 0 32px;
       border-radius: 56px 56px 0 0;
-      box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25)
+      box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
     }
 
     @include vp-767 {
       margin-top: -16px;
-      padding: 28px 0 102px;
+      padding: 30px 0 102px;
       border-radius: 29px 31px 0 0;
 
       &::after {
@@ -69,6 +69,11 @@
     gap: 30px 357px;
     z-index: 5;
 
+    @include vp-1279 {
+      gap: 30px 60px;
+      justify-content: flex-start;
+    }
+
     @include vp-1023 {
       gap: 30px 82px;
       grid-template-columns: 170px auto;
@@ -81,6 +86,7 @@
 
   &__logo {
     margin: 6px 0 0 -2px;
+    transition: opacity $trans-default;
 
     @include vp-1023 {
       margin: 10px 0 0 -2px;
@@ -105,6 +111,10 @@
 
   &__socials-wrapper {
     max-width: 500px;
+
+    @include vp-1279 {
+      margin: 0 auto;
+    }
   }
 
   &__socials-list {
@@ -128,6 +138,7 @@
     align-items: center;
     background-color: $color-pale-cornflowep-blue;
     border-radius: 50%;
+    transition: background-color $trans-default;
 
     @include vp-767 {
       width: 45px;

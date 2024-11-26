@@ -31,9 +31,8 @@ mixin intro()
     .container
       .intro__wrapper
         .intro__text
-          p В путешествие с крутыми попутчиками!
+          p В путешествие с&nbsp;крутыми попутчиками!
         .intro__process-wrapper
           ul.intro__process-list
             each item in introList
               li.intro__process-item(class=`intro__process-item${item.mods}`)!= item.text
-

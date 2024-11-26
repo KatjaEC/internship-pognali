@@ -56,9 +56,9 @@ mixin header(headerMods, currentUrl)
               - const activeState = currentUrl === link.href
               li.header__nav-item
                 if(activeState)
-                  span.header__nav-link.header__nav-link--is-active= link.text
+                  span.header__nav-link.header__nav-link--is-active(data-hover=link.text)= link.text
                 else
-                  a.header__nav-link(href=link.href)= link.text
+                  a.header__nav-link(href=link.href, data-hover=link.text)= link.text
           ul.header__contacts
             each item in contactsLinks
               li.header__contacts-item

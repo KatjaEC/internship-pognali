@@ -21,6 +21,8 @@ mixin search-form(className)
           },
         ],
         mods: "--hobby",
+        hiddenClass: "catalog__group-wrapper--is-hidden",
+        buttonStatusMods: "",
       },
       {
         title: "Музыка",
@@ -42,6 +44,8 @@ mixin search-form(className)
           },
         ],
         mods: "--music",
+        buttonStatusMods: "--is-pressed",
+        hiddenClass: "",
       },
       {
         title: "Еда",
@@ -63,6 +67,8 @@ mixin search-form(className)
           },
         ],
         mods: "--food",
+        hiddenClass: "catalog__group-wrapper--is-hidden",
+        buttonStatusMods: "",
       },
       {
         title: "Транспорт",
@@ -101,17 +107,21 @@ mixin search-form(className)
           },
         ],
         mods: "--transport",
+        buttonStatusMods: "--is-pressed",
+        hiddenClass: "",
       },
       {
         title: "Левел",
         options: [],
         minLength: "0",
-        maxLength: 3,
+        maxLength: "100",
         currentMaxValue: 100,
         currentMinValue: 30,
         idMin: "level-min-input",
         idMax: "level-max-input",
         mods: "--level",
+        buttonStatusMods: "--is-pressed",
+        hiddenClass: "",
       },
     ]
 
@@ -120,11 +130,11 @@ mixin search-form(className)
       each item in filtersList
         fieldset
           legend
-            +btn({text: item.title, type: "button"})(class=`${className}__form-button ${className}__form-button${item.mods}`)
+            +btn({text: item.title, type: "button"})(class=`${className}__form-button ${className}__form-button${item.mods} ${className}__form-button${item.buttonStatusMods}`)
               span(class=`${className}__form-icon`)
                 +icon("arrow-down-filled", 10, 6)
           if(item.title !== "Левел")
-            div(class=`${className}__group-wrapper ${className}__group-wrapper${item.mods}`)
+            div(class=`${className}__group-wrapper ${className}__group-wrapper${item.mods} ${item.hiddenClass}`)
               if(item.title !== "Транспорт")
                 ul(class=`${className}__group-list ${className}__group-list${item.mods}`)
                   each subitem in item.options
@@ -148,7 +158,7 @@ mixin search-form(className)
                         +custom-input("transportation-list__checkbox", {hiddenClass: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods})
                           +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
           else
-            div(class=`${className}__group-list ${className}__group-list${item.mods}`)
+            div(class=`${className}__group-list ${className}__group-list${item.mods}`, id="range-slider")
               +range-input(className, item.idMin, item.idMax, item.idMin, item.idMax, item.minLength, item.maxLength, item.currentMinValue, item.currentMaxValue)
       div(class=`${className}__form-button-wrapper`)
         +btn({text: "Показать", type: "submit"})(class=`${className}__form-button ${className}__submit-button`)

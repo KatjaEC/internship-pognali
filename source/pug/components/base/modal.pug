@@ -25,11 +25,13 @@ mixin modal(mods)
       .modal__content
         if block
           block
-        h2 Бизнес-тарифы
-        .modal__rates-wrapper
-          ul.modal__rates-list
-            each item in ratesList
-              li.modal__rates-item
-                p!= item.text
-                span!= item.rate
+        .modal__text-wrapper
+          h2 Бизнес-тарифы
+          .modal__rates-wrapper
+            ul.modal__rates-list
+              each item in ratesList
+                li.modal__rates-item
+                  p
+                    span!= item.text
+                    span!= item.rate
         +btn({type: "button", text: "Закрыть окно"})(class="modal__close-button", data-close-modal)

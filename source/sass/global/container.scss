@@ -8,6 +8,10 @@
     padding: 0 50px;
   }
 
+  @include vp-1279 {
+    padding: 0 44px;
+  }
+
   @include vp-1023 {
     padding: 0 40px;
   }

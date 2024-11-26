@@ -158,9 +158,9 @@ mixin companions-list()
     ]
 
   if(currentUrl === "index.html")
-    - const activeCards = [companionsList[0], companionsList[1]]
+      - const activeCards = [companionsList[0], companionsList[1]]
       ul.companions__cards-list
-        each item of activeCards
+        each item in activeCards
           li.companions__cards-item
             +companion-card(item.name, item.imageForIndex, item.level, item.indexStatusMods, item.flags, item.tags, "")
               ul.transportation-list
@@ -174,7 +174,7 @@ mixin companions-list()
                   +transportation-icon("transportation-list", "icon-run", 22, 24, "Пешком")
   else
     ul.catalog__cards-list
-      each item of companionsList
+      each item in companionsList
         li.catalog__cards-item(class=`catalog__cards-item${item.availabilityMods}`)
           +companion-card(item.name, item.image, item.level, item.statusMods, item.flags, item.tags, item.likesNumber)(class="companions-card--catalog")
             ul.transportation-list

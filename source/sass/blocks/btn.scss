@@ -2,12 +2,9 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  // padding: 29px 76px 27px 33px;
-  // min-width: 284.5px;
   font-size: 24px;
   font-weight: 700;
   color: $color-catalina-blue;
-  // background-color: $color-pale-cornflowep-blue;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -22,6 +19,7 @@
     padding: 29px 76px 27px 33px;
     min-width: 284.5px;
     background-color: $color-pale-cornflowep-blue;
+    transition: background-color $trans-default;
 
     &:hover,
     &:focus {
@@ -59,14 +57,4 @@
       right: 32px;
     }
   }
-
-  // &:hover,
-  // &:focus {
-  //   background-color: $color-picton-blue;
-  // }
-
-  // &:active {
-  //   color: rgba(29, 46, 91, 0.3);
-  //   background-color: $color-picton-blue;
-  // }
 }
