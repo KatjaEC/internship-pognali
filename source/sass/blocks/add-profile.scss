@@ -23,7 +23,7 @@
     }
 
     & .container {
-      padding: 0 37px 0 40px;
+      padding: 0 38px 0 40px;
     }
   }
 
@@ -38,22 +38,25 @@
 
   &__wrapper {
     & h2 {
-      margin: 0 0 105px;
+      margin: 0 0 104px;
       padding-left: 87px;
       font-size: 95px;
       line-height: 45px;
       font-weight: 700;
-      font-variant: all-small-caps;
+      // font-variant: all-small-caps;
+      font-variant-caps: all-small-caps;
       color: $color-midnight-express-lighter;
 
       @include vp-1439 {
         margin: 0 0 75px;
+        padding-left: 0;
         line-height: 89px;
         text-align: center;
       }
 
       @include vp-1023 {
-        margin: 0 0 27px -4px;
+        // margin: 0 0 27px -4px;
+        margin: 0 0 27px -6px;
         padding-left: 0;
       }
 
@@ -66,30 +69,38 @@
   }
 
   &__content {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: minmax(486px, 734px) minmax(194px, 587px);
+
+    @include vp-1023 {
+      padding-right: 2px;
+    }
 
     @include vp-767 {
       margin-bottom: 17px;
+      padding-right: 0;
       display: block;
     }
   }
 
   &__options-wrapper {
     padding: 62px 0 32px;
-    width: calc(56% - 10px);
+    // width: calc(56% - 10px);
 
     @include vp-1439 {
-      width: calc(48% - 10px);
+      // width: calc(48% - 10px);
     }
 
     @include vp-1279 {
-      width: 60%;
+      // width: 60%;
     }
 
     @include vp-1023 {
       padding: 0;
-      width: calc(72% - 12px);
+      // width: calc(72% - 12px);
+      // width: calc(72% - 40px);
     }
 
     @include vp-767 {
@@ -115,19 +126,24 @@
     &::after {
       position: absolute;
       bottom: 0;
-      right: -7px;
+      // right: -7px;
+      left: 111px;
       width: calc(100% - 105px);
       height: 1px;
       background-color: #e1e3e9;
       content: "";
 
       @include vp-1023 {
-        width: calc(100% - 92px);
         bottom: 22px;
+        left: 90px;
+        // width: calc(100% - 92px);
+        // width: calc(100% - 56px);
+        // width: 100%;
+        width: calc(100% - 90px);
       }
 
       @include vp-767 {
-        right: auto;
+        // right: auto;
         left: 0;
         bottom: 7px;
         width: calc(100% - 55px);
@@ -137,7 +153,7 @@
 
   &__options-list-item {
     position: relative;
-    padding: 27px 0 21px 111px;
+    padding: 27px 30px 21px 111px;
     display: block;
     min-height: 71px;
     font-size: 28px;
@@ -145,7 +161,7 @@
     color: $color-charcoal;
 
     @include vp-1023 {
-      padding: 27px 0 18px 90px;
+      padding: 27px 26px 18px 90px;
     }
 
     @include vp-767 {
@@ -193,7 +209,8 @@
     &::after {
       position: absolute;
       top: 0;
-      right: -7px;
+      // right: -7px;
+      left: 111px;
       width: calc(100% - 105px);
       height: 1px;
       background-color: #e1e3e9;
@@ -201,13 +218,17 @@
 
       @include vp-1023 {
         top: 2px;
-        width: calc(100% - 92px);
+        left: 90px;
+        // width: calc(100% - 92px);
+        // width: calc(100% - 56px);
+        // width: 100%;
+        width: calc(100% - 90px);
       }
 
       @include vp-767 {
         top: -2px;
         left: 0;
-        right: auto;
+        // right: auto;
         width: calc(100% - 55px);
       }
     }
@@ -218,10 +239,10 @@
     }
 
     &:nth-of-type(2) {
-      padding: 20px 0 30px 111px;
+      padding: 20px 30px 30px 111px;
 
       @include vp-1023 {
-        padding: 20px 0 18px 90px;
+        padding: 20px 26px 18px 90px;
       }
 
       &::before {
@@ -239,10 +260,10 @@
     }
 
     &:nth-of-type(3) {
-      padding: 10px 0 38px 111px;
+      padding: 10px 30px 38px 111px;
 
       @include vp-1023 {
-        padding: 15px 0 21px 90px;
+        padding: 15px 26px 21px 90px;
       }
 
       &::before {
@@ -277,16 +298,26 @@
 
   &__prices-wrapper {
     margin: 0 0 0 auto;
-    width: calc(50% - 75px);
+    // width: calc(50% - 75px);
+    width: 100%;
+
 
     @include vp-1439 {
       margin: 0 auto 0 0;
-      width: calc(40% - 75px);
+      // width: calc(40% - 75px);
+      // width: 584px;
+    }
+
+    @include vp-1279 {
+      // width: 356px;
+      // width: 100%;
     }
 
     @include vp-1023 {
-      margin: 0 0 0 auto;
-      width: calc(40% - 98px);
+      margin: 0 2px 0 auto;
+      // width: calc(40% - 130px);
+      // width: calc(40% - 78px);
+      // width: 198px;
     }
 
     @include vp-767 {
@@ -297,27 +328,33 @@
 
   &__list-wrapper {
     position: relative;
-    padding: 84px 286px 84px 81px;
-    width: 584px;
+    padding: 84px 280px 84px 83px;
+    // width: 584px;
+    // width: 100%;
     min-height: 333px;
     background-color: $color-accent-second;
     border-radius: 20px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 
+    @include vp-1439 {
+      padding: 90px 206px 90px 30px;
+    }
+
     @include vp-1279 {
       padding: 30px 25px;
-      width: 356px;
+      // width: 356px;
+      // width: 100%;
     }
 
     @include vp-1023 {
-      padding: 24px 25px 10px;
-      width: 198px;
+      padding: 24px 27.5px 10px;
+      // width: 198px;
       min-height: 285px;
     }
 
     @include vp-767 {
       padding: 16px 18px 16px 15px;
-      width: 100%;
+      // width: 100%;
       min-height: 113px;
       display: flex;
       flex-wrap: wrap;
@@ -329,6 +366,10 @@
     margin: 0;
     padding: 0;
     list-style: none;
+
+    @include vp-1439 {
+      margin: 0 0 20px;
+    }
 
     @include vp-1279 {
       margin: 0 0 30px;
@@ -343,6 +384,11 @@
     font-size: 28px;
     line-height: 28px;
     color: $color-default-white;
+
+    // @include vp-1439 {
+    //   font-size: 24px;
+    //   text-align: center;
+    // }
 
     @include vp-1279 {
       font-size: 24px;
@@ -363,10 +409,15 @@
       margin-bottom: 26px;
       font-size: 41px;
       font-weight: 700;
-      font-variant: all-small-caps;
+      // font-variant: all-small-caps;
+      font-variant-caps: all-small-caps;
+
+      @include vp-1439 {
+        margin-bottom: 30px;
+      }
 
       @include vp-1279 {
-        margin-bottom: 30px;
+        margin-bottom: 26px;
       }
 
       @include vp-1023 {
@@ -385,6 +436,11 @@
       margin-bottom: 12px;
       padding-left: 30px;
 
+      @include vp-1439 {
+        margin-bottom: 10px;
+        padding-left: 16px;
+      }
+
       @include vp-1279 {
         margin-bottom: 10px;
         padding-left: 0;
@@ -398,6 +454,10 @@
     &--custom-color {
       padding-left: 29px;
 
+      @include vp-1439 {
+        padding-left: 16px;
+      }
+
       @include vp-1279 {
         padding-left: 0;
       }
@@ -410,6 +470,13 @@
     right: 45px;
     width: 201px;
     height: 202px;
+
+    @include vp-1439 {
+      top: 80px;
+      right: 30px;
+      width: 160px;
+      height: 160px;
+    }
 
     @include vp-1279 {
       position: relative;

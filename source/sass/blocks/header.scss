@@ -124,9 +124,9 @@
     @include vp-1023 {
       position: absolute;
       top: -32px;
-      left: 0;
+      // left: 0;
       right: 0;
-      margin: 0 auto;
+      // margin: 0 auto;
       display: block;
     }
 
@@ -151,9 +151,16 @@
   }
 
   &__nav-wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    // display: flex; //ORIGINALLY
+    // flex-wrap: wrap;
     gap: 20px;
+
+    display: grid;
+    grid-template-columns: minmax(max-content, 715px) minmax(200px, 240px);
+
+    @include vp-1439 {
+      grid-template-columns: minmax(max-content, 560px) minmax(180px, 210px);
+    }
 
     @include vp-1023 {
       position: absolute;
@@ -162,6 +169,7 @@
       right: 0;
       padding: 20px 40px 40px;
       display: none;
+      grid-template-columns: 100%;
       width: calc(100% + 80px);
       background-color: #516172;
       border-radius: 0 0 58px 58px;
@@ -176,9 +184,10 @@
   &__nav-list {
     margin: 0;
     padding: 21px 0 12px;
-    width: 555px;
+    // width: 555px;// not needed with grid-template-columns minmax stated
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 18px;
     list-style: none;
 
@@ -240,7 +249,7 @@
   &__contacts {
     margin: 0;
     padding: 3px 0 0;
-    width: 240px;
+    // width: 240px;// not needed with grid-template-columns minmax stated
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;

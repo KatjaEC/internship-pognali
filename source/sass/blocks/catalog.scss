@@ -118,7 +118,7 @@
 
       @include vp-1279 {
         margin: 3px 15px 0 auto;
-        padding: 0;
+        padding: 0 80px 14px 0;
       }
 
       @include vp-1023 {
@@ -407,16 +407,33 @@
     }
 
     @include vp-1023 {
+      position: relative;
+
       & > form {
         display: grid;
         grid-template-columns: 124px auto;
         gap: 14px 0;
+      }
+
+      &::before {
+        position: absolute;
+        top: -34px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #f3c72b;;
+        content: "";
       }
     }
 
     @include vp-767 {
       & > form {
         display: block;
+      }
+
+      &::before {
+        display: none;
       }
     }
 
@@ -939,7 +956,7 @@
     }
 
     @include vp-767 {
-      margin: 0 0 20px;
+      margin: 0 0 19px;
       width: 100%;
       order: 0;
     }
@@ -1065,6 +1082,7 @@
 
     @include vp-767 {
       width: 100%;
+      // width: calc(100% - 5px);
       height: 2px;
     }
 
@@ -1076,7 +1094,9 @@
   &__range-bar.noUi-target.noUi-horizontal {
     position: absolute;
     top: calc(50% - 1px);
-    width: 100%;
+    // width: 100%;
+    // margin: 0 auto;
+    width: calc(100% - 4px);
     height: 3px;
     background: rgba(29, 46, 91, 0.2);
     border: none;
@@ -1084,9 +1104,11 @@
 
     @include vp-1023 {
       top: calc(50% - 2px);
+      width: 100%;
     }
 
     @include vp-767 {
+      // padding: 0 5px;
       height: 2px;
     }
 
@@ -1100,14 +1122,30 @@
       @include vp-1023 {
         top: calc(50% - 2px);
       }
+
+      @include vp-767 {
+        top: calc(50% - 1px);
+        // padding: 0 5px;
+      }
+
+      // @include vp-374 {
+      //   padding: 0 5px;
+      // }
     }
 
     & .noUi-connects {
       position: relative;
-      width: 100%;
+      // margin: 0 5px;
+      // width: 100%;
+      margin: 0 auto;
+      width: calc(100% - 12px);//////////
       height: 100%;
       overflow: hidden;
       z-index: 0;
+
+      @include vp-767 {
+        width: calc(100% - 10px);/////////
+      }
     }
 
     & .noUi-connect {
@@ -1123,6 +1161,7 @@
       transform-style: flat;
 
       @include vp-767 {
+        // right: -10px;
         height: 2px;
       }
     }
@@ -1132,16 +1171,22 @@
       top: 0;
       right: 0;
       width: 100%;
+      // width: calc(100% - 10px);
       height: 0;
       will-change: transform;
       z-index: 1;
       transform-origin: 0 0;
       transform-style: flat;
+
+      @include vp-767 {
+        // right: 0;
+        width: calc(100% - 10px);
+      }
     }
 
     & .noUi-handle {
       position: absolute;
-      right: -6px;
+      right: -7px;
       top: -6px;
       min-width: 13px;
       width: 13px;
@@ -1153,8 +1198,15 @@
       cursor: pointer;
       backface-visibility: hidden;
 
+      @include vp-1023 {
+        top: -5px;
+        right: -7px;
+      }
+
       @include vp-767 {
         top: -4px;
+        // right: -5px;
+        right: 0;
         min-width: 10px;
         width: 10px;
         height: 10px;
@@ -1170,6 +1222,12 @@
         box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.24);
       }
     }
+
+    // & .noUi-handle.noUi-handle-upper {
+    //   @include vp-767 {
+    //     right: -5px;
+    //   }
+    // }
 
     & .noUi-touch-area {
       width: 100%;
@@ -1194,9 +1252,28 @@
       grid-column: 1/-1;
     }
 
+    @include vp-1023 {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: -38px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #f3c72b;;
+        content: "";
+     }
+    }
+
     @include vp-767 {
-      margin: 17px 0 0 -5px;
+      margin: 18px 0 0 -5px;
       width: calc(100% + 10px);
+
+      &::before {
+        display: none;
+      }
     }
   }
 }

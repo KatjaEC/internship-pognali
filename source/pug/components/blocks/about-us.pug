@@ -1,18 +1,35 @@
 mixin about-us()
   section.about-us
-    .about-us__image-wrapper
-      .about-us__image
-        +picture-adaptive("content", "about-us-image", "png", 655, 665, 368, 546, 292, 353, "")
     .container
       .about-us__wrapper
-        .about-us__text
-          h2 О сервисе
-          p
-            | Любое путешествие веселее с&nbsp;попутчиками, которые на&nbsp;одной
-            | волне с&nbsp;тобой! Делитесь своими идеями путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
-          span
-            | А&nbsp;если найдете кого-то близкого&nbsp;по духу&nbsp;— скорее зовите&nbsp;в&nbsp;совместный трип!
+        .about-us__content
+          .about-us__text
+            h2 О сервисе
+            p
+              | Любое путешествие веселее с&nbsp;попутчиками, которые на&nbsp;одной
+              | волне с&nbsp;тобой! Делитесь своими идеями путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
+            span
+              | А&nbsp;если найдете кого-то близкого&nbsp;по духу&nbsp;— скорее зовите&nbsp;в&nbsp;совместный трип!
 
-        +btn({href: "#", text: "Подробнее"})(class="btn--primary about-us__button")
-          span.about-us__button-icon
-            +icon("arrow-filled", 14, 14)
+          +btn({href: "#", text: "Подробнее"})(class="btn--primary about-us__button")
+            span.about-us__button-icon
+              +icon("arrow-filled", 14, 14)
+        .about-us__image-wrapper
+          .about-us__image
+            +picture-adaptive("content", "about-us-image", "png", 655, 665, 368, 546, 292, 353, "")
+    //- .about-us__image-wrapper
+    //-   .about-us__image
+    //-     +picture-adaptive("content", "about-us-image", "png", 655, 665, 368, 546, 292, 353, "")
+    //- .container
+    //-   .about-us__wrapper
+    //-     .about-us__text
+    //-       h2 О сервисе
+    //-       p
+    //-         | Любое путешествие веселее с&nbsp;попутчиками, которые на&nbsp;одной
+    //-         | волне с&nbsp;тобой! Делитесь своими идеями путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
+    //-       span
+    //-         | А&nbsp;если найдете кого-то близкого&nbsp;по духу&nbsp;— скорее зовите&nbsp;в&nbsp;совместный трип!
+
+    //-     +btn({href: "#", text: "Подробнее"})(class="btn--primary about-us__button")
+    //-       span.about-us__button-icon
+    //-         +icon("arrow-filled", 14, 14)

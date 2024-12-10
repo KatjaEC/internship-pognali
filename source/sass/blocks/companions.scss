@@ -51,7 +51,8 @@
     grid-template-columns: 629px 690px;
 
     @include vp-1439 {
-      grid-template-columns: 45% auto;
+      // grid-template-columns: 45% auto;
+      grid-template-columns: 46% auto;
     }
 
     @include vp-1279 {
@@ -85,7 +86,8 @@
       font-size: 95px;
       line-height: 45px;
       font-weight: 700;
-      font-variant: all-small-caps;
+      // font-variant: all-small-caps;
+      font-variant-caps: all-small-caps;
       color: $color-midnight-express-lighter;
 
       @include vp-1279 {
@@ -227,6 +229,10 @@
 
   &__cards-wrapper {
     padding: 0 0 4px 77px;
+
+    @include vp-1439 {
+      padding: 0 0 4px 50px;
+    }
 
     @include vp-1279 {
       position: relative;

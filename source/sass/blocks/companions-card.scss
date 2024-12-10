@@ -5,6 +5,7 @@
   width: 285px;
   display: flex;
   flex-direction: column;
+  transition: transform $trans-default;
 
   @include vp-1023 {
     box-shadow: 0 0 10px 0 $color-default-white;
@@ -404,6 +405,7 @@
     color: $color-midnight-express-darker;
     border-radius: 25px;
     background-color: $color-pale-cornflowep-blue;
+    transition: opacity $trans-default, background-color $trans-default;
 
     &:hover,
     &:focus {
@@ -472,6 +474,7 @@
     color: rgba(25, 33, 68, 0.3);
     background-color: $color-transparent;
     border-radius: 50%;
+    transition: background-color $trans-default;
 
     @include vp-1023 {
       padding: 14px 15px 12px;
@@ -550,7 +553,7 @@
 
   &:hover,
   &:focus {
-    transform: scale(1.03);
+    transform: scale(1.01);
     box-shadow: 0 4px 20px 0 rgba(255, 254, 254, 0.5);
   }
 

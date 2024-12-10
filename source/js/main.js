@@ -7,6 +7,7 @@ import {initSlider} from './modules/destinations-slider/destinations-slider.js';
 import {setLevelRange} from './modules/range-slider/range-slider.js';
 import {initCategoryToggles} from './modules/search-filter/search-filter.js';
 import {showCountriesList} from './modules/countries-filter/countries-filter-show.js';
+import {filterCountries} from './modules/countries-filter/countries-filter-init.js';
 
 // ---------------------------------
 
@@ -29,6 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     initCategoryToggles();
     showCountriesList();
+    filterCountries();
     const select = new CustomSelect();
     select.init();
     const form = new Form();
