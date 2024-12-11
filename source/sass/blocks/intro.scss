@@ -97,7 +97,7 @@
 
     @include vp-1023 {
       right: 52px;
-      bottom: 172px;
+      bottom: 170px;
 
       & img {
         max-width: 439px;
@@ -189,7 +189,9 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 345px 375px 375px 315px;
+    // grid-template-columns: 345px 375px 375px 315px;
+    grid-template-columns: minmax(286px, 345px) minmax(312px, 330px) minmax(344px, 345px) minmax(227px, 315px);
+    gap: 16px 0;
     list-style: none;
 
     @include vp-1439 {
@@ -210,18 +212,21 @@
 
   &__process-item {
     position: relative;
-    padding: 30px 100px 29px 30px;
-    min-width: 315px;
-    max-width: 375px;
+    padding: 30px 100px 29px 0;
+    // min-width: 315px;
+    // max-width: 375px;
     flex-shrink: 0;
     font-size: 22px;
     line-height: 24px;
     font-weight: 700;
     color: $color-midnight-express-darker;
-    background-color: $color-picton-blue;
-    border-radius: 20px;
+    // background-color: $color-picton-blue;
+    background-color: $color-transparent;
+    // border-radius: 20px;
+    // border-radius: 20px 0 0 20px;
     opacity: 0;
     animation: fade-in 1s linear forwards;
+    z-index: 5;
 
     @include vp-1439 {
       padding: 30px 109px 29px 30px;
@@ -280,9 +285,28 @@
       }
     }
 
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      // left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $color-picton-blue;
+      // border-radius: 20px;
+      border-radius: 20px 0 0 20px;
+      z-index: -1;
+      content: "";
+    }
+
     &--step-one {
       padding-left: 34px;
-      background-color: $color-picton-blue;
+      // background-color: $color-picton-blue;
+
+      // &::after {
+      //   background-color: $color-picton-blue;
+      // }
 
       @include vp-1279 {
         padding-left: 33px;
@@ -296,9 +320,15 @@
     }
 
     &--step-two {
-      margin-left: -30px;
-      background-color: $color-jordy-blue;
+      // margin-left: -30px;
+      // background-color: $color-jordy-blue;
       animation-delay: 1s;
+
+      // &::after {
+      //   width: calc(100% + 30px);
+      //   background-color: $color-jordy-blue;
+      //   // border-radius: 20px 0 0 20px;
+      // }
 
       @include vp-1279 {
         margin-left: -34px;
@@ -312,7 +342,7 @@
       }
 
       &::before {
-        right: 61px;
+        right: 46px;
 
         @include vp-1439 {
           right: 73px;
@@ -326,10 +356,16 @@
     }
 
     &--step-three {
-      margin-left: -60px;
-      padding-left: 31px;
-      background-color: $color-pale-cornflowep-blue;
+      // margin-left: -60px;
+      padding-left: 16px;
+      // background-color: $color-pale-cornflowep-blue;
       animation-delay: 2s;
+
+      // &::after {
+      //   width: calc(100% + 15px);
+      //   background-color: $color-pale-cornflowep-blue;
+      //   // border-radius: 20px 0 0 20px;
+      // }
 
       @include vp-1279 {
         margin-left: 0;
@@ -344,7 +380,7 @@
       }
 
       &::before {
-        right: 61px;
+        right: 46px;
 
         @include vp-767 {
           right: 20px;
@@ -353,10 +389,16 @@
     }
 
     &--step-four {
-      margin-left: -90px;
-      max-width: 315px;
-      background-color: #cce5fa;
+      // margin-left: -90px;
+      // padding-left: 15px;
+      // max-width: 315px;
+      // background-color: #cce5fa;
       animation-delay: 3s;
+
+      // &::after {
+      //   width: calc(100% + 15px);
+      //   background-color: #cce5fa;
+      // }
 
       @include vp-1279 {
         margin-left: -34px;
@@ -381,43 +423,125 @@
     }
 
     &:not(:first-of-type) {
-      box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.25);
+      // box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.25);
+
+      &::after {
+        box-shadow: -4px 0 10px 0 rgba(0, 0, 0, 0.25);
+      }
 
       @include vp-1023 {
         box-shadow: none;
       }
     }
 
-    &:nth-of-type(1)::before {
-      content: "1";
+    &:nth-of-type(1) {
+      padding-left: 34px;
+
+      &::before {
+        content: "1";
+      }
+
+      &::after {
+        background-color: $color-picton-blue;
+      }
     }
 
-    &:nth-of-type(2)::before {
-      content: "2";
+    &:nth-of-type(2) {
+      &::before {
+        content: "2";
+      }
+
+      &::after {
+        width: calc(100% + 30px);
+        background-color: $color-jordy-blue;
+      }
     }
 
-    &:nth-of-type(3)::before {
-      content: "3";
+    &:nth-of-type(3) {
+      padding-left: 16px;
+
+      &::before {
+        content: "3";
+      }
+
+      &::after {
+        width: calc(100% + 15px);
+        background-color: $color-pale-cornflowep-blue;
+      }
     }
 
-    &:nth-of-type(4)::before {
-      content: "4";
+    &:nth-of-type(4) {
+      padding-left: 15px;
+
+      &::before {
+        content: "4";
+      }
+
+      &::after {
+        width: calc(100% + 15px);
+        background-color: #cce5fa;
+        border-radius: 20px;
+      }
     }
 
-    &:nth-of-type(5)::before {
-      content: "5";
+    &:nth-of-type(5) {
+      padding-left: 34px;
+
+      &::before {
+        content: "5";
+      }
+
+      &::after {
+        background-color: $color-picton-blue;
+        box-shadow: none;
+      }
     }
 
-    &:nth-of-type(6)::before {
-      content: "6";
+    &:nth-of-type(6) {
+      &::before {
+        content: "6";
+      }
+
+      &::after {
+        width: calc(100% + 30px);
+        background-color: $color-jordy-blue;
+      }
     }
 
-    &:nth-of-type(7)::before {
-      content: "7";
+    &:nth-of-type(7) {
+      padding-left: 16px;
+
+      &::before {
+        content: "7";
+      }
+
+      &::after {
+        width: calc(100% + 15px);
+        background-color: $color-pale-cornflowep-blue;
+      }
     }
 
-    &:nth-of-type(8)::before {
-      content: "8";
+    &:nth-of-type(8) {
+      padding-left: 15px;
+
+      &::before {
+        content: "8";
+      }
+
+      &::after {
+        width: calc(100% + 15px);
+        background-color: #cce5fa;
+        border-radius: 20px;
+      }
+    }
+
+    &:last-of-type {
+      border-radius: 20px;
+
+      &::after {
+        padding-left: 15px;
+        border-radius: 20px;
+      }
     }
   }
 }

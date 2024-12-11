@@ -16,22 +16,42 @@
     border-radius: 50%;
     cursor: pointer;
 
+    &[data-status="is-enabled"] > .transportation-list__item-icon > svg {
+      color: $color-catalina-blue;
+    }
+
     &--plane {
       & .transportation-list__tooltip-wrapper {
         left: calc(50% - 72px);
+
+        @include vp-767 {
+          left: calc(50% - 58px);
+        }
       }
     }
 
     &--car .transportation-list__tooltip-wrapper {
       left: calc(50% - 81px);
+
+      @include vp-767 {
+        left: calc(50% - 66px);
+      }
     }
 
     &--bicycle .transportation-list__tooltip-wrapper {
       left: calc(50% - 62px);
+
+      @include vp-767 {
+        left: calc(50% - 50px);
+      }
     }
 
     &--on-foot .transportation-list__tooltip-wrapper {
       left: calc(50% - 52px);
+
+      @include vp-767 {
+        left: calc(50% - 45px);
+      }
     }
 
     & svg {
@@ -46,6 +66,12 @@
 
       & .transportation-list__item-icon > svg {
         color: #b2b2b2;
+      }
+
+      @include vp-1023 {
+        & .transportation-list__item-icon {
+          box-shadow: none;
+        }
       }
     }
 
@@ -64,6 +90,10 @@
 
       & > svg {
         color: rgba(29, 46, 91, 0.1);
+      }
+
+      @include vp-1023 {
+        background-color: transparent;
       }
     }
 
@@ -115,6 +145,13 @@
     width: fit-content;
     display: none;
     z-index: 15;
+
+    @include vp-767 {
+      // left: 20px;
+      // right: auto;
+      min-width: 90px;
+      max-width: 140px;
+    }
   }
 
   &__tooltip {
@@ -137,12 +174,38 @@
       content: "";
     }
 
+    @include vp-1023 {
+      padding: 14px;
+
+      // &::before {
+      //   left: 24px;
+      // }
+    }
+
+    @include vp-767 {
+      padding: 12px 10px;
+
+      // &::before {
+      //   left: 24px;
+      // }
+    }
+
     & > span {
       font-size: 20px;
       line-height: 20px;
       font-weight: 400;
       text-align: center;
       color: $color-default-white;
+
+      @include vp-1023 {
+        font-size: 18px;
+        line-height: 18px;
+      }
+
+      @include vp-767 {
+        font-size: 16px;
+        line-height: 16px;
+      }
     }
   }
 }

@@ -122,12 +122,13 @@
       }
 
       @include vp-1023 {
-        padding: 0 0 16px;
-      }
-
-      @include vp-767 {
+        // padding: 0 0 16px;
         padding: 0;
       }
+
+      // @include vp-767 {
+      //   padding: 0;
+      // }
     }
 
     @include vp-1279 {
@@ -164,15 +165,28 @@
   }
 
   &__button.catalog__button--show-more {
-    padding: 37px 210px 37px 154px;
+    // padding: 37px 210px 37px 154px;
+    position: relative;
+    margin: 0 auto;
+    padding: 22px 75px 17px 70px;
+    min-width: 200px;
+    max-width: 320px;
     display: flex;
+    // justify-content: flex-end;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 24px;
+    // gap: 24px;
     background-color: $color-transparent;
 
     @include vp-1279 {
-      padding: 5px 165px 10px 176px;
+      // padding: 5px 165px 10px 176px;
+      // padding: 5px 0 10px;
+      // padding: 9px 10px 10px 72px;
+    }
+
+    @include vp-1023 {
+      padding: 10px 10px 10px 72px;
+      max-width: 260px
     }
 
     @include vp-767 {
@@ -187,7 +201,7 @@
     }
 
     & .catalog__button-text {
-      padding-top: 3px;
+      // padding-top: 3px;
       display: inline-flex;
       width: auto;
       height: auto;
@@ -197,17 +211,25 @@
       order: 1;
 
       @include vp-767 {
-        padding-top: 5px;
+        // padding-top: 5px;
         font-size: 17px;
         line-height: 30px;
       }
     }
 
     & .catalog__button-icon {
+      position: absolute;
+      top: 17px;
+      left: 31px;
       width: 26px;
       height: 26px;
       color: $color-catalina-blue;
       order: 0;
+
+      @include vp-1023 {
+        top: 4px;
+        left: 34px;
+      }
 
       @include vp-767 {
         margin-bottom: 2px;
@@ -236,10 +258,15 @@
   }
 
   &__button-wrapper {
+    padding: 20px 0;
     grid-column: 1/2;
 
     @include vp-1279 {
       order: 3;
+    }
+
+    @include vp-1023 {
+      padding: 0;
     }
 
     @include vp-767 {
@@ -248,12 +275,20 @@
   }
 
   &__pagination-wrapper {
-    margin-top: 8px;
+    margin-top: 10px;
     grid-column: 1/2;
 
     @include vp-1279 {
       margin-top: 0;
       order: 4;
+    }
+
+    @include vp-1023 {
+      margin-top: 1px;
+    }
+
+    @include vp-767 {
+      margin-top: 0;
     }
   }
 
@@ -371,6 +406,10 @@
     &.catalog__navigation-button--next {
       padding: 11px 9px 15px 7px;
       transform: rotate(180deg);
+    }
+
+    &.catalog__navigation-button--is-inactive {
+      pointer-events: none;
     }
 
     & > .catalog__navigation-button-icon {

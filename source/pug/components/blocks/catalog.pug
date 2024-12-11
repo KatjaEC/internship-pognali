@@ -38,7 +38,7 @@ mixin catalog()
                     a.catalog__pagination-link(href="#")!= item.pageNumber
             .catalog__navigation-buttons
               .catalog__navigation-button-wrapper
-                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev", aria-label="Предыдущая страница.")
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev catalog__navigation-button--is-inactive", aria-label="Предыдущая страница.")
                   span.catalog__navigation-button-icon
                     +icon("icon-pagination-arrow", 13, 20)
               .catalog__navigation-button-wrapper

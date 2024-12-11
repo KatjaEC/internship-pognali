@@ -1,22 +1,22 @@
 mixin footer(footerMods)
-  -
-    const socialLinks = [
-      {
-        href: "#",
-        classMod: "--telegram",
-        icon: "socials-telegram",
-      },
-      {
-        href: "#",
-        classMod: "--vk",
-        icon: "socials-vkontakte",
-      },
-      {
-        href: "#",
-        classMod: "--youtube",
-        icon: "socials-youtube",
-      },
-    ]
+  //- -
+  //-   const socialLinks = [
+  //-     {
+  //-       href: "#",
+  //-       classMod: "--telegram",
+  //-       icon: "socials-telegram",
+  //-     },
+  //-     {
+  //-       href: "#",
+  //-       classMod: "--vk",
+  //-       icon: "socials-vkontakte",
+  //-     },
+  //-     {
+  //-       href: "#",
+  //-       classMod: "--youtube",
+  //-       icon: "socials-youtube",
+  //-     },
+  //-   ]
 
   footer.footer(class=footerMods)
     .footer__body
@@ -31,9 +31,10 @@ mixin footer(footerMods)
             a.footer__logo(href="index.html", aria-label="Переход на главную страницу.")
               .footer__icon
                 +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
-          .footer__socials-wrapper
-            ul.footer__socials-list
-              each item in socialLinks
-                li.footer__socials-item
-                  a.footer__socials-link(href=item.href, target="_blank", rel="noopener noreferrer", class=`footer__socials-link${item.classMod}`)
-                    +icon(item.icon, 32, 32)
+          +socials-list("footer")
+          //- .footer__socials-wrapper
+          //-   ul.footer__socials-list
+          //-     each item in socialLinks
+          //-       li.footer__socials-item
+          //-         a.footer__socials-link(href=item.href, target="_blank", rel="noopener noreferrer", class=`footer__socials-link${item.classMod}`)
+          //-           +icon(item.icon, 32, 32)

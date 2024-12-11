@@ -125,7 +125,7 @@
 
     &::after {
       position: absolute;
-      bottom: 0;
+      bottom: 6px;
       // right: -7px;
       left: 111px;
       width: calc(100% - 105px);
@@ -260,11 +260,9 @@
     }
 
     &:nth-of-type(3) {
-      padding: 10px 30px 38px 111px;
-
-      @include vp-1023 {
-        padding: 15px 26px 21px 90px;
-      }
+      // padding: 10px 30px 38px 111px;
+      // padding: 10px 30px 44px 111px;
+      margin-bottom: 6px;
 
       &::before {
         top: 5px;
@@ -272,13 +270,17 @@
         content: "3";
       }
 
-      @include vp-767 {
-        padding: 12px 44px 18px 1px;
+      // @include vp-1023 {
+      //   padding: 15px 26px 21px 90px;
+      // }
 
-        &::before {
-          top: 3px;
-        }
-      }
+      // @include vp-767 {
+      //   padding: 12px 44px 18px 1px;
+
+      //   &::before {
+      //     top: 3px;
+      //   }
+      // }
     }
 
     &:nth-of-type(4)::before {
@@ -293,6 +295,29 @@
     &:nth-of-type(6)::before {
       background-color: $color-pale-cornflowep-blue;
       content: "6";
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+      padding: 10px 30px 44px 111px;
+
+      // &::before {
+      //   top: 5px;
+      //   background-color: $color-pale-cornflowep-blue;
+      //   content: "3";
+      // }
+
+      @include vp-1023 {
+        padding: 15px 26px 21px 90px;
+      }
+
+      @include vp-767 {
+        padding: 12px 44px 18px 1px;
+
+        // &::before {
+        //   top: 3px;
+        // }
+      }
     }
   }
 
@@ -454,12 +479,26 @@
     &--custom-color {
       padding-left: 29px;
 
+      &:not(:last-of-type) {
+        margin-bottom: 12px;
+      }
+
       @include vp-1439 {
         padding-left: 16px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 10px;
+        }
       }
 
       @include vp-1279 {
         padding-left: 0;
+      }
+
+      @include vp-767 {
+        &:not(:last-of-type) {
+          margin-bottom: 4px;
+        }
       }
     }
   }

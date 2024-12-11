@@ -1,0 +1,29 @@
+mixin contacts-list(className)
+  -
+    const contactsList = [
+      {
+        icon: "icon-contacts-phone",
+        text: "8 800 555-86-28",
+        href: "tel:+78005558628",
+        width: 36,
+        height: 34,
+        mods: "--phone",
+      },
+      {
+        icon: "icon-contacts-mail",
+        text: "mail@htmlacademy.ru",
+        href: "mailto:mail@htmlacademy.ru",
+        width: 37,
+        height: 25,
+        mods: "--mail",
+      },
+    ]
+
+  div(class=`${className}__contacts-list-wrapper`)
+    ul(class=`${className}__contacts-list`)
+      each item in contactsList
+        li(class=`${className}__contacts-item`)
+          a(class=`${className}__contacts-link`, href=item.href)
+            span(class=`${className}__contacts-icon ${className}__contacts-icon${item.mods}`)
+              +icon(item.icon, item.width, item.height)
+            span!= item.text

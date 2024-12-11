@@ -65,7 +65,8 @@
   }
 
   &__text-wrapper {
-    padding-left: 53px;
+    // padding-left: 53px;
+    padding: 101px 0 96px 53px;
     grid-column: 2/3;
     max-width: 570px;
 
@@ -92,7 +93,7 @@
   }
 
   &__text {
-    padding: 101px 0 155px 0;
+    // padding: 101px 0 155px 0;
 
     & h2 {
       margin: 0 0 33px;
@@ -117,7 +118,7 @@
     }
 
     @include vp-1279 {
-      padding: 0;
+      // padding: 0;
 
       & h2 {
         margin: 0 0 55px;
@@ -154,7 +155,8 @@
   }
 
   &__button.btn {
-    margin-left: 6px;
+    // margin-left: 6px;
+    margin: 155px 0 0 6px;
     padding-left: 36px;
     width: 299px;
 
