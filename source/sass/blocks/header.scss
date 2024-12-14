@@ -85,7 +85,6 @@
   &__logo {
     padding-top: 1px;
     width: 202px;
-    // color: $color-default-white;
     transition: opacity $trans-default;
 
     & > .header__icon-mobile {
@@ -103,12 +102,6 @@
       opacity: 0.6;
     }
 
-    // @include vp-1023 {
-    //   & > .header__icon {
-    //     color: $color-default-white;
-    //   }
-    // }
-
     @include vp-1023 {
       display: block;
     }
@@ -121,14 +114,6 @@
         width: 96px;
         height: 15px;
       }
-
-      // &--menu-is-shown > .header__icon {
-      //   display: none;
-      // }
-
-      // &--menu-is-shown > .header__icon-mobile {
-      //   display: block;
-      // }
     }
 
     @include vp-374 {
@@ -150,8 +135,13 @@
       content: "";
     }
 
+    @include vp-1439 {
+      width: calc(100% - 206px);
+    }
+
     @include vp-1023 {
       padding-left: 0;
+      width: 100%;
 
       &::before {
         display: none;
@@ -172,9 +162,7 @@
     @include vp-1023 {
       position: absolute;
       top: -32px;
-      // left: 0;
       right: 0;
-      // margin: 0 auto;
       display: block;
 
       &--is-open > .header__nav-toggle-icon--menu-is-hidden {
@@ -223,14 +211,12 @@
   }
 
   &__nav-wrapper {
-    // display: flex; //ORIGINALLY
-    // flex-wrap: wrap;
     gap: 20px;
     display: grid;
     grid-template-columns: minmax(max-content, 715px) minmax(200px, 240px);
 
     @include vp-1439 {
-      grid-template-columns: minmax(max-content, 560px) minmax(180px, 210px);
+      grid-template-columns: minmax(min-content, 1fr) minmax(min-content, auto);
     }
 
     @include vp-1023 {
@@ -245,10 +231,7 @@
       width: calc(100% + 80px);
       background-color: $color-default-white;
       border-radius: 0 0 38px 38px;
-      // border-radius: 0 0 58px 58px;
-      // box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
       z-index: 15;
-      // overflow: hidden;
 
       &--menu-is-shown {
         display: grid;
@@ -263,7 +246,6 @@
         height: 40px;
         background-color: #121936;
         border-radius: 0 0 38px 38px;
-        // box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.3);
         content: "";
       }
     }
@@ -273,15 +255,12 @@
       right: -25px;
       padding: 54px 25px 48px;
       width: calc(100% + 50px);
-      // background-color: $color-default-white;
       gap: 19px;
       border-radius: 0 0 22px 22px;
       box-shadow: none;
 
       &::before {
-        // bottom: -20px;
         height: 19px;
-        // background-color: #121936;
         border-radius: 0 0 22px 22px;
       }
     }
@@ -290,7 +269,6 @@
   &__nav-list {
     margin: 0;
     padding: 21px 0 12px;
-    // width: 555px;// not needed with grid-template-columns minmax stated
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -374,11 +352,12 @@
       width: 100%;
       font-size: 30px;
       line-height: 43px;
-      // color: $color-midnight-express-lighter;
     }
   }
 
   &__nav-contacts-wrapper {
+    justify-self: flex-end;
+
     @include vp-1023 {
       display: none;
     }
@@ -387,7 +366,6 @@
   &__nav-contacts {
     margin: 0;
     padding: 3px 0 0;
-    // width: 240px;// not needed with grid-template-columns minmax stated
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -398,11 +376,6 @@
       margin: 0 0 0 auto;
       width: 124px;
     }
-
-    // @include vp-1023 {
-    //   justify-content: flex-start;
-    //   margin: 0;
-    // }
   }
 
   &__nav-contacts-link {
@@ -486,25 +459,7 @@
       padding: 12px 0 13px 61px;
       font-size: 16px;
       line-height: 22px;
-      // color: $color-midnight-express-lighter;
     }
-
-    // &:hover,
-    // &:focus {
-    //   color: $color-picton-blue;
-
-    //   & > .registration__contacts-icon {
-    //     color: $color-picton-blue;
-    //   }
-    // }
-
-    // &:active {
-    //   color: rgba(168, 210, 244, 0.3);
-
-    //   & > .registration__contacts-icon {
-    //     color: rgba(168, 210, 244, 0.3);
-    //   }
-    // }
   }
 
   &__contacts-icon {
@@ -565,11 +520,8 @@
     list-style: none;
 
     @include vp-767 {
-      // margin: 0 auto;
       margin: 0 40px 0 68px;
       width: 150px;
-      // width: 144px;
-      // justify-content: center;
     }
   }
 
@@ -589,18 +541,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // background-color: $color-pale-cornflowep-blue;
     color: $color-default-white;
     border-radius: 50%;
-    // transition: background-color $trans-default;
 
     @include vp-1023 {
       color: $color-midnight-express-lighter;
     }
 
     @include vp-767 {
-      // color: $color-midnight-express-lighter;
-
       & > svg {
         width: 23px;
         height: 23px;

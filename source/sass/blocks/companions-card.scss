@@ -663,7 +663,6 @@
 
       @include vp-1023 {
         bottom: 103px;
-        // bottom: 87px;
         right: 23px;
 
         & .companions-card__level {
@@ -727,10 +726,7 @@
 
       @include vp-1023 {
         padding: 33px 25px 25px 35px;
-        // display: flex;
-        // flex-direction: row;
-        // flex-wrap: wrap;
-        grid-template-columns: 190px auto 60px;//experimental
+        grid-template-columns: 190px auto 60px;
         background-color: $color-transparent;
         gap: 0 10px;
       }
@@ -750,9 +746,7 @@
 
       @include vp-1023 {
         padding: 0 0 0 223px;
-        // width: 90%;//experimental
-        grid-column: span 2;//experimental
-        // grid-row: span 2;//experimental
+        grid-column: span 2;
         order: 0;
       }
 
@@ -826,9 +820,7 @@
       width: 100%;
 
       @include vp-1023 {
-        // margin-top: 18px;
         margin-top: 24px;
-        // padding: 0 100px 0 0;
         padding: 0 68px 0 0;
         display: flex;
         width: 100%;
@@ -916,8 +908,8 @@
 
     & .companions-card__countries-item {
       margin-bottom: 12px;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 35px auto;
       gap: 18px;
 
       &:last-of-type {
@@ -926,7 +918,7 @@
 
       @include vp-1023 {
         margin: 0;
-        gap: 13px;
+        gap: 19px;
 
         & img {
           width: 100%;
@@ -935,7 +927,9 @@
       }
 
       @include vp-767 {
+        grid-template-columns: 27px auto;
         align-items: flex-end;
+        gap: 13px;
       }
     }
 
@@ -1274,6 +1268,39 @@
       }
     }
 
+    & .companions-card__countries-item--flag-bosnia-herzegovina {
+      & .companions-card__countries-name {
+        padding-top: 4px;
+      }
+
+      @include vp-1023 {
+        margin-left: 9px;
+
+        & .companions-card__countries-name {
+          padding-top: 7px;
+          padding-left: 1px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 41px;
+        }
+      }
+
+      @include vp-767 {
+        margin-left: 0;
+
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
     & .companions-card__countries-name {
       padding-top: 4px;
       font-size: 20px;
@@ -1292,7 +1319,6 @@
       padding-bottom: 5px;
 
       @include vp-1023 {
-        // padding: 0 100px 0 219px;
         margin-top: 11px;
         padding: 0 68px 0 219px;
         width: 100%;
@@ -1314,14 +1340,11 @@
       grid-column: -2/-1;
 
       @include vp-1023 {
-        // margin: 3px 15px 0 auto;
         margin: 4px 16px 0 auto;
-        // padding: 0 0 16px;
         padding: 0;
         align-self: flex-start;
         justify-self: flex-end;
         order: 1;
-        // grid-row: span 2;
       }
 
       @include vp-767 {
@@ -1350,22 +1373,27 @@
 
         & > .transportation-list__item {
           margin-bottom: 0;
+          padding: 1px 3px 0 0;
           width: 32px;
           height: 32px;
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: $color-accent-main;
 
           @include vp-1023 {
             margin-bottom: 6.5px;
+            padding: 0 3px 0 0;
             width: 26px;
             height: 25px;
-            background-color: $color-transparent;
+
+            &.transportation-list__item--bicycle {
+              padding: 0 0 0 2px;
+            }
           }
 
           @include vp-767 {
             margin-bottom: 0;
+            padding: 0;
             width: 32px;
             height: 32px;
             background-color: $color-accent-main;
@@ -1373,8 +1401,8 @@
         }
 
         & > .transportation-list__item > .transportation-list__item-icon {
-          width: 17px;
-          height: 17px;
+          width: 22px;
+          height: 22px;
           background-color: $color-transparent;
 
           @include vp-1023 {
@@ -1398,8 +1426,8 @@
         }
 
         & > .transportation-list__item--car > .transportation-list__item-icon {
-          width: 15px;
-          height: 15px;
+          width: 22px;
+          height: 20px;
 
           @include vp-1023 {
             width: 20px;

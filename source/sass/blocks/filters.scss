@@ -15,8 +15,6 @@
 
     @include vp-1023 {
       position: relative;
-      // padding: 63px 0 17px;//original
-      // padding: 63px 0 80px;// -- too much space when list is hidden
       padding: 63px 0 3px;
     }
 
@@ -27,8 +25,7 @@
   }
 
   &__options-wrapper {
-    position: relative;//newly added
-    // padding: 0 20px 74px;//original
+    position: relative;
     padding: 0 20px 110px;
     display: flex;
     flex-wrap: wrap;
@@ -68,15 +65,9 @@
 
     @include vp-1279 {
       padding: 0 0 110px;
-
-      // & .btn.filters__options-button > .filters__options-button-icon {
-      //   display: none;
-      // }
     }
 
     @include vp-1023 {
-      // padding: 0 12px 40px 32px;
-      // padding: 0 12px 161px 32px;
       padding: 0 12px 54px 32px;
 
       & > p {
@@ -140,8 +131,6 @@
       }
 
       &--list-is-hidden {
-        // padding: 0 12px 54px 32px;
-
         & > p {
           padding: 0 24px 0 28px;
         }
@@ -158,30 +147,6 @@
           display: none;
         }
       }
-
-      // &--list-is-open { ////////////!!!!!!!!!!!!!!!!!
-      //   & > p {
-      //     padding: 0 40px 0 28px;
-      //   }
-
-      //   & > .filters__list {
-      //     display: flex;
-      //   }
-
-      //   & .filters__options-button {
-      //     & > .filters__options-button-icon--is-hidden {
-      //       display: none;
-      //     }
-
-      //     & > .filters__options-button-icon--is-shown {
-      //       display: inline-flex;
-      //     }
-      //   }
-
-      //   & + .filters__countries-wrapper {
-      //     display: block;
-      //   }
-      // }
     }
   }
 
@@ -224,8 +189,6 @@
     }
 
     @include vp-767 {
-      // padding: 0 25px 0 26px;//was
-      // display: none;//originally
       padding: 0 25px 5px 26px;
       flex-direction: column;
       gap: 9px;
@@ -293,8 +256,8 @@
 
     @include vp-767 {
       position: absolute;
-      top: 20px;
-      right: 30px;
+      top: 22px;
+      right: 27px;
       margin: 0;
       width: 17px;
       height: 17px;
@@ -317,29 +280,11 @@
     text-transform: uppercase;
     color: $color-midnight-express-lighter;
     background-color: $color-transparent;
-    // visibility: hidden;
-    // visibility: visible;
     transition: color $trans-default;
-
-    // &--list-is-hidden {
-    //   visibility: visible;
-    // }
-
-    // & .filters__options-button-icon {
-    //   display: none;
-    // }
 
     @include vp-1023 {
       padding: 0 60px 0 0;
       background-color: #e2e5f2;
-
-      // & > .filters__options-button-icon--is-hidden {
-      //   display: inline-flex;
-      // }
-
-      // & > .filters__options-button-icon--is-shown {
-      //   display: none;
-      // }
     }
 
     @include vp-767 {
@@ -399,17 +344,11 @@
   }
 
   &__countries-wrapper {
-    // &--is-hidden {
-    //   display: none;//original
-    // }
-
     @include vp-1023 {
       position: absolute;
-      // left: 0;//original
       left: -40px;
       right: -40px;
       top: calc(100% - 56px);
-      // padding: 63px 60px 61px 74px;//original
       margin: 0 auto;
       padding: 65px 78px 241px 72px;
       width: calc(100% + 80px);
@@ -419,9 +358,6 @@
     }
 
     @include vp-767 {
-      // top: calc(100% + 114px);//was
-      // padding: 25px 25px 349px;//was
-      // border-radius: 0 0 22px 22px;//was
       position: relative;
       top: auto;
       left: auto;
@@ -433,8 +369,7 @@
 
   &__countries-list {
     margin: 0;
-    // padding: 0 35px; ORIGINAL
-    padding: 64px 0 49px;//newly added
+    padding: 64px 0 49px;
     display: grid;
     grid-template-columns: 210px 206px 209px 216px 180px;
     gap: 20px 38px;
@@ -448,10 +383,8 @@
 
     @include vp-1023 {
       position: relative;
-      // padding: 0 276px 0 0;//original
       padding: 0 248px 0 0;
       grid-template-columns: repeat(5, 65px);
-      // gap: 20px 8px;//original
       gap: 21px 12px;
     }
 
@@ -464,7 +397,7 @@
   }
 
   &__countries-item {
-    padding: 0 0 0 15px;// newly added
+    padding: 0 0 0 15px;
 
     &:nth-of-type(2),
     &:nth-of-type(7),
@@ -557,7 +490,6 @@
         }
 
         & > .filters__countries-group {
-          // width: 190px;//original
           width: 172px;
           display: block;
         }
@@ -565,7 +497,6 @@
     }
 
     @include vp-767 {
-      // padding: 10px;
       padding: 13px 4px 8px 3px;
       min-height: 41px;
       display: flex;
@@ -597,12 +528,10 @@
         left: -50px;
         right: -50px;
         top: -2px;
-        // width: 100%;//was
         margin: 0 auto;
         padding: 220px 50px 74px;
         width: calc(100% + 100px);
         height: max-content;
-        // padding: 0 100px 0 0;//was
         background-color: #e2e5f2;
         border-radius: 0 0 20px 20px;
         z-index: -2;
@@ -621,8 +550,6 @@
         }
       }
     }
-
-    // @mixin vp-374
 
     &--a {
       @include vp-1023 {
@@ -643,7 +570,6 @@
     }
 
     &--b {
-      // margin-left: 4px;
       padding: 0 0 0 19px;
 
       & > p {
@@ -655,10 +581,7 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > p {
-          // padding: 0;//original
           padding: 0 0 0 3px;
         }
       }
@@ -675,21 +598,16 @@
     }
 
     &--v {
-      // margin-left: 8px;
-
       & > .filters__countries-group {
         padding: 0 35px 0 7px;
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
-          // padding: 0;
           padding: 0 0 0 1px;
         }
       }
@@ -706,21 +624,16 @@
     }
 
     &--g {
-      // margin-left: 12px;
-
       & > .filters__countries-group {
         padding-left: 8px;
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
-          // padding: 0;
           padding: 0 0 0 7px;
         }
       }
@@ -737,11 +650,7 @@
     }
 
     &--d {
-      // margin-left: 8px;
-
       @include vp-1023 {
-        // margin: 0;
-
         & > p {
           padding: 0;
         }
@@ -768,14 +677,11 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
-          // padding: 0;
           padding: 4px 0 0 4px;
         }
       }
@@ -792,8 +698,6 @@
     }
 
     &--z {
-      // margin-left: 4px;
-
       & > .filters__countries-group {
         padding-left: 3px;
       }
@@ -803,24 +707,12 @@
         margin-bottom: 28px;
       }
 
-      // @include vp-1023 {
-      //   // margin-left: 0;
-
-      //   & > p {
-      //     margin-bottom: 0;
-      //     padding: 0 0 0 15px;
-      //   }
-      // }
-
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
-          // padding: 0;
           margin: 0;
           padding: 4px 0 0 6px;
         }
@@ -838,8 +730,6 @@
     }
 
     &--i {
-      // margin-left: 8px;
-
       & > .filters__countries-group {
         padding-left: 6px;
       }
@@ -850,15 +740,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 4px 0 0 1px;
         }
       }
@@ -875,7 +762,6 @@
     }
 
     &--k {
-      // margin-left: 12px;
       margin-bottom: 26px;
 
       & > .filters__countries-group {
@@ -895,7 +781,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 4px 0 0 7px;
         }
       }
@@ -912,8 +797,6 @@
     }
 
     &--l {
-      // margin-left: 8px;
-
       & > .filters__countries-group {
         padding-left: 5px;
       }
@@ -924,15 +807,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 4px 0 0 1px;
         }
       }
@@ -973,7 +853,6 @@
     }
 
     &--n {
-      // margin-left: 4px;
       margin-bottom: 37px;
 
       & > p {
@@ -994,7 +873,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 4px;
         }
       }
@@ -1011,8 +889,6 @@
     }
 
     &--o {
-      // margin-left: 8px;
-
       & > .filters__countries-group {
         padding-left: 7px;
       }
@@ -1023,15 +899,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 2px;
         }
       }
@@ -1048,8 +921,6 @@
     }
 
     &--p {
-      // margin-left: 12px;
-
       & > .filters__countries-group {
         padding-left: 7px;
       }
@@ -1060,15 +931,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 4px;
         }
       }
@@ -1085,9 +953,6 @@
     }
 
     &--r {
-      // margin-left: 5px;
-      // padding: 0 0 0 20px;//newly added
-
       & > .filters__countries-group {
         padding-left: 8px;
       }
@@ -1098,9 +963,6 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-        // padding: 0;//newly added
-
         & > .filters__countries-group {
           padding: 0;
         }
@@ -1142,7 +1004,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 6px;
         }
       }
@@ -1159,7 +1020,7 @@
     }
 
     &--t {
-      padding: 0 0 0 15px;//newly added
+      padding: 0 0 0 15px;
 
       & > .filters__countries-group {
         padding-left: 6px;
@@ -1170,8 +1031,7 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-        padding: 0;//newly added
+        padding: 0;
 
         & > .filters__countries-group {
           padding: 0;
@@ -1179,16 +1039,12 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 6px;
         }
       }
 
       @include vp-767 {
         padding: 13px 4px 8px;
-        // & > p {
-        //   padding: 13px 4px 8px;
-        // }
 
         & > .filters__countries-group {
           padding: 220px 50px 74px;
@@ -1196,8 +1052,6 @@
       }
 
       @include vp-374 {
-        // padding: 10px;
-
         & > p {
           padding: 0 0 0 1px;
         }
@@ -1205,8 +1059,6 @@
     }
 
     &--u {
-      // margin-left: 8px;
-
       & > .filters__countries-group {
         padding-left: 6px;
       }
@@ -1216,15 +1068,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 6px;
         }
       }
@@ -1241,8 +1090,6 @@
     }
 
     &--f {
-      // margin-left: 12px;
-
       & > .filters__countries-group {
         padding-left: 6px;
       }
@@ -1252,8 +1099,6 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
@@ -1272,8 +1117,6 @@
     }
 
     &--kh {
-      // margin-left: 5px;
-
       & > .filters__countries-group {
         padding-left: 11px;
       }
@@ -1284,15 +1127,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 0 0 0 1px;
         }
       }
@@ -1325,7 +1165,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 6px 0 0 4px;
         }
       }
@@ -1358,7 +1197,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 6px 0 0 0;
         }
       }
@@ -1375,8 +1213,7 @@
     }
 
     &--e {
-      // margin-left: 11px;
-      padding: 0 0 0 26px;// newly added
+      padding: 0 0 0 26px;
 
       & > .filters__countries-group {
         padding-left: 4px;
@@ -1388,8 +1225,7 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-        padding: 0;// newly added
+        padding: 0;
 
         & > .filters__countries-group {
           padding: 0;
@@ -1397,7 +1233,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 4px 0 0 3px;
         }
       }
@@ -1418,8 +1253,7 @@
     }
 
     &--yu {
-      // margin-left: 15px;
-      padding: 0 0 0 30px;// newly added
+      padding: 0 0 0 30px;
 
       & > .filters__countries-group {
         padding: 0 64px 0 6px;
@@ -1431,8 +1265,7 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-        padding: 0;// newly added
+        padding: 0;
 
         & > .filters__countries-group {
           padding: 0;
@@ -1440,7 +1273,6 @@
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 4px 0 0 0;
         }
       }
@@ -1461,8 +1293,6 @@
     }
 
     &--ya {
-      // margin-left: 8px;
-
       & > .filters__countries-group {
         padding-left: 7px;
       }
@@ -1473,15 +1303,12 @@
       }
 
       @include vp-1023 {
-        // margin: 0;
-
         & > .filters__countries-group {
           padding: 0;
         }
 
         & > p {
           margin: 0;
-          // padding: 0;
           padding: 2px 0 0 0;
         }
       }
@@ -1542,8 +1369,7 @@
   }
 
   &__button-wrapper {
-    // margin: 59px auto 0;//original
-    position: absolute;//newly added
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -1551,8 +1377,6 @@
     width: 100%;
 
     @include vp-1023 {
-      // margin: 61px 0 0;
-      // width: calc(100% - 16px);//original
       bottom: 79px;
       margin: 0 auto;
       width: calc(100% - 153px);
@@ -1560,7 +1384,6 @@
 
     @include vp-767 {
       position: absolute;
-      // bottom: 27px;//was
       left: 0;
       right: 0;
       bottom: calc(-100% - 119px);
@@ -1608,10 +1431,6 @@
         height: 100%;
       }
     }
-
-    // &.filter__button--is-hidden {//original
-    //   visibility: hidden;
-    // }
 
     &:hover,
     &:focus {

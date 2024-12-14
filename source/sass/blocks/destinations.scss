@@ -1,6 +1,6 @@
 .destinations {
   position: relative;
-  padding: 0 0 53px;
+  padding: 0 0 56px;
 
   @include vp-1279 {
     padding: 0 0 100px;
@@ -54,18 +54,15 @@
     }
 
     @include vp-1023 {
-      // padding: 61px 0 105px;
       padding: 61px 0 31px;
     }
 
     @include vp-767 {
-      // padding: 54px 0 66px;
       padding: 54px 0 166px;
     }
   }
 
   &__text-wrapper {
-    // padding-left: 53px;
     padding: 101px 0 96px 53px;
     grid-column: 2/3;
     max-width: 570px;
@@ -83,7 +80,6 @@
     }
 
     @include vp-1023 {
-      // padding: 0 4px;
       padding: 0 33px;
     }
 
@@ -93,14 +89,11 @@
   }
 
   &__text {
-    // padding: 101px 0 155px 0;
-
     & h2 {
       margin: 0 0 33px;
       font-size: 75px;
       line-height: 45px;
       font-weight: 700;
-      // font-variant: all-small-caps;
       font-variant-caps: all-small-caps;
       color: $color-midnight-express-lighter;
     }
@@ -118,8 +111,6 @@
     }
 
     @include vp-1279 {
-      // padding: 0;
-
       & h2 {
         margin: 0 0 55px;
         font-size: 95px;
@@ -155,7 +146,6 @@
   }
 
   &__button.btn {
-    // margin-left: 6px;
     margin: 155px 0 0 6px;
     padding-left: 36px;
     width: 299px;
@@ -201,7 +191,7 @@
 
   &__slider-wrapper {
     position: relative;
-    margin-top: 72px;
+    margin-top: 69px;
     max-width: 748px;
     height: 580px;
     padding: 80px 0;
@@ -330,7 +320,6 @@
 
     @include vp-1023 {
       margin: 0 auto 9px;
-      // padding: 31px 273px 19px 30px;
       padding: 28px 273px 14px 30px;
       min-height: 138px;
     }

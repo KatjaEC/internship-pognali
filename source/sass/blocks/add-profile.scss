@@ -43,7 +43,6 @@
       font-size: 95px;
       line-height: 45px;
       font-weight: 700;
-      // font-variant: all-small-caps;
       font-variant-caps: all-small-caps;
       color: $color-midnight-express-lighter;
 
@@ -55,7 +54,6 @@
       }
 
       @include vp-1023 {
-        // margin: 0 0 27px -4px;
         margin: 0 0 27px -6px;
         padding-left: 0;
       }
@@ -69,8 +67,6 @@
   }
 
   &__content {
-    // display: flex;
-    // flex-wrap: wrap;
     display: grid;
     grid-template-columns: minmax(486px, 734px) minmax(194px, 587px);
 
@@ -87,20 +83,9 @@
 
   &__options-wrapper {
     padding: 62px 0 32px;
-    // width: calc(56% - 10px);
-
-    @include vp-1439 {
-      // width: calc(48% - 10px);
-    }
-
-    @include vp-1279 {
-      // width: 60%;
-    }
 
     @include vp-1023 {
       padding: 0;
-      // width: calc(72% - 12px);
-      // width: calc(72% - 40px);
     }
 
     @include vp-767 {
@@ -126,7 +111,6 @@
     &::after {
       position: absolute;
       bottom: 6px;
-      // right: -7px;
       left: 111px;
       width: calc(100% - 105px);
       height: 1px;
@@ -136,14 +120,10 @@
       @include vp-1023 {
         bottom: 22px;
         left: 90px;
-        // width: calc(100% - 92px);
-        // width: calc(100% - 56px);
-        // width: 100%;
         width: calc(100% - 90px);
       }
 
       @include vp-767 {
-        // right: auto;
         left: 0;
         bottom: 7px;
         width: calc(100% - 55px);
@@ -209,7 +189,6 @@
     &::after {
       position: absolute;
       top: 0;
-      // right: -7px;
       left: 111px;
       width: calc(100% - 105px);
       height: 1px;
@@ -219,16 +198,12 @@
       @include vp-1023 {
         top: 2px;
         left: 90px;
-        // width: calc(100% - 92px);
-        // width: calc(100% - 56px);
-        // width: 100%;
         width: calc(100% - 90px);
       }
 
       @include vp-767 {
         top: -2px;
         left: 0;
-        // right: auto;
         width: calc(100% - 55px);
       }
     }
@@ -260,8 +235,6 @@
     }
 
     &:nth-of-type(3) {
-      // padding: 10px 30px 38px 111px;
-      // padding: 10px 30px 44px 111px;
       margin-bottom: 6px;
 
       &::before {
@@ -269,18 +242,6 @@
         background-color: $color-pale-cornflowep-blue;
         content: "3";
       }
-
-      // @include vp-1023 {
-      //   padding: 15px 26px 21px 90px;
-      // }
-
-      // @include vp-767 {
-      //   padding: 12px 44px 18px 1px;
-
-      //   &::before {
-      //     top: 3px;
-      //   }
-      // }
     }
 
     &:nth-of-type(4)::before {
@@ -301,48 +262,27 @@
       margin-bottom: 0;
       padding: 10px 30px 44px 111px;
 
-      // &::before {
-      //   top: 5px;
-      //   background-color: $color-pale-cornflowep-blue;
-      //   content: "3";
-      // }
-
       @include vp-1023 {
         padding: 15px 26px 21px 90px;
       }
 
       @include vp-767 {
         padding: 12px 44px 18px 1px;
-
-        // &::before {
-        //   top: 3px;
-        // }
       }
     }
   }
 
   &__prices-wrapper {
     margin: 0 0 0 auto;
-    // width: calc(50% - 75px);
     width: 100%;
 
 
     @include vp-1439 {
       margin: 0 auto 0 0;
-      // width: calc(40% - 75px);
-      // width: 584px;
-    }
-
-    @include vp-1279 {
-      // width: 356px;
-      // width: 100%;
     }
 
     @include vp-1023 {
       margin: 0 2px 0 auto;
-      // width: calc(40% - 130px);
-      // width: calc(40% - 78px);
-      // width: 198px;
     }
 
     @include vp-767 {
@@ -354,8 +294,6 @@
   &__list-wrapper {
     position: relative;
     padding: 84px 280px 84px 83px;
-    // width: 584px;
-    // width: 100%;
     min-height: 333px;
     background-color: $color-accent-second;
     border-radius: 20px;
@@ -367,19 +305,15 @@
 
     @include vp-1279 {
       padding: 30px 25px;
-      // width: 356px;
-      // width: 100%;
     }
 
     @include vp-1023 {
       padding: 24px 27.5px 10px;
-      // width: 198px;
       min-height: 285px;
     }
 
     @include vp-767 {
       padding: 16px 18px 16px 15px;
-      // width: 100%;
       min-height: 113px;
       display: flex;
       flex-wrap: wrap;
@@ -410,11 +344,6 @@
     line-height: 28px;
     color: $color-default-white;
 
-    // @include vp-1439 {
-    //   font-size: 24px;
-    //   text-align: center;
-    // }
-
     @include vp-1279 {
       font-size: 24px;
       text-align: center;
@@ -434,7 +363,6 @@
       margin-bottom: 26px;
       font-size: 41px;
       font-weight: 700;
-      // font-variant: all-small-caps;
       font-variant-caps: all-small-caps;
 
       @include vp-1439 {

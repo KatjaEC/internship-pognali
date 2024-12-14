@@ -30,13 +30,11 @@
       font-size: 60px;
       line-height: 60px;
       font-weight: 700;
-      // font-variant: all-small-caps;
       font-variant-caps: all-small-caps;
       color: $color-default-white;
 
       @include vp-1023 {
         line-height: 20px;
-        // font-variant: normal;
         font-variant-caps: normal;
       }
 

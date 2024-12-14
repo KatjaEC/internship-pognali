@@ -9,6 +9,8 @@ import {initCategoryToggles} from './modules/search-filter/search-filter.js';
 import {showCountriesList} from './modules/countries-filter/countries-filter-show.js';
 import {filterCountries} from './modules/countries-filter/countries-filter-init.js';
 import {initNavMenu} from './modules/nav-menu/nav-menu.js';
+import {renderCards} from './modules/cards-list/cards-show-more.js';
+import {initPagination} from './modules/cards-list/cards-list-pagination.js';
 
 // ---------------------------------
 
@@ -30,6 +32,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initSlider();
     toggleModalWindow();
     setLevelRange();
+    renderCards();
+    initPagination();
     initModals();
     initCategoryToggles();
     filterCountries();

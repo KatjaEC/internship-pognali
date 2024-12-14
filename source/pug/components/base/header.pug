@@ -41,14 +41,12 @@ mixin header(headerMods, currentUrl)
           .header__icon
             +logo("svg", "logo", "svg", "-header-full.", "-header", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
           .header__icon-mobile
-            //- +svg("logo-mobile-footer", 96, 15, "Логотип сайта Погнали.")
             +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
       else
         a.header__logo(href="index.html", aria-label="Переход на главную страницу.")
           .header__icon
             +logo("svg", "logo", "svg", "-header-full.", "-header", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
           .header__icon-mobile
-            //- +svg("logo-mobile-footer", 96, 15, "Логотип сайта Погнали.")
             +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
       nav.header__nav
         button.header__nav-toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")

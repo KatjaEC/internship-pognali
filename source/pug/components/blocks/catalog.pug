@@ -1,48 +1,24 @@
 mixin catalog()
-  -
-    const pagesCount = [
-      {
-        pageNumber: "1",
-        statusMods: "--is-active",
-      },
-      {
-        pageNumber: "2",
-      },
-      {
-        pageNumber: "3",
-      },
-      {
-        pageNumber: "4",
-      },
-    ]
-
   section.catalog
     h2.visually-hidden Список попутчиков и их поиск.
     .container
       .catalog__list-wrapper
         +companions-list()
         .catalog__button-wrapper
-          +btn({href: "#"})(class="catalog__button catalog__button--show-more")
+          +btn(class="catalog__button catalog__button--show-more")
             span.catalog__button-text Показать еще
             span.catalog__button-icon
               +icon("icon-plus", 26, 26)
         .catalog__pagination-wrapper
           .catalog__pagination
             ul.catalog__pagination-list
-              each item in pagesCount
-                if(item.statusMods)
-                  li.catalog__pagination-item
-                    a.catalog__pagination-link(class=`catalog__pagination-link${item.statusMods}`, href="#")!= item.pageNumber
-                else
-                  li.catalog__pagination-item
-                    a.catalog__pagination-link(href="#")!= item.pageNumber
             .catalog__navigation-buttons
               .catalog__navigation-button-wrapper
-                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev catalog__navigation-button--is-inactive", aria-label="Предыдущая страница.")
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev catalog__navigation-button--is-inactive", id="prev-button", aria-label="Предыдущая страница.")
                   span.catalog__navigation-button-icon
                     +icon("icon-pagination-arrow", 13, 20)
               .catalog__navigation-button-wrapper
-                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--next", aria-label="Следующая страница.")
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--next", id="next-button", aria-label="Следующая страница.")
                   span.catalog__navigation-button-icon
                     +icon("icon-pagination-arrow", 13, 20)
         .catalog__search-form

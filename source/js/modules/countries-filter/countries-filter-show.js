@@ -6,7 +6,6 @@ const hideListBtn = document.querySelector('.btn.filters__button');
 const showListBtnMobile = document.querySelector('.filters__options-wrapper p');
 const breakpointMobile = window.matchMedia('(max-width:767px)');
 // const breakpointTablet = window.matchMedia('(max-width:1023px)');
-//filters__options-wrapper p
 
 // const openList = () => {
 //   const toggleText = showListBtn.querySelector('.filters__options-button-text');
@@ -53,14 +52,6 @@ const openList = (button) => {
     }
   });
 };
-
-// const updateToggleText = (filterListStatus) => {
-//   const toggleText = showListBtn.querySelector('.filters__options-button-text');
-//   if (listShown) {
-//     toggleText.textContent = 'Свернуть';
-//   }
-// };
-
 
 export const showCountriesList = () => {
   if (filters) {

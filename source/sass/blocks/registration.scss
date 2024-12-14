@@ -77,7 +77,6 @@
       @include vp-1023 {
         margin: 0 auto 43px;
         font-size: 75px;
-        // font-variant: all-small-caps;
         font-variant-caps: all-small-caps;
       }
 
@@ -86,7 +85,6 @@
         padding: 0 0 0 7px;
         font-size: 24px;
         line-height: 24px;
-        // font-variant: normal;
         font-variant-caps: normal;
       }
     }
@@ -104,7 +102,6 @@
         padding: 0 30px 0 12px;
         font-size: 24px;
         line-height: 32px;
-        // font-variant: normal;
         font-variant-caps: normal;
       }
 
@@ -120,7 +117,6 @@
 
       @include vp-1023 {
         padding: 0 20px 0 3px;
-        // font-variant: normal;
         font-variant-caps: normal;
       }
 

@@ -51,7 +51,6 @@
     grid-template-columns: 629px 690px;
 
     @include vp-1439 {
-      // grid-template-columns: 45% auto;
       grid-template-columns: 46% auto;
     }
 
@@ -86,7 +85,6 @@
       font-size: 95px;
       line-height: 45px;
       font-weight: 700;
-      // font-variant: all-small-caps;
       font-variant-caps: all-small-caps;
       color: $color-midnight-express-lighter;
 

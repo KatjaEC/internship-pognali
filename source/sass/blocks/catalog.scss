@@ -89,6 +89,9 @@
   &__cards-list {
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 31px;
     grid-column: 1/2;
     list-style: none;
 
@@ -96,20 +99,23 @@
       order: 1;
     }
 
+    @include vp-1023 {
+      gap: 39px;
+    }
+
     @include vp-767 {
-      padding: 28px 0 13px;
+      padding: 28px 0 18px;
+      gap: 10px;
     }
   }
 
   &__cards-item {
-    margin-bottom: 31px;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-
     &--is-unavailable .companions-card__buttons-wrapper {
       visibility: hidden;
+    }
+
+    &.catalog__cards-item--is-hidden {
+      display: none;
     }
 
     &:nth-of-type(4) .companions-card__transportation-wrapper {
@@ -122,21 +128,11 @@
       }
 
       @include vp-1023 {
-        // padding: 0 0 16px;
         padding: 0;
       }
-
-      // @include vp-767 {
-      //   padding: 0;
-      // }
-    }
-
-    @include vp-1279 {
-      margin-bottom: 39px;
     }
 
     @include vp-767 {
-      margin-bottom: 10px;
       display: flex;
       flex-direction: column;
       min-height: 393px;
@@ -165,33 +161,35 @@
   }
 
   &__button.catalog__button--show-more {
-    // padding: 37px 210px 37px 154px;
     position: relative;
     margin: 0 auto;
     padding: 22px 75px 17px 70px;
     min-width: 200px;
     max-width: 320px;
     display: flex;
-    // justify-content: flex-end;
     justify-content: center;
     flex-wrap: wrap;
-    // gap: 24px;
     background-color: $color-transparent;
 
     @include vp-1279 {
-      // padding: 5px 165px 10px 176px;
-      // padding: 5px 0 10px;
-      // padding: 9px 10px 10px 72px;
-    }
-
-    @include vp-1023 {
-      padding: 10px 10px 10px 72px;
       max-width: 260px
     }
 
+    @include vp-1023 {
+      padding: 10px 18px 10px 80px;
+      width: 100%;
+      max-width: 280px
+    }
+
     @include vp-767 {
-      padding: 3px 20px 4px 32px;
+      padding: 3px 32px 4px 86px;
       gap: 15px;
+      max-width: 320px
+    }
+
+    @include vp-374 {
+      padding: 3px 38px 4px 83px;
+      max-width: 100%;
     }
 
     & > span {
@@ -201,7 +199,6 @@
     }
 
     & .catalog__button-text {
-      // padding-top: 3px;
       display: inline-flex;
       width: auto;
       height: auto;
@@ -211,7 +208,6 @@
       order: 1;
 
       @include vp-767 {
-        // padding-top: 5px;
         font-size: 17px;
         line-height: 30px;
       }
@@ -220,7 +216,7 @@
     & .catalog__button-icon {
       position: absolute;
       top: 17px;
-      left: 31px;
+      left: 20px;
       width: 26px;
       height: 26px;
       color: $color-catalina-blue;
@@ -228,11 +224,12 @@
 
       @include vp-1023 {
         top: 4px;
-        left: 34px;
+        left: 44px;
       }
 
       @include vp-767 {
-        margin-bottom: 2px;
+        top: 3px;
+        left: 60px;
         width: 18px;
         height: 18px;
 
@@ -320,6 +317,11 @@
     }
   }
 
+  &__pagination-item {
+    display: block;
+    border-radius: 50%;
+  }
+
   &__pagination-link {
     padding: 5px 6px 2px 5px;
     width: 50px;
@@ -331,6 +333,10 @@
     line-height: 20px;
     font-weight: 700;
     color: $color-catalina-blue;
+
+    &--is-disabled {
+      pointer-events: none;
+    }
 
     @include vp-1279 {
       padding: 5px 6px 2px 6.5px;
@@ -1121,7 +1127,6 @@
 
     @include vp-767 {
       width: 100%;
-      // width: calc(100% - 5px);
       height: 2px;
     }
 
@@ -1133,8 +1138,6 @@
   &__range-bar.noUi-target.noUi-horizontal {
     position: absolute;
     top: calc(50% - 1px);
-    // width: 100%;
-    // margin: 0 auto;
     width: calc(100% - 4px);
     height: 3px;
     background: rgba(29, 46, 91, 0.2);
@@ -1147,7 +1150,6 @@
     }
 
     @include vp-767 {
-      // padding: 0 5px;
       height: 2px;
     }
 
@@ -1164,26 +1166,19 @@
 
       @include vp-767 {
         top: calc(50% - 1px);
-        // padding: 0 5px;
       }
-
-      // @include vp-374 {
-      //   padding: 0 5px;
-      // }
     }
 
     & .noUi-connects {
       position: relative;
-      // margin: 0 5px;
-      // width: 100%;
       margin: 0 auto;
-      width: calc(100% - 12px);//////////
+      width: calc(100% - 12px);
       height: 100%;
       overflow: hidden;
       z-index: 0;
 
       @include vp-767 {
-        width: calc(100% - 10px);/////////
+        width: calc(100% - 10px);
       }
     }
 
@@ -1200,7 +1195,6 @@
       transform-style: flat;
 
       @include vp-767 {
-        // right: -10px;
         height: 2px;
       }
     }
@@ -1210,7 +1204,6 @@
       top: 0;
       right: 0;
       width: 100%;
-      // width: calc(100% - 10px);
       height: 0;
       will-change: transform;
       z-index: 1;
@@ -1218,7 +1211,6 @@
       transform-style: flat;
 
       @include vp-767 {
-        // right: 0;
         width: calc(100% - 10px);
       }
     }
@@ -1244,7 +1236,6 @@
 
       @include vp-767 {
         top: -4px;
-        // right: -5px;
         right: 0;
         min-width: 10px;
         width: 10px;
@@ -1261,12 +1252,6 @@
         box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.24);
       }
     }
-
-    // & .noUi-handle.noUi-handle-upper {
-    //   @include vp-767 {
-    //     right: -5px;
-    //   }
-    // }
 
     & .noUi-touch-area {
       width: 100%;

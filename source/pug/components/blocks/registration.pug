@@ -15,26 +15,6 @@ mixin registration()
       },
     ]
 
-  //- -
-  //-   const contactsList = [
-  //-     {
-  //-       icon: "icon-contacts-phone",
-  //-       text: "8 800 555-86-28",
-  //-       href: "tel:+78005558628",
-  //-       width: 36,
-  //-       height: 34,
-  //-       mods: "--phone",
-  //-     },
-  //-     {
-  //-       icon: "icon-contacts-mail",
-  //-       text: "mail@htmlacademy.ru",
-  //-       href: "mailto:mail@htmlacademy.ru",
-  //-       width: 37,
-  //-       height: 25,
-  //-       mods: "--mail",
-  //-     },
-  //-   ]
-
   section.registration
     h2.visually-hidden Регистрация на сайте.
     .container
@@ -57,10 +37,3 @@ mixin registration()
           .registration__contacts-heading
             p Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!
           +contacts-list("registration")
-          //- ul.registration__contacts-list
-          //-   each item in contactsList
-          //-     li.registration__contacts-item
-          //-       a.registration__contacts-link(href=item.href)
-          //-         span.registration__contacts-icon(class=`registration__contacts-icon${item.mods}`)
-          //-           +icon(item.icon, item.width, item.height)
-          //-         span!= item.text

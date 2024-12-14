@@ -90,8 +90,6 @@
 
   &__wrapper {
     position: relative;
-    // padding: 55px 63px;
-    // padding: 55px 73px;
     padding: 0;
     width: 100%;
     min-height: 201px;
@@ -120,15 +118,10 @@
   }
 
   &__text-wrapper {
-    // margin: 0 47px 0 223px;
-    // margin: 0 74px 0 153px;
     margin: 0 auto 0 163px;
-    // padding: 0;
     padding: 55px 60px;
     display: flex;
     flex-wrap: wrap;
-    // justify-content: flex-end;
-    // gap: 40px 74px;
     gap: 40px 88px;
 
     @include vp-1279 {
@@ -216,7 +209,6 @@
   }
 
   &__button-wrapper {
-    // padding: 0 13px 0 15px;
     padding: 0;
 
     @include vp-1023 {
