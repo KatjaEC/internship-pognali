@@ -376,7 +376,6 @@
     list-style: none;
 
     @include vp-1279 {
-      grid-template-columns: 164px 176px 194px 245px 159px;
       grid-template-columns: minmax(164px, max-content) minmax(176px, max-content) minmax(194px, max-content) minmax(245px, max-content) minmax(159px, max-content);
       gap: 20px 10px;
     }

@@ -151,11 +151,11 @@ mixin search-form(className)
                   each subitem in item.options
                     if(subitem.attribute)
                       li(class=`transportation-list__item transportation-list__item--${subitem.mods}`)
-                        +custom-input("transportation-list__checkbox", {hiddenClass: true, isChecked: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods})
+                        +custom-input("transportation-list__checkbox", {hiddenClass: true, isChecked: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods}, `${subitem.text}.`)
                           +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
                     else
                       li(class=`transportation-list__item transportation-list__item--${subitem.mods}`)
-                        +custom-input("transportation-list__checkbox", {hiddenClass: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods})
+                        +custom-input("transportation-list__checkbox", {hiddenClass: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods}, `${subitem.text}.`)
                           +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
           else
             div(class=`${className}__group-list ${className}__group-list${item.mods}`, id="range-slider")

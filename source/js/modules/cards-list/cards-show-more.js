@@ -19,9 +19,14 @@ const createCard = (items) => {
     const cardWrapper = cardWrapperEl.cloneNode(true);
     cardWrapper.querySelector('.companions-card__content').className = 'companions-card__content';
     cardWrapper.querySelector('.companions-card__content').classList.add(`companions-card__content${statusMods}`);
-    cardWrapper.querySelector('.companions-card__image img').src = `${image}.jpg`;
-    cardWrapper.querySelector('.companions-card__image img').srcset = `${image}@2x.jpg`;
-    cardWrapper.querySelector('.companions-card__image source').srcset = `${image}.webp, ${image}@2x.webp`;
+    cardWrapper.querySelector('.companions-card__image img').src = `${image}-mobile.jpg`;
+    cardWrapper.querySelector('.companions-card__image img').srcset = `${image}-mobile@2x.jpg`;
+    cardWrapper.querySelectorAll('.companions-card__image source[data-screen-size="desktop"]').forEach((item) => {
+      item.srcset = `${image}-desktop.webp, ${image}-desktop@2x.webp`;
+    });
+    cardWrapper.querySelectorAll('.companions-card__image source[data-screen-size="mobile"]').forEach((item) => {
+      item.srcset = `${image}-mobile.webp, ${image}-mobilep@2x.webp`;
+    });
     cardWrapper.querySelector('.companions-card__image img').alt = 'Изображение пользователя.';
     cardWrapper.querySelector('.companions-card__level').className = `companions-card__level companions-card__level--${level}`;
     cardWrapper.querySelector('.companions-card__level span').textContent = level;

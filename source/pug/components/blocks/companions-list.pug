@@ -173,7 +173,7 @@ mixin companions-list()
                 li.transportation-list__item.transportation-list__item--on-foot(data-status=item.transport[3].statusAttr)
                   +transportation-icon("transportation-list", "icon-run", 22, 24, "Пешком")
   else
-    ul.catalog__cards-list(id='catalog-paginated-list', data-current-page='1')
+    ul.catalog__cards-list(id="catalog-paginated-list", data-current-page="1")
       each item in companionsList
         li.catalog__cards-item(class=`catalog__cards-item${item.availabilityMods}`)
           +companion-card(item.name, item.image, item.level, item.statusMods, item.flags, item.tags, item.likesNumber)(class="companions-card--catalog")

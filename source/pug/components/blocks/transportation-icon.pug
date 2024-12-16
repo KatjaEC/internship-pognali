@@ -4,42 +4,46 @@ mixin transportation-icon(className, name, width, height, text)
       use(xlink:href="img/sprite.svg#" + name)
   +tooltip("transportation-list", text)
 
-mixin transportation-list()
-  -
-    const transportationList = [
-      {
-        text: "Авиаперелет",
-        icon: "icon-plane",
-        width: 23,
-        height: 22,
-      },
-      {
-        text: "Автотранспорт",
-        icon: "icon-bus",
-        width: 19,
-        height: 22,
-      },
-      {
-        text: "Велосипед",
-        icon: "icon-bicycle",
-        width: 25,
-        height: 25,
-      },
-      {
-        text: "Пешком",
-        icon: "icon-run",
-        width: 22,
-        height: 24,
-      },
-    ]
+//- mixin transportation-list()
+//-   -
+//-     const transportationList = [
+//-       {
+//-         text: "Авиаперелет",
+//-         icon: "icon-plane",
+//-         width: 23,
+//-         height: 22,
+//-         label: "Самолет.",
+//-       },
+//-       {
+//-         text: "Автотранспорт",
+//-         icon: "icon-bus",
+//-         width: 19,
+//-         height: 22,
+//-         label: "Автобус.",
+//-       },
+//-       {
+//-         text: "Велосипед",
+//-         icon: "icon-bicycle",
+//-         width: 25,
+//-         height: 25,
+//-         label: "Человек на велосипеде.",
+//-       },
+//-       {
+//-         text: "Пешком",
+//-         icon: "icon-run",
+//-         width: 22,
+//-         height: 24,
+//-         label: "Человек в движении.",
+//-       },
+//-     ]
 
-  if(currentUrl === "index.html")
-    ul.companions__transportation-list
-      each option in transportationList
-        li.companions__transportation-item
-          +transportation-icon(option.icon, option.width, option.height, option.text)
-  else
-    ul.catalog__transportation-list
-      each option in transportationList
-        li.catalog__transportation-item
-          +transportation-icon(option.icon, option.width, option.height, option.text)
+//-   if(currentUrl === "index.html")
+//-     ul.companions__transportation-list
+//-       each option in transportationList
+//-         li.companions__transportation-item
+//-           +transportation-icon(option.icon, option.width, option.height, option.text)
+//-   else
+//-     ul.catalog__transportation-list
+//-       each option in transportationList
+//-         li.catalog__transportation-item
+//-           +transportation-icon(option.icon, option.width, option.height, option.text)

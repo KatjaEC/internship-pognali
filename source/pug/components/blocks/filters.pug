@@ -848,7 +848,7 @@ mixin filters()
                   else
                     +filter-checkbox("filters", item.filterName, item.id, item.id)
           .filters__options-button-wrapper
-            +btn({type: "button"})(class="filters__options-button")
+            +btn({type: "button"})(class="filters__options-button", aria-label="Показать-скрыть фильтры по странам.")
               span.filters__options-button-text Показать все
               span.filters__options-button-icon.filters__options-button-icon--is-shown
                 +icon("icon-close-bold", 22, 24)

@@ -14,9 +14,7 @@ mixin picture-adaptive(path, image, format, widthDesktop, heightDesktop, widthTa
 
 mixin picture-semi-adaptive(path, image, format, widthDesktop, heightDesktop, widthMobile, heightMobile, altText)
   picture(class!=attributes.class)
-    source(type="image/webp", media="(min-width: 1024px)", srcset="img/" + path + "/" + image + "-desktop" + ".webp" + ", " + "img/" + path + "/" + image + "-desktop" + "@2x.webp" + " 2x", width= widthDesktop, height= heightDesktop)
-    source(type="image/" + format, media="(min-width: 1024px)", srcset="img/" + path + "/" + image + "-desktop" + "." + format + ", " + "img/" + path + "/" + image + "-desktop" + "@2x." + format + " 2x", width= widthDesktop, height= heightDesktop)
-    source(type="image/webp", media="(min-width: 768px)", srcset="img/" + path + "/" + image + "-desktop" + ".webp" + ", " + "img/" + path + "/" + image + "-desktop" + "@2x.webp" + " 2x", width= widthDesktop, height= heightDesktop)
-    source(type="image/" + format, media="(min-width: 768px)", srcset="img/" + path + "/" + image + "-desktop" + "." + format + ", " + "img/" + path + "/" + image + "-desktop" + "@2x." + format + " 2x", width= widthDesktop, height= heightDesktop)
-    source(type="image/webp", srcset="img/" + path + "/" + image + "-mobile" + ".webp" + ", " + "img/" + path + "/" + image + "-mobile" + "@2x.webp" + " 2x", width= widthMobile, height= heightMobile)
+    source(type="image/webp", media="(min-width: 768px)", srcset="img/" + path + "/" + image + "-desktop" + ".webp" + ", " + "img/" + path + "/" + image + "-desktop" + "@2x.webp" + " 2x", width= widthDesktop, height= heightDesktop, data-screen-size="desktop")
+    source(type="image/" + format, media="(min-width: 768px)", srcset="img/" + path + "/" + image + "-desktop" + "." + format + ", " + "img/" + path + "/" + image + "-desktop" + "@2x." + format + " 2x", width= widthDesktop, height= heightDesktop, data-screen-size="desktop")
+    source(type="image/webp", srcset="img/" + path + "/" + image + "-mobile" + ".webp" + ", " + "img/" + path + "/" + image + "-mobile" + "@2x.webp" + " 2x", width= widthMobile, height= heightMobile, data-screen-size="mobile")
     img(src="img/" + path + "/" + image + "-mobile" + "." + format, srcset= "img/" + path + "/" + image + "-mobile" + "@2x." + format + " 2x", width= widthMobile, height= heightMobile, alt= altText)&attributes(attributes)

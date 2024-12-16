@@ -4,7 +4,7 @@ mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNum
       if(currentUrl === "index.html")
         +picture-adaptive("slides", image, "jpg", 285, 286, 285, 286, 270, 270, "Изображение пользователя.")
       else
-        +picture("slides", image, "jpg", 285, 286, "Изображение пользователя.")
+        +picture-semi-adaptive("slides", image, "jpg", 285, 286, 70, 70, "Изображение пользователя.")
     .companions-card__stats
       if(currentUrl === "catalog.html")
         span Левел:
@@ -44,7 +44,7 @@ mixin companion-card(name, image, level, statusMod, countries={}, tags, likesNum
           .companions-card__invite-button-wrapper
             +btn({href: "#", text: "Позвать!"})(class="companions-card__invite-button")
           .companions-card__likes-wrapper
-            +btn({type: "button"})(class="companions-card__like-button")
+            +btn({type: "button"})(class="companions-card__like-button", aria-label="Поставить лайк.")
               span.companions-card__like-button-icon
                 +icon("icon-heart", 20, 20)
               span.companions-card__like-button-icon.companions-card__like-button-icon--is-pressed

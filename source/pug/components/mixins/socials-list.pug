@@ -5,16 +5,19 @@ mixin socials-list(className)
         href: "#",
         classMod: "--telegram",
         icon: "socials-telegram",
+        label: "Мы в Телеграме.",
       },
       {
         href: "#",
         classMod: "--vk",
         icon: "socials-vkontakte",
+        label: "Мы ВКонтакте.",
       },
       {
         href: "#",
         classMod: "--youtube",
         icon: "socials-youtube",
+        label: "Мы на Ютубе.",
       },
     ]
 
@@ -22,5 +25,5 @@ mixin socials-list(className)
     ul(class=`${className}__socials-list`)
       each item in socialLinks
         li(class=`${className}__socials-item`)
-          a(class=`${className}__socials-link ${className}__socials-link${item.classMod}`, href=item.href, target="_blank", rel="noopener noreferrer")
+          a(class=`${className}__socials-link ${className}__socials-link${item.classMod}`, href=item.href, target="_blank", rel="noopener noreferrer", aria-label=item.label)
             +icon(item.icon, 32, 32)

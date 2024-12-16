@@ -124,6 +124,7 @@
   &__nav {
     position: relative;
     padding-left: 143px;
+    width: calc(100% - 202px);
 
     &::before {
       position: absolute;
@@ -185,7 +186,7 @@
         top: -17px;
         right: -3px;
 
-      & > .header__nav-toggle-icon--menu-is-shown {
+        & > .header__nav-toggle-icon--menu-is-shown {
           width: 20px;
           height: 20px;
         }

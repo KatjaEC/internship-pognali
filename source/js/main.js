@@ -20,7 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   initNavMenu();
-  showCountriesList();
   mobileVhFix();
 
   // Modules
@@ -30,6 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
     initSlider();
+    showCountriesList();
     toggleModalWindow();
     setLevelRange();
     renderCards();

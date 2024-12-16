@@ -73,10 +73,24 @@
       border-radius: 0 0 65px 62px;
     }
 
-    @include vp-767 {
-      top: -139px;
+    @include vp-1023 {
+      top: -151px;
+      border-radius: 0;
 
       & img {
+        width: 1440px;
+        height: 902px;
+        object-position: 33.4% 50%;
+        border-radius: 0;
+      }
+    }
+
+    @include vp-767 {
+      top: -146px;
+
+      & img {
+        width: 100%;
+        height: 100%;
         object-position: 50% 66px;
       }
     }
@@ -295,7 +309,7 @@
       width: 100%;
       height: 100%;
       background-color: $color-picton-blue;
-      border-radius: 20px 0 0 20px;
+      border-radius: 20px;
       z-index: -1;
       content: "";
 
@@ -322,8 +336,8 @@
         @include vp-1279 {
           right: auto;
           left: 0;
-          width: calc(100% + 26px);
-          border-radius: 20px 0 0 0;
+          width: calc(100% + 35px);
+          border-radius: 20px 20px 0 0;
         }
 
         @include vp-767 {
@@ -399,8 +413,8 @@
         background-color: $color-pale-cornflowep-blue;
 
         @include vp-1279 {
-          width: calc(100% + 26px);
-          border-radius: 0 0 0 20px;
+          width: calc(100% + 35px);
+          border-radius: 0 0 20px 20px;
         }
 
         @include vp-767 {
@@ -477,7 +491,8 @@
       }
 
       &::after {
-        width: calc(100% + 30px);
+        right: -15px;
+        width: calc(100% + 45px);
         background-color: $color-jordy-blue;
       }
 
@@ -490,6 +505,7 @@
         }
 
         &::after {
+          right: 0;
           width: 100%;
         }
       }
@@ -517,7 +533,8 @@
       }
 
       &::after {
-        width: calc(100% + 15px);
+        right: -20px;
+        width: calc(100% + 35px);
         background-color: $color-pale-cornflowep-blue;
       }
 
@@ -527,7 +544,7 @@
         &::after {
           right: auto;
           left: 0;
-          width: calc(100% + 26px);
+          width: calc(100% + 35px);
         }
       }
 
@@ -671,7 +688,7 @@
         @include vp-767 {
           padding-left: 0;
           height: 100%;
-          border-radius: 10px;;
+          border-radius: 10px;
         }
       }
     }

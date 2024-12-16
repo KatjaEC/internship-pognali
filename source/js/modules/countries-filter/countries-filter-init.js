@@ -11,16 +11,6 @@ const checkboxAsia = document.querySelector('.filters__list #asia');
 const checkboxAmerica = document.querySelector('.filters__list #america');
 const checkboxIslands = document.querySelector('.filters__list #islands');
 
-// const setNewListPaddingTop = () => {
-//   const activeLiItem = document.querySelector('.filters__countries-item--is-active');
-//   const countriesList = activeLiItem.querySelector('.filters__countries-group');
-//   const lettersList = document.querySelector('.filters__countries-list');
-//   const lettersListHeight = lettersList.getBoundingClientRect().height;
-//   const newCountriesListPaddingTop = `${lettersListHeight + 15}px`;
-//   countriesList.style.paddingTop = newCountriesListPaddingTop;
-//   console.log(lettersListHeight);
-// };
-
 const toggleCheckedAttribute = () => {
   filterTabsWrapper.addEventListener('click', () => {
     inputs.forEach((input) => {
@@ -34,7 +24,6 @@ const toggleCheckedAttribute = () => {
 };
 
 const filterByDefault = () => {
-  // const checkboxEurope = document.querySelector('#europe');
   if (checkboxEurope.checked) {
     countries.forEach((country) => {
       if (country.dataset.countryCategory !== 'europe' && country.dataset.countryCategory !== 'europe islands' && country.dataset.countryCategory !== 'europe asia' && country.dataset.countryCategory !== 'europe islands asia') {
@@ -57,7 +46,6 @@ const hideEmptyGroups = () => {
       group.closest('.filters__countries-item').style.display = 'block';
     }
   });
-  // setNewHideButtonPosition();
 };
 
 const showEurope = () => {
@@ -160,7 +148,6 @@ const hideIslands = () => {
 const toggleCheckedClass = () => {
   inputs.forEach((input) => {
     input.addEventListener('change', () => {
-      // setNewStyles();
       const checkedCheckboxes = filters.querySelectorAll('[checked="true"]');
       if (checkedCheckboxes.length) {
         if (!input.checked) {
@@ -272,7 +259,6 @@ export const filterCountries = () => {
   if (filters) {
     const breakpointChecker = () => {
       if (breakpointTablet.matches) {
-        // setNewHideButtonPosition();
         filterByDefault();
         hideEmptyGroups();
         toggleCheckedAttribute();
@@ -289,11 +275,3 @@ export const filterCountries = () => {
     breakpointChecker();
   }
 };
-
-// setNewListPaddingTop();
-// filterByDefault();
-// hideEmptyGroups();
-// toggleCheckedAttribute();
-// toggleCheckedClass();
-// switchActiveLetter();
-// setNewHideButtonPosition();

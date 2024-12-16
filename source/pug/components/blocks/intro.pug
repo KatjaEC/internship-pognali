@@ -22,7 +22,7 @@ mixin intro()
   section.intro
     h2.visually-hidden Промо-блок главной страницы.
     .intro__background
-      +picture("content", "hero-background", "jpg", 1440, 750, "")
+      +picture-semi-adaptive("content", "hero-background", "jpg", 1440, 750, 320, 888, "")
     //- вставлять блоки во внешний контейнер неверно
     //- все блоки содержат в себе container без доп класса tutorial__wrapper
     .intro__image

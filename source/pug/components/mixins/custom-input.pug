@@ -1,4 +1,4 @@
-mixin custom-input(className, options = {})
+mixin custom-input(className, options = {}, ariaLabel)
   - const inputLabel = options.inputLabel ? options.inputLabel : false
   - const inputPlaceholder = options.inputPlaceholder ? options.inputPlaceholder : false
   - const inputType = options.inputType ? options.inputType : "text"
@@ -12,7 +12,7 @@ mixin custom-input(className, options = {})
   - const checkedStatus = options.isChecked ? "checked" : false
 
   div(class=`${className}`)&attributes(attributes)
-    input(class=hiddenClass, type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept, checked=checkedStatus)
+    input(class=hiddenClass, type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder, accept=inputAccept, checked=checkedStatus, aria-label=ariaLabel)
     label(for=inputId)
       if inputLabel
         span(class=`${className}__label`)!= inputLabel

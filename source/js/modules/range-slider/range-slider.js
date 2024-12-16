@@ -43,8 +43,16 @@ const initLevelRange = () => {
   });
 };
 
+const setAriaLabel = () => {
+  const rangeMin = document.querySelector('.noUi-handle.noUi-handle-lower');
+  const rangeMax = document.querySelector('.noUi-handle.noUi-handle-upper');
+  rangeMin.setAttribute('aria-label', 'Установить минимальный левел.');
+  rangeMax.setAttribute('aria-label', 'Установить максимальный левел.');
+};
+
 export const setLevelRange = () => {
   if (levelRange) {
     initLevelRange();
+    setAriaLabel();
   }
 };

@@ -14,13 +14,15 @@ mixin catalog()
             ul.catalog__pagination-list
             .catalog__navigation-buttons
               .catalog__navigation-button-wrapper
-                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev catalog__navigation-button--is-inactive", id="prev-button", aria-label="Предыдущая страница.")
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev catalog__navigation-button--is-inactive", id="prev-button")
                   span.catalog__navigation-button-icon
                     +icon("icon-pagination-arrow", 13, 20)
+                  span.visually-hidden Перейти на предыдущую страницу.
               .catalog__navigation-button-wrapper
-                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--next", id="next-button", aria-label="Следующая страница.")
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--next", id="next-button")
                   span.catalog__navigation-button-icon
                     +icon("icon-pagination-arrow", 13, 20)
+                  span.visually-hidden Перейти на следующую страницу.
         .catalog__search-form
           h2 Подберите идеального попутчика
           +search-form("catalog")
