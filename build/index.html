@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Погнали - сервис поиска попутчиков для путешествий</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Погнали - сервис поиска попутчиков для путешествий.">
+    <link rel="icon" href="img/favicons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-icon-180x180.png">
+    <link rel="manifest" href="img/favicons/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="preload" href="fonts/roboto/roboto-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/roboto/roboto-500.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/roboto/roboto-700.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header header--index">
+        <div class="container">
+          <div class="header__logo">
+            <div class="header__icon">
+              <picture>
+                <source type="image/svg+xml" media="(min-width: 1024px)" srcset="img/svg/logo-header-full.svg" width="202" height="50">
+                <source type="image/svg+xml" media="(min-width: 768px)" srcset="img/svg/logo-header-full.svg" width="168" height="42"><img src="img/svg/logo-mobile-header.svg" width="96" height="15" alt="Логотип сайта Погнали.">
+              </picture>
+            </div>
+            <div class="header__icon-mobile">
+              <picture>
+                <source type="image/svg+xml" media="(min-width: 1024px)" srcset="img/svg/logo-footer-full.svg" width="202" height="50">
+                <source type="image/svg+xml" media="(min-width: 768px)" srcset="img/svg/logo-footer-full.svg" width="168" height="42"><img src="img/svg/logo-mobile-footer.svg" width="96" height="15" alt="Логотип сайта Погнали.">
+              </picture>
+            </div>
+          </div>
+          <nav class="header__nav">
+            <button class="header__nav-toggle" type="button" aria-label="Переключатель отображения меню" aria-pressed="false"><span class="header__nav-toggle-icon header__nav-toggle-icon--menu-is-hidden">
+                <svg width="25" height="25" aria-hidden="true" id="icon-menu-is-hidden">
+                  <use xlink:href="img/sprite.svg#icon-menu-tablet"></use>
+                </svg></span><span class="header__nav-toggle-icon header__nav-toggle-icon--menu-is-shown">
+                <svg width="25" height="25" aria-hidden="true" id="icon-menu-is-shown">
+                  <use xlink:href="img/sprite.svg#icon-close"></use>
+                </svg></span></button>
+            <div class="header__nav-wrapper">
+              <div class="header__nav-list-wrapper">
+                <ul class="header__nav-list">
+                  <li class="header__nav-item"><a class="header__nav-link" href="#" data-hover="О сервисе">О сервисе</a>
+                  </li>
+                  <li class="header__nav-item"><a class="header__nav-link" href="#" data-hover="Направления">Направления</a>
+                  </li>
+                  <li class="header__nav-item"><a class="header__nav-link" href="catalog.html" data-hover="Попутчики">Попутчики</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="header__nav-contacts-wrapper">
+                <ul class="header__nav-contacts">
+                  <li class="header__nav-contacts-item"><a class="header__nav-contacts-link header__nav-contacts-link--phone" href="tel:+78005558628" aria-label="Позвонить нам.">
+                      <svg width="18" height="18" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-phone"></use>
+                      </svg></a></li>
+                  <li class="header__nav-contacts-item"><a class="header__nav-contacts-link header__nav-contacts-link--mail" href="mailto:mail@htmlacademy.ru" aria-label="Написать нам.">
+                      <svg width="16" height="14" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#icon-mail"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+              <div class="header__contacts-list-wrapper">
+                <ul class="header__contacts-list">
+                  <li class="header__contacts-item"><a class="header__contacts-link" href="tel:+78005558628"><span class="header__contacts-icon header__contacts-icon--phone">
+                        <svg width="36" height="34" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-contacts-phone"></use>
+                        </svg></span><span>8 800 555-86-28</span></a></li>
+                  <li class="header__contacts-item"><a class="header__contacts-link" href="mailto:mail@htmlacademy.ru"><span class="header__contacts-icon header__contacts-icon--mail">
+                        <svg width="37" height="25" aria-hidden="true">
+                          <use xlink:href="img/sprite.svg#icon-contacts-mail"></use>
+                        </svg></span><span>mail@htmlacademy.ru</span></a></li>
+                </ul>
+              </div>
+              <div class="header__socials-wrapper">
+                <ul class="header__socials-list">
+                  <li class="header__socials-item"><a class="header__socials-link header__socials-link--telegram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Мы в Телеграме.">
+                      <svg width="32" height="32" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#socials-telegram"></use>
+                      </svg></a></li>
+                  <li class="header__socials-item"><a class="header__socials-link header__socials-link--vk" href="#" target="_blank" rel="noopener noreferrer" aria-label="Мы ВКонтакте.">
+                      <svg width="32" height="32" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#socials-vkontakte"></use>
+                      </svg></a></li>
+                  <li class="header__socials-item"><a class="header__socials-link header__socials-link--youtube" href="#" target="_blank" rel="noopener noreferrer" aria-label="Мы на Ютубе.">
+                      <svg width="32" height="32" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#socials-youtube"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <h1 class="visually-hidden">Главная страница сайта "Погнали".</h1>
+        <section class="intro">
+          <h2 class="visually-hidden">Промо-блок главной страницы.</h2>
+          <div class="intro__background">
+            <picture>
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/content/hero-background-desktop.webp, img/content/hero-background-desktop@2x.webp 2x" width="1440" height="750" data-screen-size="desktop">
+              <source type="image/jpg" media="(min-width: 768px)" srcset="img/content/hero-background-desktop.jpg, img/content/hero-background-desktop@2x.jpg 2x" width="1440" height="750" data-screen-size="desktop">
+              <source type="image/webp" srcset="img/content/hero-background-mobile.webp, img/content/hero-background-mobile@2x.webp 2x" width="320" height="888" data-screen-size="mobile"><img src="img/content/hero-background-mobile.jpg" srcset="img/content/hero-background-mobile@2x.jpg 2x" width="320" height="888" alt="">
+            </picture>
+          </div>
+          <div class="intro__image">
+            <div class="intro__picture">
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/content/hero-image-desktop.webp, img/content/hero-image-desktop@2x.webp 2x" width="431" height="640">
+                <source type="image/png" media="(min-width: 1024px)" srcset="img/content/hero-image-desktop.png, img/content/hero-image-desktop@2x.png 2x" width="431" height="640">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/content/hero-image-tablet.webp, img/content/hero-image-tablet@2x.webp 2x" width="437" height="530">
+                <source type="image/png" media="(min-width: 768px)" srcset="img/content/hero-image-tablet.png, img/content/hero-image-tablet@2x.png 2x" width="437" height="530">
+                <source type="image/webp" srcset="img/content/hero-image-mobile.webp, img/content/hero-image-mobile@2x.webp 2x" width="192" height="255"><img src="img/content/hero-image-mobile.png" srcset="img/content/hero-image-mobile@2x.png 2x" width="192" height="255" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="container">
+            <div class="intro__wrapper">
+              <div class="intro__text">
+                <p>В путешествие с&nbsp;крутыми попутчиками!</p>
+              </div>
+              <div class="intro__process-wrapper">
+                <ul class="intro__process-list">
+                  <li class="intro__process-item intro__process-item--step-one">Выберите направление</li>
+                  <li class="intro__process-item intro__process-item--step-two">Изучите идеи путешественников</li>
+                  <li class="intro__process-item intro__process-item--step-three">Находите тех, кто&nbsp;похож на&nbsp;вас</li>
+                  <li class="intro__process-item intro__process-item--step-four">Путешествуйте вместе!</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about-us">
+          <div class="container">
+            <div class="about-us__wrapper">
+              <div class="about-us__content">
+                <div class="about-us__text">
+                  <h2>О сервисе</h2>
+                  <p>
+                    Любое путешествие веселее с&nbsp;попутчиками, которые на&nbsp;одной
+                    волне с&nbsp;тобой! Делитесь своими идеями путешествий и&nbsp;черпайте вдохновение в&nbsp;чужих.
+                  </p><span>А&nbsp;если найдете кого-то близкого&nbsp;по духу&nbsp;— скорее зовите&nbsp;в&nbsp;совместный трип!</span>
+                </div>
+                <a class="btn btn--primary about-us__button" href="#">Подробнее<span class="about-us__button-icon">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#arrow-filled"></use>
+                    </svg></span>
+                </a>
+              </div>
+              <div class="about-us__image-wrapper">
+                <div class="about-us__image">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 1024px)" srcset="img/content/about-us-image-desktop.webp, img/content/about-us-image-desktop@2x.webp 2x" width="655" height="665">
+                    <source type="image/png" media="(min-width: 1024px)" srcset="img/content/about-us-image-desktop.png, img/content/about-us-image-desktop@2x.png 2x" width="655" height="665">
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/content/about-us-image-tablet.webp, img/content/about-us-image-tablet@2x.webp 2x" width="368" height="546">
+                    <source type="image/png" media="(min-width: 768px)" srcset="img/content/about-us-image-tablet.png, img/content/about-us-image-tablet@2x.png 2x" width="368" height="546">
+                    <source type="image/webp" srcset="img/content/about-us-image-mobile.webp, img/content/about-us-image-mobile@2x.webp 2x" width="292" height="353"><img src="img/content/about-us-image-mobile.png" srcset="img/content/about-us-image-mobile@2x.png 2x" width="292" height="353" alt="">
+                  </picture>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="destinations">
+          <div class="container">
+            <div class="destinations__wrapper">
+              <div class="destinations__text-wrapper">
+                <div class="destinations__text">
+                  <h2>Направления</h2>
+                  <p>Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем.<span>Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.</span></p>
+                </div>
+                <a class="btn btn--primary destinations__button" href="catalog.html">Показать все<span class="destinations__button-icon">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#arrow-filled"></use>
+                    </svg></span>
+                </a>
+              </div>
+              <div class="destinations__slider-wrapper">
+                <ul class="destinations__slider-list">
+                  <li class="destinations__slider-item">
+                    <div class="destinations__slider-item-content">
+                      <h3>Таиланд</h3>
+                      <p>Джунгли зовут!</p>
+                      <div class="destinations__slider-item-stats"><span class="destinations__slider-item-icon">
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-user"></use>
+                          </svg></span><span>18321</span></div>
+                    </div>
+                    <div class="destinations__slider-images">
+                      <div class="destinations__slider-flag-image">
+                        <picture>
+                          <source type="image/webp" srcset="img/content/flag-thailand.webp, img/content/flag-thailand@2x.webp 2x"><img src="img/content/flag-thailand.jpg" srcset="img/content/flag-thailand@2x.jpg 2x" width="70" height="47" alt="Флаг страны.">
+                        </picture>
+                      </div>
+                      <div class="destinations__slider-photo">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/slides/countries-thailand-desktop.webp, img/slides/countries-thailand-desktop@2x.webp 2x" width="203" height="140" data-screen-size="desktop">
+                          <source type="image/jpg" media="(min-width: 768px)" srcset="img/slides/countries-thailand-desktop.jpg, img/slides/countries-thailand-desktop@2x.jpg 2x" width="203" height="140" data-screen-size="desktop">
+                          <source type="image/webp" srcset="img/slides/countries-thailand-mobile.webp, img/slides/countries-thailand-mobile@2x.webp 2x" width="270" height="110" data-screen-size="mobile"><img src="img/slides/countries-thailand-mobile.jpg" srcset="img/slides/countries-thailand-mobile@2x.jpg 2x" width="270" height="110" alt="Вид на пляж в Таиланде сверху.">
+                        </picture>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="destinations__slider-item destinations__slider-item--active">
+                    <div class="destinations__slider-item-content">
+                      <h3>Франция</h3>
+                      <p>Трэ бьен, манифик!</p>
+                      <div class="destinations__slider-item-stats"><span class="destinations__slider-item-icon">
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-user"></use>
+                          </svg></span><span>12518</span></div>
+                    </div>
+                    <div class="destinations__slider-images">
+                      <div class="destinations__slider-flag-image">
+                        <picture>
+                          <source type="image/webp" srcset="img/content/flag-france.webp, img/content/flag-france@2x.webp 2x"><img src="img/content/flag-france.jpg" srcset="img/content/flag-france@2x.jpg 2x" width="70" height="47" alt="Флаг страны.">
+                        </picture>
+                      </div>
+                      <div class="destinations__slider-photo">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/slides/countries-france-desktop.webp, img/slides/countries-france-desktop@2x.webp 2x" width="203" height="140" data-screen-size="desktop">
+                          <source type="image/jpg" media="(min-width: 768px)" srcset="img/slides/countries-france-desktop.jpg, img/slides/countries-france-desktop@2x.jpg 2x" width="203" height="140" data-screen-size="desktop">
+                          <source type="image/webp" srcset="img/slides/countries-france-mobile.webp, img/slides/countries-france-mobile@2x.webp 2x" width="270" height="110" data-screen-size="mobile"><img src="img/slides/countries-france-mobile.jpg" srcset="img/slides/countries-france-mobile@2x.jpg 2x" width="270" height="110" alt="Вид на улицу во Франции.">
+                        </picture>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="destinations__slider-item">
+                    <div class="destinations__slider-item-content">
+                      <h3>Чехия</h3>
+                      <p>Закоулки старой Европы</p>
+                      <div class="destinations__slider-item-stats"><span class="destinations__slider-item-icon">
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-user"></use>
+                          </svg></span><span>5326</span></div>
+                    </div>
+                    <div class="destinations__slider-images">
+                      <div class="destinations__slider-flag-image">
+                        <picture>
+                          <source type="image/webp" srcset="img/content/flag-czechia.webp, img/content/flag-czechia@2x.webp 2x"><img src="img/content/flag-czechia.jpg" srcset="img/content/flag-czechia@2x.jpg 2x" width="70" height="47" alt="Флаг страны.">
+                        </picture>
+                      </div>
+                      <div class="destinations__slider-photo">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/slides/countries-czech-desktop.webp, img/slides/countries-czech-desktop@2x.webp 2x" width="203" height="140" data-screen-size="desktop">
+                          <source type="image/jpg" media="(min-width: 768px)" srcset="img/slides/countries-czech-desktop.jpg, img/slides/countries-czech-desktop@2x.jpg 2x" width="203" height="140" data-screen-size="desktop">
+                          <source type="image/webp" srcset="img/slides/countries-czech-mobile.webp, img/slides/countries-czech-mobile@2x.webp 2x" width="270" height="110" data-screen-size="mobile"><img src="img/slides/countries-czech-mobile.jpg" srcset="img/slides/countries-czech-mobile@2x.jpg 2x" width="270" height="110" alt="Вид на город в Чехии.">
+                        </picture>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="companions">
+          <div class="container">
+            <div class="companions__wrapper">
+              <div class="companions__text-wrapper">
+                <div class="companions__text">
+                  <h2>Попутчики</h2>
+                  <p>Все мы индивидуальны и у каждого свой взгляд на идеальный отдых.&nbsp;<span>Одному нужен пляж и коктейль, а другому маршрут для хайкинга.</span></p><span>Теперь можно легко найти единомышленников!</span>
+                </div>
+                <a class="btn btn--primary companions__button" href="catalog.html">Показать всех<span class="companions__button-icon">
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#arrow-filled"></use>
+                    </svg></span>
+                </a>
+              </div>
+              <div class="companions__cards-wrapper">
+                <ul class="companions__cards-list">
+                  <li class="companions__cards-item">
+                    <div class="companions-card">
+                      <div class="companions-card__image">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 1024px)" srcset="img/slides/companions-card-1-desktop.webp, img/slides/companions-card-1-desktop@2x.webp 2x" width="285" height="286">
+                          <source type="image/jpg" media="(min-width: 1024px)" srcset="img/slides/companions-card-1-desktop.jpg, img/slides/companions-card-1-desktop@2x.jpg 2x" width="285" height="286">
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/slides/companions-card-1-tablet.webp, img/slides/companions-card-1-tablet@2x.webp 2x" width="285" height="286">
+                          <source type="image/jpg" media="(min-width: 768px)" srcset="img/slides/companions-card-1-tablet.jpg, img/slides/companions-card-1-tablet@2x.jpg 2x" width="285" height="286">
+                          <source type="image/webp" srcset="img/slides/companions-card-1-mobile.webp, img/slides/companions-card-1-mobile@2x.webp 2x" width="270" height="270"><img src="img/slides/companions-card-1-mobile.jpg" srcset="img/slides/companions-card-1-mobile@2x.jpg 2x" width="270" height="270" alt="Изображение пользователя.">
+                        </picture>
+                      </div>
+                      <div class="companions-card__stats">
+                        <div class="companions-card__level companions-card__level--99"><span>99</span><span>level</span>
+                          <svg width="64" height="64" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-level"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="companions-card__content companions-card__content--is-offline">
+                        <div class="companions-card__text">
+                          <h3>Таня Фирсова</h3>
+                          <p>#ЗОЖ #ПП #Фитнес #пляж &nbsp;#авокадо #смузи</p>
+                        </div>
+                        <div class="companions-card__countries">
+                          <ul class="companions-card__countries-list">
+                            <li class="companions-card__countries-item companions-card__countries-item--flag-sri-lanka">
+                              <div class="companions-card__picture-wrapper">
+                                <picture>
+                                  <source type="image/webp" srcset="img/content/flag-sri-lanka.webp, img/content/flag-sri-lanka@2x.webp 2x"><img src="img/content/flag-sri-lanka.jpg" srcset="img/content/flag-sri-lanka@2x.jpg 2x" width="35" height="24" alt="Флаг Шри-Ланки.">
+                                </picture>
+                              </div>
+                              <div class="companions-card__tooltip-wrapper">
+                                <div class="companions-card__tooltip"><span>Шри-Ланка</span></div>
+                              </div>
+                            </li>
+                            <li class="companions-card__countries-item companions-card__countries-item--flag-thailand">
+                              <div class="companions-card__picture-wrapper">
+                                <picture>
+                                  <source type="image/webp" srcset="img/content/flag-thailand.webp, img/content/flag-thailand@2x.webp 2x"><img src="img/content/flag-thailand.jpg" srcset="img/content/flag-thailand@2x.jpg 2x" width="35" height="24" alt="Флаг Таиланда.">
+                                </picture>
+                              </div>
+                              <div class="companions-card__tooltip-wrapper">
+                                <div class="companions-card__tooltip"><span>Таиланд</span></div>
+                              </div>
+                            </li>
+                            <li class="companions-card__countries-item companions-card__countries-item--flag-seychelles">
+                              <div class="companions-card__picture-wrapper">
+                                <picture>
+                                  <source type="image/webp" srcset="img/content/flag-seychelles.webp, img/content/flag-seychelles@2x.webp 2x"><img src="img/content/flag-seychelles.jpg" srcset="img/content/flag-seychelles@2x.jpg 2x" width="35" height="24" alt="Флаг Сейшельских Островов.">
+                                </picture>
+                              </div>
+                              <div class="companions-card__tooltip-wrapper">
+                                <div class="companions-card__tooltip"><span>Сейшелы</span></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="companions-card__transportation-wrapper">
+                          <ul class="transportation-list">
+                            <li class="transportation-list__item transportation-list__item--plane" data-status="is-enabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="24" height="22" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plane"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Авиаперелет</span></div>
+                              </div>
+                            </li>
+                            <li class="transportation-list__item transportation-list__item--car" data-status="is-disabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="19" height="22" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-bus"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Автотранспорт</span></div>
+                              </div>
+                            </li>
+                            <li class="transportation-list__item transportation-list__item--bicycle" data-status="is-disabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="25" height="25" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-bicycle"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Велосипед</span></div>
+                              </div>
+                            </li>
+                            <li class="transportation-list__item transportation-list__item--on-foot" data-status="is-disabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="22" height="24" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-run"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Пешком</span></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="companions__cards-item">
+                    <div class="companions-card">
+                      <div class="companions-card__image">
+                        <picture>
+                          <source type="image/webp" media="(min-width: 1024px)" srcset="img/slides/companions-card-2-desktop.webp, img/slides/companions-card-2-desktop@2x.webp 2x" width="285" height="286">
+                          <source type="image/jpg" media="(min-width: 1024px)" srcset="img/slides/companions-card-2-desktop.jpg, img/slides/companions-card-2-desktop@2x.jpg 2x" width="285" height="286">
+                          <source type="image/webp" media="(min-width: 768px)" srcset="img/slides/companions-card-2-tablet.webp, img/slides/companions-card-2-tablet@2x.webp 2x" width="285" height="286">
+                          <source type="image/jpg" media="(min-width: 768px)" srcset="img/slides/companions-card-2-tablet.jpg, img/slides/companions-card-2-tablet@2x.jpg 2x" width="285" height="286">
+                          <source type="image/webp" srcset="img/slides/companions-card-2-mobile.webp, img/slides/companions-card-2-mobile@2x.webp 2x" width="270" height="270"><img src="img/slides/companions-card-2-mobile.jpg" srcset="img/slides/companions-card-2-mobile@2x.jpg 2x" width="270" height="270" alt="Изображение пользователя.">
+                        </picture>
+                      </div>
+                      <div class="companions-card__stats">
+                        <div class="companions-card__level companions-card__level--80"><span>80</span><span>level</span>
+                          <svg width="64" height="64" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-level"></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class="companions-card__content companions-card__content--is-online">
+                        <div class="companions-card__text">
+                          <h3>Петя Демин</h3>
+                          <p>#бургер #бар #футбол #концерт #крафт</p>
+                        </div>
+                        <div class="companions-card__countries">
+                          <ul class="companions-card__countries-list">
+                            <li class="companions-card__countries-item companions-card__countries-item--flag-belgium">
+                              <div class="companions-card__picture-wrapper">
+                                <picture>
+                                  <source type="image/webp" srcset="img/content/flag-belgium.webp, img/content/flag-belgium@2x.webp 2x"><img src="img/content/flag-belgium.jpg" srcset="img/content/flag-belgium@2x.jpg 2x" width="35" height="24" alt="Флаг Бельгии.">
+                                </picture>
+                              </div>
+                              <div class="companions-card__tooltip-wrapper">
+                                <div class="companions-card__tooltip"><span>Бельгия</span></div>
+                              </div>
+                            </li>
+                            <li class="companions-card__countries-item companions-card__countries-item--flag-czechia">
+                              <div class="companions-card__picture-wrapper">
+                                <picture>
+                                  <source type="image/webp" srcset="img/content/flag-czechia.webp, img/content/flag-czechia@2x.webp 2x"><img src="img/content/flag-czechia.jpg" srcset="img/content/flag-czechia@2x.jpg 2x" width="35" height="24" alt="Флаг Чехии.">
+                                </picture>
+                              </div>
+                              <div class="companions-card__tooltip-wrapper">
+                                <div class="companions-card__tooltip"><span>Чехия</span></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="companions-card__transportation-wrapper">
+                          <ul class="transportation-list">
+                            <li class="transportation-list__item transportation-list__item--plane" data-status="is-enabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="24" height="22" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-plane"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Авиаперелет</span></div>
+                              </div>
+                            </li>
+                            <li class="transportation-list__item transportation-list__item--car" data-status="is-enabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="19" height="22" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-bus"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Автотранспорт</span></div>
+                              </div>
+                            </li>
+                            <li class="transportation-list__item transportation-list__item--bicycle" data-status="is-disabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="25" height="25" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-bicycle"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Велосипед</span></div>
+                              </div>
+                            </li>
+                            <li class="transportation-list__item transportation-list__item--on-foot" data-status="is-enabled">
+                              <div class="transportation-list__item-icon">
+                                <svg width="22" height="24" aria-hidden="true">
+                                  <use xlink:href="img/sprite.svg#icon-run"></use>
+                                </svg>
+                              </div>
+                              <div class="transportation-list__tooltip-wrapper">
+                                <div class="transportation-list__tooltip"><span>Пешком</span></div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="add-profile">
+          <div class="container">
+            <div class="add-profile__wrapper">
+              <h2>Добавьте свой профиль</h2>
+              <div class="add-profile__content">
+                <div class="add-profile__options-wrapper">
+                  <ul class="add-profile__options-list">
+                    <li class="add-profile__options-list-item">Базовое размещение</li>
+                    <li class="add-profile__options-list-item">Вывод на первых позициях</li>
+                    <li class="add-profile__options-list-item">Кастомный цвет карточки</li>
+                  </ul>
+                </div>
+                <div class="add-profile__prices-wrapper">
+                  <div class="add-profile__list-wrapper">
+                    <ul class="add-profile__prices-list">
+                      <li class="add-profile__prices-list-item add-profile__prices-list-item--free">Бесплатно</li>
+                      <li class="add-profile__prices-list-item add-profile__prices-list-item--first-priority">99 руб./мес</li>
+                      <li class="add-profile__prices-list-item add-profile__prices-list-item--custom-color">59 руб./мес</li>
+                    </ul>
+                    <div class="add-profile__prices-image">
+                      <picture>
+                        <source type="image/webp" media="(min-width: 768px)" srcset="img/content/rates-desktop.webp, img/content/rates-desktop@2x.webp 2x" width="200" height="202" data-screen-size="desktop">
+                        <source type="image/png" media="(min-width: 768px)" srcset="img/content/rates-desktop.png, img/content/rates-desktop@2x.png 2x" width="200" height="202" data-screen-size="desktop">
+                        <source type="image/webp" srcset="img/content/rates-mobile.webp, img/content/rates-mobile@2x.webp 2x" width="81" height="81" data-screen-size="mobile"><img src="img/content/rates-mobile.png" srcset="img/content/rates-mobile@2x.png 2x" width="81" height="81" alt="">
+                      </picture>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="add-profile__button-wrapper">
+                <a class="btn add-profile__button" href="#">Показать тарифы для бизнеса<span class="add-profile__button-icon">
+                    <svg width="29" height="28" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-businessman"></use>
+                    </svg></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="registration">
+          <h2 class="visually-hidden">Регистрация на сайте.</h2>
+          <div class="container">
+            <div class="registration__wrapper">
+              <div class="registration__text">
+                <p>Заинтересовались?</p>
+                <p>Зарегистрируйтесь, это быстро и&nbsp;бесплатно!</p>
+                <p>Уже&nbsp;зарегистрированы? Тогда скорее<a class="registration__login-link" href="#">авторизуйтесь</a>.</p>
+              </div>
+              <div class="registration__form-wrapper">
+                <form>
+                  <div class="registration__form-input">
+                    <input type="email" placeholder="E-mail" name="user-mail" id="user-mail" pattern="[^@s]+@[^@s]+.[^@s]+" required>
+                    <label for="user-mail"></label>
+                  </div>
+                  <button class="btn btn--primary registration__button" type="submit">Регистрация<span class="registration__button-icon">
+                      <svg width="14" height="16" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#arrow-filled"></use>
+                      </svg></span>
+                  </button>
+                </form>
+              </div>
+              <div class="registration__contacts-wrapper">
+                <div class="registration__contacts-heading">
+                  <p>Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!</p>
+                </div>
+                <div class="registration__contacts-list-wrapper">
+                  <ul class="registration__contacts-list">
+                    <li class="registration__contacts-item"><a class="registration__contacts-link" href="tel:+78005558628"><span class="registration__contacts-icon registration__contacts-icon--phone">
+                          <svg width="36" height="34" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-contacts-phone"></use>
+                          </svg></span><span>8 800 555-86-28</span></a></li>
+                    <li class="registration__contacts-item"><a class="registration__contacts-link" href="mailto:mail@htmlacademy.ru"><span class="registration__contacts-icon registration__contacts-icon--mail">
+                          <svg width="37" height="25" aria-hidden="true">
+                            <use xlink:href="img/sprite.svg#icon-contacts-mail"></use>
+                          </svg></span><span>mail@htmlacademy.ru</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="map">
+          <h2 class="visually-hidden">Как нас найти.</h2>
+          <div class="map__wrapper">
+            <div class="container">
+              <div class="map__text-wrapper">
+                <div class="map__address-wrapper">
+                  <address>ул. Большая Конюшенная, 19/8</address><span class="map__location-pin-icon">
+                    <svg width="42" height="42" aria-hidden="true">
+                      <use xlink:href="img/sprite.svg#icon-location-pin"></use>
+                    </svg></span>
+                </div>
+                <div class="map__button-wrapper">
+                  <a class="btn map__button" href="#">Проложить маршрут<span class="map__button-icon">
+                      <svg width="15" height="15" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#arrow-filled"></use>
+                      </svg></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="map__image-wrapper">
+            <noscript>
+              <picture>
+                <source type="image/webp" media="(min-width: 1024px)" srcset="img/maps/map-desktop.webp, img/maps/map-desktop@2x.webp 2x" width="1440" height="704">
+                <source type="image/jpg" media="(min-width: 1024px)" srcset="img/maps/map-desktop.jpg, img/maps/map-desktop@2x.jpg 2x" width="1440" height="704">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/maps/map-tablet.webp, img/maps/map-tablet@2x.webp 2x" width="768" height="581">
+                <source type="image/jpg" media="(min-width: 768px)" srcset="img/maps/map-tablet.jpg, img/maps/map-tablet@2x.jpg 2x" width="768" height="581">
+                <source type="image/webp" srcset="img/maps/map-mobile.webp, img/maps/map-mobile@2x.webp 2x" width="320" height="424"><img src="img/maps/map-mobile.jpg" srcset="img/maps/map-mobile@2x.jpg 2x" width="320" height="424" alt="Наше местоположение на карте.">
+              </picture>
+            </noscript>
+            <iframe class="map__live-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7994.415024106482!2d30.323046999999995!3d59.938717000000004!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1694079343837!5m2!1sru!2sru" width="1440" height="704" title="Наш адрес: Санкт-Петербург, ул. Большая Конюшенная, д. 19/8" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><span class="map__map-pin-icon">
+              <svg width="56" height="56" aria-hidden="true">
+                <use xlink:href="img/sprite.svg#icon-map-pin"></use>
+              </svg></span>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer__body">
+          <div class="container">
+            <div class="footer__wrapper">
+              <div class="footer__logo">
+                <div class="footer__icon">
+                  <picture>
+                    <source type="image/svg+xml" media="(min-width: 1024px)" srcset="img/svg/logo-footer-full.svg" width="202" height="50">
+                    <source type="image/svg+xml" media="(min-width: 768px)" srcset="img/svg/logo-footer-full.svg" width="168" height="42"><img src="img/svg/logo-mobile-footer.svg" width="96" height="15" alt="Логотип сайта Погнали.">
+                  </picture>
+                </div>
+              </div>
+              <div class="footer__socials-wrapper">
+                <ul class="footer__socials-list">
+                  <li class="footer__socials-item"><a class="footer__socials-link footer__socials-link--telegram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Мы в Телеграме.">
+                      <svg width="32" height="32" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#socials-telegram"></use>
+                      </svg></a></li>
+                  <li class="footer__socials-item"><a class="footer__socials-link footer__socials-link--vk" href="#" target="_blank" rel="noopener noreferrer" aria-label="Мы ВКонтакте.">
+                      <svg width="32" height="32" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#socials-vkontakte"></use>
+                      </svg></a></li>
+                  <li class="footer__socials-item"><a class="footer__socials-link footer__socials-link--youtube" href="#" target="_blank" rel="noopener noreferrer" aria-label="Мы на Ютубе.">
+                      <svg width="32" height="32" aria-hidden="true">
+                        <use xlink:href="img/sprite.svg#socials-youtube"></use>
+                      </svg></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="modal modal--preload">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <div class="modal__text-wrapper">
+            <h2>Бизнес-тарифы</h2>
+            <div class="modal__rates-wrapper">
+              <ul class="modal__rates-list">
+                <li class="modal__rates-item">
+                  <p><span>Реклама у блоггера</span><span>300 000 руб./пост</span></p>
+                </li>
+                <li class="modal__rates-item">
+                  <p><span>Накрутка подписчиков</span><span>от 1 руб./шт.</span></p>
+                </li>
+                <li class="modal__rates-item">
+                  <p><span>Лайки от ботов</span><span>от 20 коп./лайк</span></p>
+                </li>
+                <li class="modal__rates-item">
+                  <p><span>Ваш продакт-плейсмент </span><span>Индивидуально</span></p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="btn modal__close-button" type="button" data-close-modal>Закрыть окно
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
