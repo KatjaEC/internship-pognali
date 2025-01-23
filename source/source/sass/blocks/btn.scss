@@ -1,0 +1,60 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: $color-catalina-blue;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: opacity $trans-default;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--primary {
+    padding: 29px 76px 27px 33px;
+    min-width: 284.5px;
+    background-color: $color-pale-cornflowep-blue;
+    transition: background-color $trans-default;
+
+    &:hover,
+    &:focus {
+      background-color: $color-picton-blue;
+    }
+
+    &:active {
+      color: rgba(29, 46, 91, 0.3);
+      background-color: $color-picton-blue;
+    }
+
+    @include vp-1023 {
+      padding: 29px 65px 27px 33px;
+      min-width: 276.5px;
+    }
+
+    @include vp-767 {
+      padding: 24px 63px 24px 24px;
+      min-width: 263px;
+      font-size: 18px;
+      line-height: 18px;
+      border-radius: 10px;
+    }
+  }
+
+  & span {
+    position: absolute;
+    top: 27px;
+    right: 35px;
+    width: 14px;
+    height: 14px;
+
+    @include vp-767 {
+      top: 25px;
+      right: 32px;
+    }
+  }
+}

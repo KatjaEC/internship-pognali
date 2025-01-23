@@ -1,0 +1,170 @@
+.footer {
+  padding: 46px 0 0;
+  background-color: $color-accent-main;
+
+  @include vp-1023 {
+    padding: 0;
+    background-color: $color-default-white;
+    border-radius: 60px 60px 0 0;
+  }
+
+  @include vp-767 {
+    border-radius: 29px 31px 0 0;
+  }
+
+  &__body {
+    position: relative;
+    padding: 1px 0 42px;
+    height: 100%;
+    background-color: $color-default-white;
+    border-radius: 60px 60px 0 0;
+
+    @include vp-1023 {
+      margin-top: -52px;
+      padding: 46px 0 32px;
+      border-radius: 56px 56px 0 0;
+      box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    @include vp-767 {
+      margin-top: -16px;
+      padding: 28px 0 102px;
+      border-radius: 29px 31px 0 0;
+
+      &::after {
+        position: absolute;
+        left: 25px;
+        right: 0;
+        bottom: 65px;
+        width: calc(100% - 50px);
+        height: 1px;
+        background-color: #f2f2f2;
+        z-index: 5;
+        content: "";
+      }
+    }
+
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: calc(100% + 46px);
+      background-color: $color-default-white;
+      border-radius: 60px 60px 0 0;
+      box-shadow: 0 -5px 20px 0 rgba(0, 0, 0, 0.25);
+      content: "";
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 210px auto;
+    gap: 30px 357px;
+    z-index: 5;
+
+    @include vp-1279 {
+      gap: 30px 60px;
+      justify-content: flex-start;
+    }
+
+    @include vp-1023 {
+      gap: 30px 82px;
+      grid-template-columns: 170px auto;
+    }
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__logo {
+    margin: 6px 0 0 -2px;
+    transition: opacity $trans-default;
+
+    @include vp-1023 {
+      margin: 10px 0 0 -2px;
+    }
+
+    @include vp-767 {
+      margin: 0 auto 30px;
+      padding: 9px 9px 10px 7px;
+      display: block;
+      width: 116px;
+    }
+
+    &[href]:hover,
+    &[href]:focus {
+      opacity: 0.8;
+    }
+
+    &[href]:active {
+      opacity: 0.6;
+    }
+  }
+
+  &__socials-wrapper {
+    max-width: 500px;
+
+    @include vp-1279 {
+      margin: 0 auto;
+    }
+  }
+
+  &__socials-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    @include vp-767 {
+      margin: 0 auto;
+      width: 144px;
+    }
+  }
+
+  &__socials-link {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-pale-cornflowep-blue;
+    border-radius: 50%;
+    transition: background-color $trans-default;
+
+    @include vp-767 {
+      width: 45px;
+      height: 45px;
+
+      & > svg {
+        width: 23px;
+        height: 23px;
+      }
+
+      &--vk {
+        & > svg {
+          width: 33px;
+          height: 33px;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-picton-blue;
+    }
+
+    &:active {
+      color: rgba(0, 0, 0, 0.3);
+      background-color: $color-picton-blue;
+    }
+  }
+}

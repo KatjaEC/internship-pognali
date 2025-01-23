@@ -1,0 +1,876 @@
+mixin filters()
+  -
+    const countriesList = [
+      {
+        letter: "А",
+        mods: "--a",
+        modsActiveClass: "--is-active",
+        countries: [
+          {
+            name: "Австралия",
+            category: "australia",
+          },
+          {
+            name: "Австрия",
+            category: "europe",
+          },
+          {
+            name: "Азербайджан",
+            category: "asia",
+          },
+          {
+            name: "Албания",
+            category: "europe",
+          },
+          {
+            name: "Алжир",
+            category: "africa",
+          },
+          {
+            name: "Ангола",
+            category: "africa",
+          },
+          {
+            name: "Андорра",
+            category: "europe",
+          },
+          {
+            name: "Антигуа и Барбуда",
+            category: "america islands",
+          },
+          {
+            name: "Аргентина",
+            category: "america",
+          },
+          {
+            name: "Армения",
+            category: "asia",
+          },
+          {
+            name: "Афганистан",
+            category: "asia",
+          },
+        ],
+      },
+      {
+        letter: "Б",
+        mods: "--b",
+        countries: [
+          {
+            name: "Багамские Острова",
+            category: "america islands",
+          },
+          {
+            name: "Бангладеш",
+            category: "asia",
+          },
+          {
+            name: "Барбадос",
+            category: "america islands",
+          },
+          {
+            name: "Бахрейн",
+            category: "asia islands",
+          },
+          {
+            name: "Белоруссия",
+            category: "europe",
+          },
+          {
+            name: "Белиз",
+            category: "america",
+          },
+          {
+            name: "Бельгия",
+            category: "europe",
+          },
+          {
+            name: "Бенин",
+            category: "africa",
+          },
+          {
+            name: "Болгария",
+            category: "europe",
+          },
+          {
+            name: "Боливия",
+            category: "america",
+          },
+          {
+            name: "Босния и Герцеговина",
+            category: "europe",
+          },
+          {
+            name: "Ботсвана",
+            category: "america",
+          },
+          {
+            name: "Бразилия",
+            category: "america",
+          },
+          {
+            name: "Бруней",
+            category: "asia",
+          },
+          {
+            name: "Буркина-Фасо",
+            category: "africa",
+          },
+          {
+            name: "Бурунди",
+            category: "africa",
+          },
+          {
+            name: "Бутан",
+            category: "asia",
+          },
+        ],
+      },
+      {
+        letter: "В",
+        mods: "--v",
+        countries: [
+          {
+            name: "Вануату",
+            category: "islands",
+          },
+          {
+            name: "Великобритания",
+            category: "europe islands",
+          },
+          {
+            name: "Венгрия",
+            category: "europe",
+          },
+          {
+            name: "Венесуэла",
+            category: "america",
+          },
+          {
+            name: "Восточный Тимор",
+            category: "asia islands",
+          },
+          {
+            name: "Вьетнам",
+            category: "asia",
+          },
+        ],
+      },
+      {
+        letter: "Г",
+        mods: "--g",
+        countries: [
+          {
+            name: "Габон",
+            category: "africa",
+          },
+          {
+            name: "Гаити",
+            category: "america islands",
+          },
+          {
+            name: "Гайана",
+            category: "america",
+          },
+          {
+            name: "Гамбия",
+            category: "africa",
+          },
+          {
+            name: "Гана",
+            category: "africa",
+          },
+          {
+            name: "Гватемала",
+            category: "america",
+          },
+          {
+            name: "Гвинея",
+            category: "africa",
+          },
+          {
+            name: "Гвинея-Бисау",
+            category: "africa",
+          },
+          {
+            name: "Германия",
+            category: "europe",
+          },
+          {
+            name: "Гондурас",
+            category: "america",
+          },
+          {
+            name: "Гренада",
+            category: "america islands",
+          },
+          {
+            name: "Греция",
+            category: "europe",
+
+          },
+          {
+            name: "Грузия",
+            category: "asia",
+          },
+        ],
+      },
+      {
+        letter: "Д",
+        mods: "--d",
+        countries: [
+          {
+            name: "Дания",
+            category: "europe",
+          },
+          {
+            name: "Джибути",
+            category: "africa",
+          },
+          {
+            name: "Доминика",
+            category: "america islands",
+          },
+          {
+            name: "Доминикана",
+            category: "america islands",
+          },
+        ],
+      },
+      {
+        letter: "Е",
+        mods: "--ye",
+        countries: [
+          {
+            name: "Египет",
+            category: "africa",
+          },
+        ],
+      },
+      {
+        letter: "З",
+        mods: "--z",
+        countries: [
+          {
+            name: "Замбия",
+            category: "africa",
+          },
+          {
+            name: "Зимбабве",
+            category: "africa",
+          },
+        ],
+      },
+      {
+        letter: "И",
+        mods: "--i",
+        countries: [
+          {
+            name: "Израиль",
+            category: "asia",
+          },
+          {
+            name: "Индия",
+            category: "asia",
+          },
+          {
+            name: "Индонезия",
+            category: "asia islands",
+          },
+          {
+            name: "Иордания",
+            category: "asia",
+          },
+          {
+            name: "Ирак",
+            category: "asia",
+          },
+          {
+            name: "Иран",
+            category: "asia",
+          },
+          {
+            name: "Ирландия",
+            category: "europe islands",
+          },
+          {
+            name: "Исландия",
+            category: "europe islands",
+          },
+          {
+            name: "Испания",
+            category: "europe",
+          },
+          {
+            name: "Италия",
+            category: "europe",
+          },
+        ],
+      },
+      {
+        letter: "К",
+        mods: "--k",
+        countries: [
+          {
+            name: "Кабо-Верде",
+            category: "islands",
+          },
+          {
+            name: "Казахстан",
+            category: "asia",
+          },
+          {
+            name: "Камбоджа",
+            category: "asia",
+          },
+          {
+            name: "Камерун",
+            category: "africa",
+          },
+          {
+            name: "Канада",
+            category: "america",
+          },
+          {
+            name: "Катар",
+            category: "asia",
+          },
+          {
+            name: "Кения",
+            category: "africa",
+          },
+          {
+            name: "Кипр",
+            category: "europe islands asia",
+          },
+          {
+            name: "Киргизия",
+            category: "asia",
+          },
+          {
+            name: "Кирибати",
+            category: "islands",
+          },
+          {
+            name: "Китай",
+            category: "asia",
+          },
+          {
+            name: "Колумбия",
+            category: "america",
+          },
+        ],
+      },
+      {
+        letter: "Л",
+        mods: "--l",
+        countries: [
+          {
+            name: "Лаос",
+            category: "asia",
+          },
+          {
+            name: "Латвия",
+            category: "europe",
+          },
+          {
+            name: "Лесото",
+            category: "africa",
+          },
+          {
+            name: "Либерия",
+            category: "africa",
+          },
+          {
+            name: "Ливан",
+            category: "asia",
+          },
+          {
+            name: "Ливия",
+            category: "africa",
+          },
+          {
+            name: "Литва",
+            category: "europe",
+          },
+          {
+            name: "Лихтенштейн",
+            category: "europe",
+          },
+          {
+            name: "Люксембург",
+            category: "europe",
+          },
+        ],
+      },
+      {
+        letter: "М",
+        mods: "--m",
+        countries: [
+          {
+            name: "Маврикий",
+            category: "islands",
+          },
+          {
+            name: "Мавритания",
+            category: "africa",
+          },
+          {
+            name: "Мадагаскар",
+            category: "africa islands",
+          },
+          {
+            name: "Малави",
+            category: "africa",
+          },
+          {
+            name: "Малайзия",
+            category: "asia",
+          },
+          {
+            name: "Мали",
+            category: "africa",
+          },
+          {
+            name: "Мальдивы",
+            category: "asia islands",
+          },
+          {
+            name: "Мальта",
+            category: "europe islands",
+          },
+          {
+            name: "Марокко",
+            category: "africa",
+          },
+        ],
+      },
+      {
+        letter: "Н",
+        mods: "--n",
+        countries: [
+          {
+            name: "Намибия",
+            category: "africa",
+          },
+          {
+            name: "Науру",
+            category: "islands",
+          },
+          {
+            name: "Непал",
+            category: "asia",
+          },
+          {
+            name: "Нигер",
+            category: "africa",
+          },
+          {
+            name: "Нигерия",
+            category: "africa",
+          },
+          {
+            name: "Нидерланды",
+            category: "europe",
+          },
+          {
+            name: "Никарагуа",
+            category: "america",
+          },
+          {
+            name: "Новая Зеландия",
+            category: "islands",
+          },
+          {
+            name: "Норвегия",
+            category: "europe",
+          },
+        ],
+      },
+      {
+        letter: "О",
+        mods: "--o",
+        countries: [
+          {
+            name: "ОАЭ",
+            category: "asia",
+          },
+          {
+            name: "Оман",
+            category: "asia",
+          },
+        ],
+      },
+      {
+        letter: "П",
+        mods: "--p",
+        countries: [
+          {
+            name: "Пакистан",
+            category: "asia",
+          },
+          {
+            name: "Палау",
+            category: "islands",
+          },
+          {
+            name: "Панама",
+            category: "america",
+          },
+          {
+            name: "Папуа&nbsp;&#8209;&nbsp;Новая&nbsp;Гвинея",
+            category: "islands",
+          },
+          {
+            name: "Парагвай",
+            category: "america",
+          },
+          {
+            name: "Перу",
+            category: "america",
+          },
+          {
+            name: "Польша",
+            category: "europe",
+          },
+          {
+            name: "Португалия",
+            category: "europe",
+          },
+        ],
+      },
+      {
+        letter: "Р",
+        mods: "--r",
+        countries: [
+          {
+            name: "Руанда",
+            category: "africa",
+          },
+          {
+            name: "Румыния",
+            category: "europe",
+          },
+          {
+            name: "Россия",
+            category: "europe asia",
+          },
+        ],
+      },
+      {
+        letter: "С",
+        mods: "--s",
+        countries: [
+          {
+            name: "Сальвадор",
+            category: "america",
+          },
+          {
+            name: "Самоа",
+            category: "islands",
+          },
+          {
+            name: "Сан-Марино",
+            category: "europe",
+          },
+          {
+            name: "Саудовская Аравия",
+            category: "asia",
+          },
+          {
+            name: "Сейшелы",
+            category: "islands",
+          },
+          {
+            name: "Сенегал",
+            category: "africa",
+          },
+          {
+            name: "Сербия",
+            category: "europe",
+          },
+          {
+            name: "Сингапур",
+            category: "asia islands",
+          },
+          {
+            name: "Сирия",
+            category: "asia",
+          },
+          {
+            name: "Словакия",
+            category: "europe",
+          },
+          {
+            name: "Словения",
+            category: "europe",
+          },
+          {
+            name: "США",
+            category: "america",
+          },
+        ],
+      },
+      {
+        letter: "Т",
+        mods: "--t",
+        countries: [
+          {
+            name: "Таджикистан",
+            category: "asia",
+          },
+          {
+            name: "Таиланд",
+            category: "asia",
+          },
+          {
+            name: "Танзания",
+            category: "africa",
+          },
+          {
+            name: "Того",
+            category: "africa",
+          },
+          {
+            name: "Тонга",
+            category: "islands",
+          },
+          {
+            name: "Тринидад и Тобаго",
+            category: "america islands",
+          },
+          {
+            name: "Тувалу",
+            category: "islands",
+          },
+          {
+            name: "Тунис",
+            category: "africa",
+          },
+          {
+            name: "Туркмения",
+            category: "asia",
+          },
+          {
+            name: "Турция",
+            category: "europe asia",
+          },
+        ],
+      },
+      {
+        letter: "У",
+        mods: "--u",
+        countries: [
+          {
+            name: "Уганда",
+            category: "africa",
+          },
+          {
+            name: "Узбекистан",
+            category: "asia",
+          },
+          {
+            name: "Украина",
+            category: "europe",
+          },
+          {
+            name: "Уругвай",
+            category: "america",
+          },
+        ],
+      },
+      {
+        letter: "Ф",
+        mods: "--f",
+        countries: [
+          {
+            name: "Фиджи",
+            category: "islands",
+          },
+          {
+            name: "Филиппины",
+            category: "asia islands",
+          },
+          {
+            name: "Финляндия",
+            category: "europe",
+          },
+          {
+            name: "Франция",
+            category: "europe",
+          },
+        ],
+      },
+      {
+        letter: "Х",
+        mods: "--kh",
+        countries: [
+          {
+            name: "Хорватия",
+            category: "europe",
+          },
+        ],
+      },
+      {
+        letter: "Ч",
+        mods: "--ch",
+        countries: [
+          {
+            name: "Чад",
+            category: "africa",
+          },
+          {
+            name: "Черногория",
+            category: "europe",
+          },
+          {
+            name: "Чехия",
+            category: "europe",
+          },
+          {
+            name: "Чили",
+            category: "america",
+          },
+        ],
+      },
+      {
+        letter: "Ш",
+        mods: "--sh",
+        countries: [
+          {
+            name: "Швейцария",
+            category: "europe",
+          },
+          {
+            name: "Швеция",
+            category: "europe",
+          },
+          {
+            name: "Шри-Ланка",
+            category: "asia islands",
+          },
+        ],
+      },
+      {
+        letter: "Э",
+        mods: "--e",
+        countries: [
+          {
+            name: "Эквадор",
+            category: "america",
+          },
+          {
+            name: "Эритрея",
+            category: "africa",
+          },
+          {
+            name: "Эсватини",
+            category: "africa",
+          },
+          {
+            name: "Эстония",
+            category: "europe",
+          },
+          {
+            name: "Эфиопия",
+            category: "africa",
+          },
+        ],
+      },
+      {
+        letter: "Ю",
+        mods: "--yu",
+        countries: [
+          {
+            name: "ЮАР",
+            category: "africa",
+          },
+          {
+            name: "Южный Судан",
+            category: "africa",
+          },
+        ],
+      },
+      {
+        letter: "Я",
+        mods: "--ya",
+        countries: [
+          {
+            name: "Ямайка",
+            category: "america islands",
+          },
+          {
+            name: "Япония",
+            category: "asia islands",
+          },
+        ],
+      },
+    ]
+  -
+    const filters = [
+      {
+        filterName: "Европа",
+        id: "europe",
+        attribute: "checked",
+      },
+      {
+        filterName: "Азия",
+        id: "asia",
+        attribute: "",
+      },
+      {
+        filterName: "Америка",
+        id: "america",
+        attribute: "",
+      },
+      {
+        filterName: "Острова",
+        id: "islands",
+        attribute: "",
+      },
+    ]
+
+  section.filters
+    +page-title("Попутчики")
+    .filters__wrapper
+      .container
+        .filters__options-wrapper.filters__options-wrapper--list-is-hidden
+          p
+            span.filters__icon
+              +icon("icon-filters", 23, 15)
+            | Фильтрация по странам:
+          .filters__list-wrapper
+            ul.filters__list
+              each item in filters
+                li.filters__item(class=`filters__item--${item.id}`, data-tab-id=item.id)
+                  if(item.attribute)
+                    +filter-checkbox("filters", item.filterName, item.id, item.id)(checked="true")
+                  else
+                    +filter-checkbox("filters", item.filterName, item.id, item.id)
+          .filters__options-button-wrapper
+            +btn({type: "button"})(class="filters__options-button", aria-label="Показать-скрыть фильтры по странам.")
+              span.filters__options-button-text Показать все
+              span.filters__options-button-icon.filters__options-button-icon--is-shown
+                +icon("icon-close-bold", 22, 24)
+              span.filters__options-button-icon.filters__options-button-icon--is-hidden
+                +icon("icon-dots-button", 34, 6)
+          .filters__countries-wrapper
+            ol.filters__countries-list
+              each item in countriesList
+                if(item.modsActiveClass)
+                  li.filters__countries-item(class=`filters__countries-item${item.mods} filters__countries-item${item.modsActiveClass}`)
+                    p!= item.letter
+                    .filters__countries-group
+                      each country in item.countries
+                        a.filters__countries-link(href="#", data-country-category=country.category)!= country.name
+                else
+                  li.filters__countries-item(class=`filters__countries-item${item.mods}`)
+                    p!= item.letter
+                    .filters__countries-group
+                      each country in item.countries
+                        a.filters__countries-link(href="#", data-country-category=country.category)!= country.name
+            .filters__button-wrapper
+              +btn({type: "button"})(class="filters__button")
+                span.filters__button-text Свернуть
+                span.filters__button-icon
+                  +icon("icon-close-bold", 22, 24)

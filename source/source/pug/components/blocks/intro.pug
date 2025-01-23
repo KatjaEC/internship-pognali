@@ -1,0 +1,38 @@
+mixin intro()
+  -
+    const introList = [
+      {
+        text: "Выберите направление",
+        mods: "--step-one",
+      },
+      {
+        text: "Изучите идеи путешественников",
+        mods: "--step-two",
+      },
+      {
+        text: "Находите тех, кто&nbsp;похож на&nbsp;вас",
+        mods: "--step-three",
+      },
+      {
+        text: "Путешествуйте вместе!",
+        mods: "--step-four",
+      },
+    ]
+
+  section.intro
+    h2.visually-hidden Промо-блок главной страницы.
+    .intro__background
+      +picture-semi-adaptive("content", "hero-background", "jpg", 1440, 750, 320, 888, "")
+    //- вставлять блоки во внешний контейнер неверно
+    //- все блоки содержат в себе container без доп класса tutorial__wrapper
+    .intro__image
+      .intro__picture
+        +picture-adaptive("content", "hero-image", "png", 431, 640, 437, 530, 192, 255, "")
+    .container
+      .intro__wrapper
+        .intro__text
+          p В путешествие с&nbsp;крутыми попутчиками!
+        .intro__process-wrapper
+          ul.intro__process-list
+            each item in introList
+              li.intro__process-item(class=`intro__process-item${item.mods}`)!= item.text

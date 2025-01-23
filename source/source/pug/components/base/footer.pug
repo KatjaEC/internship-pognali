@@ -1,0 +1,15 @@
+mixin footer(footerMods)
+  footer.footer(class=footerMods)
+    .footer__body
+      .container
+        .footer__wrapper
+          if(currentUrl === "index.html")
+            //- lighthouse снимает 10 баллов SEO за <a> без href
+            .footer__logo
+              .footer__icon
+                +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
+          else
+            a.footer__logo(href="index.html", aria-label="Переход на главную страницу.")
+              .footer__icon
+                +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
+          +socials-list("footer")

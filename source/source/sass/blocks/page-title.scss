@@ -1,0 +1,72 @@
+.page-title {
+  background-color: $color-midnight-express-lighter;
+  border-radius: 0 0 58px 58px;
+
+  @include vp-1023 {
+    border-radius: 0 0 60px 60px;
+  }
+
+  @include vp-767 {
+    border-radius: 0 0 20px 20px;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    padding: 78px 126px 67px;
+    max-width: 1440px;
+
+    @include vp-1023 {
+      padding: 112px 126px 72px 74px;
+    }
+
+    @include vp-767 {
+      padding: 40px 25px 11px;
+    }
+
+    & h1 {
+      position: relative;
+      margin: 0;
+      display: inline-block;
+      font-size: 60px;
+      line-height: 60px;
+      font-weight: 700;
+      font-variant-caps: all-small-caps;
+      color: $color-default-white;
+
+      @include vp-1023 {
+        line-height: 20px;
+        font-variant-caps: normal;
+      }
+
+      @include vp-767 {
+        font-size: 36px;
+        line-height: 36px;
+      }
+
+      &::before {
+        position: absolute;
+        bottom: -72px;
+        left: 0;
+        width: calc(100% - 27px);
+        height: 8px;
+        background-color: $color-picton-blue;
+        border-radius: 4px;
+        content: "";
+
+        @include vp-1023 {
+          bottom: -91px;
+          width: calc(100% - 18px);
+          background-color: #335d8d;
+        }
+
+        @include vp-767 {
+          bottom: -13px;
+          height: 5px;
+          width: calc(100% - 12px);
+          background-color: $color-default-white;
+          z-index: 20;
+        }
+      }
+    }
+  }
+}

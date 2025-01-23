@@ -1,0 +1,1444 @@
+.companions-card {
+  position: relative;
+  background-color: $color-default-white;
+  border-radius: 22px;
+  width: 285px;
+  display: flex;
+  flex-direction: column;
+  transition: transform $trans-default;
+
+  @include vp-1023 {
+    box-shadow: 0 0 10px 0 $color-default-white;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  & .companions-card__image {
+    position: relative;
+    height: 285px;
+    border-radius: 22px 22px 0 0;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
+
+    @include vp-1023 {
+      & img {
+        object-fit: cover;
+        object-position: 50% bottom;
+      }
+    }
+
+    @include vp-767 {
+      height: 270px;
+      border-radius: 10px 10px 0 0;
+
+      & img {
+        object-position: 50% -1px;
+      }
+    }
+  }
+
+  & .companions-card__stats {
+    position: absolute;
+    top: 21px;
+    left: 22px;
+
+    @include vp-767 {
+      top: 16px;
+      left: 18px;
+    }
+
+    @include vp-374 {
+      top: 19px;
+    }
+  }
+
+  & .companions-card__level {
+    position: relative;
+    padding: 13px 10px 5px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    z-index: 5;
+
+    & span {
+      font-size: 24px;
+      font-weight: 700;
+      color: $color-default-white;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-decoration-color: rgba(255, 255, 255, 0.3);
+    }
+
+    & span + span {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 400;
+      text-decoration: none;
+    }
+
+    & > svg {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: 64px;
+      height: 64px;
+      color: $color-picton-blue;
+      stroke-width: 5;
+    }
+
+    &--99 > svg {
+      stroke-dashoffset: 710;
+      stroke-dasharray: 328;
+      transform: rotate(-86deg);
+    }
+
+    &--80 > svg {
+      stroke-dashoffset: -500;
+      stroke-dasharray: 227;
+      transform: rotate(210deg);
+    }
+
+    &--25 > svg {
+      stroke-dashoffset: -630;
+      stroke-dasharray: 210;
+    }
+
+    &--50 > svg {
+      stroke-dashoffset: -211;
+      stroke-dasharray: 138;
+    }
+
+    @include vp-767 {
+      padding: 9px 0 6px;
+
+      & span {
+        text-decoration: none;
+      }
+    }
+  }
+
+  & .companions-card__content {
+    position: relative;
+    padding: 31px 15px 21px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 24px;
+    line-height: 22px;
+    font-weight: 700;
+    color: $color-catalina-blue;
+    background-color: $color-default-white;
+    border-radius: 0 0 17px 17px;
+
+    &--is-offline > .companions-card__text > h3::before {
+      background-color: #f97676;
+    }
+
+    @include vp-1023 {
+      border-radius: 0 0 20px 20px;
+    }
+
+    @include vp-767 {
+      padding: 26px 15px 17px;
+      border-radius: 0 0 10px 10px;
+    }
+  }
+
+  & .companions-card__text {
+    text-align: center;
+    cursor: pointer;
+
+    & h3 {
+      position: relative;
+      margin: 0 0 23px -8px;
+      padding-left: 22px;
+      display: inline-flex;
+      font-size: 24px;
+      font-weight: 700;
+
+      @include vp-1023 {
+        margin: 0 0 23px -21px;
+      }
+
+      @include vp-767 {
+        margin: 0 0 13px -21px;
+        font-size: 21px;
+        line-height: 21px;
+      }
+
+      &::before {
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 50px;
+        background-color: #81e31e;
+        content: "";
+
+        @include vp-767 {
+          left: 5px;
+          width: 6px;
+          height: 6px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+
+    & p {
+      margin: 0;
+      font-size: 20px;
+      line-height: 23px;
+      font-weight: 400;
+      color: $color-charcoal;
+
+      @include vp-767 {
+        margin-left: 3px;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  & .companions-card__countries {
+    position: absolute;
+    top: -32px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 0 30px;
+    width: 224px;
+
+    @include vp-1023 {
+      top: -12px;
+    }
+  }
+
+  & .companions-card__countries-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__countries-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__countries-item {
+    border-radius: 4px;
+    cursor: pointer;
+
+    & img {
+      border-radius: 4px;
+
+      @include vp-767 {
+        height: 25px;
+        border-radius: 2px;
+      }
+    }
+
+    &:hover > .companions-card__tooltip-wrapper {
+      display: block;
+    }
+
+    &--flag-sri-lanka > .companions-card__tooltip-wrapper {
+      left: -7px;
+    }
+
+    &--flag-thailand > .companions-card__tooltip-wrapper {
+      margin: 0 auto;
+    }
+
+    &--flag-seychelles > .companions-card__tooltip-wrapper {
+      left: 110px;
+    }
+
+    &--flag-belgium > .companions-card__tooltip-wrapper {
+      left: 29px;
+    }
+
+    &--flag-czechia > .companions-card__tooltip-wrapper {
+      left: 85px;
+    }
+  }
+
+  &__tooltip-wrapper {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    min-width: 110px;
+    max-width: 200px;
+    width: fit-content;
+    display: none;
+    z-index: 5;
+  }
+
+  &__tooltip {
+    position: relative;
+    padding: 15px 13px 18px 13px;
+    background-color: #101d41;
+    border-radius: 4px;
+
+    &::before {
+      position: absolute;
+      top: -9px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-left: 8px solid $color-transparent;
+      border-right: 8px solid $color-transparent;
+      border-bottom: 10px solid #101d41;
+      content: "";
+    }
+
+    & > span {
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 400;
+      text-align: center;
+      color: $color-default-white;
+    }
+  }
+
+  &__transportation-wrapper {
+    margin: auto 50px 0 64px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include vp-1023 {
+      margin: auto 60px 0 63px;
+    }
+
+    @include vp-767 {
+      margin: auto 55px 0 59px;
+      z-index: 5;
+    }
+  }
+
+  &__transportation-heading {
+    & > span {
+      display: none;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 400;
+      color: $color-charcoal;
+      text-transform: lowercase;
+    }
+
+    @include vp-767 {
+      position: relative;
+      margin-left: -10px;
+      padding-top: 2px;
+      display: inline-flex;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -17px;
+        right: 0;
+        height: 1px;
+        min-width: 268px;
+        background-color: $color-accent-main;
+        z-index: -5;
+        content: "";
+      }
+
+      & > span {
+        margin-left: 8px;
+        padding: 0 10px;
+        display: block;
+        background-color: $color-default-white;
+      }
+    }
+  }
+
+  &__buttons-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 8px 4px;
+
+    @include vp-767 {
+      order: 3;
+    }
+  }
+
+  &__invite-button-wrapper {
+    @include vp-767 {
+      margin: 0 auto;
+      width: calc(100% - 5px);
+    }
+  }
+
+  &__invite-button.btn {
+    padding: 17px 27px 13px 26px;
+    min-width: 150px;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $color-midnight-express-darker;
+    border-radius: 25px;
+    background-color: $color-pale-cornflowep-blue;
+    transition: opacity $trans-default, background-color $trans-default;
+
+    &:hover,
+    &:focus {
+      background-color: $color-picton-blue;
+      opacity: 1;
+    }
+
+    &:active {
+      color: rgba(22, 28, 53, 0.3);
+    }
+
+    @include vp-1023 {
+      padding: 18px 37px 12px;
+    }
+
+    @include vp-767 {
+      padding: 13px 30px 10px;
+      width: 100%;
+      justify-content: center;
+      font-size: 17px;
+      line-height: 17px;
+    }
+  }
+
+  &__likes-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+
+    & > span {
+      display: inline-block;
+      padding: 17px 0 14px;
+      font-size: 20px;
+      line-height: 20px;
+      color: #161c35;
+    }
+
+    @include vp-1023 {
+      gap: 4px;
+
+      & > span {
+        padding: 17px 0 11px;
+      }
+    }
+
+    @include vp-767 {
+      position: absolute;
+      top: 42px;
+      left: 50px;
+      align-items: center;
+      gap: 7px;
+
+      & > span {
+        padding: 5px 0 0;
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+  }
+
+  &__like-button.btn {
+    padding: 14px 15px 19px;
+    min-width: 50px;
+    width: 50px;
+    height: 50px;
+    color: rgba(25, 33, 68, 0.3);
+    background-color: $color-transparent;
+    border-radius: 50%;
+    transition: background-color $trans-default;
+
+    @include vp-1023 {
+      padding: 14px 15px 12px;
+      width: 57px;
+    }
+
+    @include vp-767 {
+      padding: 4px;
+      min-width: 30px;
+      width: 30px;
+      height: 30px;
+      background-color: #e2e5f2;
+    }
+
+    & .companions-card__like-button-icon {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 20px;
+      height: 18px;
+
+      & > svg {
+        width: 100%;
+        height: 100%;
+      }
+
+      &--is-pressed {
+        display: none;
+      }
+
+      @include vp-1023 {
+        top: 13px;
+        width: 23px;
+        height: 20px;
+      }
+
+      @include vp-767 {
+        top: 0;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: rgba(25, 33, 68, 0.5);
+      background-color: #e2e5f2;
+    }
+
+    &:active {
+      color: rgba(25, 33, 68, 0.1);
+      background-color: #e2e5f2;
+    }
+
+    &--is-pressed {
+      color: #f02323;
+      background-color: #f9eaea;
+
+      & .companions-card__like-button-icon--is-pressed {
+        display: block;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: #f9d8d8;
+      }
+
+      &:active {
+        color: rgba(240, 35, 35, 0.3);
+        background-color: #f9d8d8;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+    box-shadow: 0 4px 20px 0 rgba(255, 254, 254, 0.5);
+  }
+
+  &--catalog {
+    padding-left: 285px;
+    width: 100%;
+    min-height: 285px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 22px;
+    cursor: pointer;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+
+    @include vp-767 {
+      padding: 13px 17px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    &:hover {
+      box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    & .companions-card__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 285px;
+      height: 100%;
+      border-radius: 22px 0 0 22px;
+
+      @include vp-1023 {
+        top: 35px;
+        left: 35px;
+        width: 190px;
+        height: 190px;
+        border-radius: 20px;
+      }
+
+      @include vp-767 {
+        top: 16px;
+        left: 18px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      & img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 22px 0 0 22px;
+
+        @include vp-1023 {
+          border-radius: 20px;
+        }
+
+        @include vp-767 {
+          width: 70px;
+          max-width: 70px;
+          height: 70px;
+        }
+      }
+    }
+
+    & .companions-card__stats {
+      top: auto;
+      left: auto;
+      bottom: 39px;
+      right: 40px;
+      z-index: 10;
+
+      & > span {
+        display: none;
+      }
+
+      & .companions-card__level {
+        padding: 12px 10px 5px 12px;
+        width: 66px;
+        height: 66px;
+        background-color: $color-transparent;
+
+        & > span {
+          color: $color-catalina-blue;
+          text-decoration-color: rgba(0, 0, 0, 0.1);
+        }
+
+        & > span + span {
+          padding-top: 2px;
+          color: rgba(0, 0, 0, 0.4);
+        }
+
+        & > svg {
+          top: 0;
+          left: 0;
+          width: 66px;
+          height: 66px;
+          stroke-width: 4;
+        }
+      }
+
+      @include vp-1023 {
+        bottom: 103px;
+        right: 23px;
+
+        & .companions-card__level {
+          width: 63px;
+          height: 63px;
+
+          & > svg {
+            top: -2px;
+            left: -2px;
+            width: 67px;
+            height: 67px;
+            color: #ff8d30;
+          }
+        }
+      }
+
+      @include vp-767 {
+        bottom: 75px;
+        right: 13px;
+        height: 72px;
+
+        & > span {
+          margin-bottom: 10px;
+          padding: 0 10px;
+          display: block;
+          font-size: 14px;
+          line-height: 16px;
+          text-transform: lowercase;
+          letter-spacing: -0.1px;
+          color: $color-charcoal;
+          background-color: $color-default-white;
+        }
+
+        & .companions-card__level {
+          margin: 0 auto;
+          padding: 9px 1px 5px 3px;
+          width: 45px;
+          height: 45px;
+
+          & > span + span {
+            display: none;
+          }
+
+          & > svg {
+            top: -1px;
+            left: -1px;
+            width: 47px;
+            height: 47px;
+            stroke-width: 5;
+          }
+        }
+      }
+    }
+
+    & .companions-card__content {
+      padding: 46px 34px 42px 54px;
+      display: grid;
+      grid-template-columns: auto 242px;
+      gap: 22px 10px;
+      border-radius: 0 22px 22px 0;
+
+      @include vp-1023 {
+        padding: 33px 25px 25px 35px;
+        grid-template-columns: 190px auto 60px;
+        background-color: $color-transparent;
+        gap: 0 10px;
+      }
+
+      @include vp-767 {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        order: 1;
+      }
+    }
+
+    & .companions-card__text {
+      width: 100%;
+      text-align: left;
+
+      @include vp-1023 {
+        padding: 0 0 0 223px;
+        grid-column: span 2;
+        order: 0;
+      }
+
+      @include vp-767 {
+        padding: 0;
+        width: 100%;
+      }
+
+      & > h3 {
+        margin: 0 0 20px -14px;
+        font-size: 30px;
+        line-height: 30px;
+
+        @include vp-1023 {
+          margin: 0 0 19px 0;
+          padding: 0 30px 0 0;
+        }
+
+        @include vp-767 {
+          margin: 0;
+          padding: 0 45px 60px 87px;
+          font-size: 20px;
+          line-height: 20px;
+        }
+
+        @include vp-374 {
+          padding: 0 45px 43px 87px;
+        }
+
+        &::before {
+          top: 11px;
+          left: -4px;
+
+          @include vp-1023 {
+            left: auto;
+            right: 0;
+          }
+
+          @include vp-767 {
+            top: 7px;
+            right: 5px;
+          }
+        }
+      }
+
+      & > p {
+        margin-left: 8px;
+        width: 224px;
+        color: $color-default-black;
+
+        @include vp-1023 {
+          margin-left: 3px;
+        }
+
+        @include vp-767 {
+          margin-left: 8px;
+          font-size: 15px;
+          line-height: 18px;
+          color: $color-charcoal;
+        }
+      }
+    }
+
+    & .companions-card__countries {
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      margin: 0;
+      padding: 3px 0 0 1px;
+      width: 100%;
+
+      @include vp-1023 {
+        margin-top: 24px;
+        padding: 0 68px 0 0;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        order: 3;
+        grid-column: 1/-1;
+        z-index: 5;
+      }
+
+      @include vp-767 {
+        margin-top: 2px;
+        padding: 0;
+        align-self: flex-start;
+        order: 1;
+      }
+    }
+
+    & .companions-card__countries-heading {
+      position: relative;
+      width: 100%;
+      display: none;
+      align-self: flex-start;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -34px;
+        right: -125px;
+        height: 1px;
+        width: calc(100% + 159px);
+        background-color: $color-accent-main;
+        z-index: -5;
+        content: "";
+
+        @include vp-767 {
+          left: -17px;
+          right: -17px;
+          width: calc(100% + 34px);
+        }
+      }
+
+      & > span {
+        margin-left: 37px;
+        padding-left: 12px;
+        font-size: 15px;
+        line-height: 16px;
+        font-weight: 400;
+        text-transform: lowercase;
+        color: $color-charcoal;
+        background-color: $color-default-white;
+
+        @include vp-767 {
+          margin-left: 0;
+          padding-left: 8px;
+          letter-spacing: -0.5px;
+        }
+      }
+
+      @include vp-1023 {
+        display: inline-flex;
+      }
+    }
+
+    & .companions-card__countries-list {
+      display: block;
+
+      @include vp-1023 {
+        margin-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 10px;
+      }
+
+      @include vp-767 {
+        margin: 12.5px 0 0;
+        padding-left: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+    }
+
+    & .companions-card__countries-item {
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 35px auto;
+      gap: 18px;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      @include vp-1023 {
+        margin: 0;
+        gap: 19px;
+
+        & img {
+          width: 100%;
+          clip-path: inset(2px 0 2px 0);
+        }
+      }
+
+      @include vp-767 {
+        grid-template-columns: 27px auto;
+        align-items: flex-end;
+        gap: 13px;
+      }
+    }
+
+    & .companions-card__countries-item--flag-sri-lanka {
+      padding: 2px 0 0;
+
+      @include vp-1023 {
+        padding: 0;
+
+        & .companions-card__countries-name {
+          padding: 7px 0 0;
+        }
+
+        & .companions-card__countries-icon {
+          width: 40px;
+
+          & img {
+            clip-path: inset(1px 1px 1px 1px);
+          }
+        }
+      }
+
+      @include vp-767 {
+        & .companions-card__countries-name {
+          padding: 7px 0 0 1px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-thailand {
+      & .companions-card__countries-name {
+        padding: 4px 0 0 1px;
+      }
+
+      @include vp-1023 {
+        & .companions-card__countries-name {
+          padding: 9px 0 0 2px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 43px;
+        }
+      }
+
+      @include vp-767 {
+        & .companions-card__countries-name {
+          padding: 9px 0 0 0;
+        }
+
+        & .companions-card__countries-icon {
+          width: 27px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            clip-path: inset(0 1px 0 0);
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-seychelles {
+      & .companions-card__countries-name {
+        padding-left: 1px;
+      }
+
+      @include vp-1023 {
+        margin-left: 5px;
+
+        & .companions-card__countries-name {
+          padding: 7px 0 0;
+        }
+
+        & .companions-card__countries-icon {
+          width: 41px;
+        }
+      }
+
+      @include vp-767 {
+        margin-left: 0;
+
+        & .companions-card__countries-name {
+          padding: 10px 0 0 0;
+        }
+
+        & .companions-card__countries-icon {
+          width: 27px;
+          height: 20px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            clip-path: inset(2px 1px 0 1px);
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-belgium {
+      margin-bottom: 13px;
+      padding-top: 1px;
+
+      & .companions-card__countries-name {
+        padding-top: 3px;
+      }
+
+      @include vp-1023 {
+        margin-bottom: 0;
+
+        & .companions-card__countries-name {
+          padding-top: 7px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 40px;
+        }
+      }
+
+      @include vp-767 {
+        padding-top: 0;
+
+        & .companions-card__countries-name {
+          padding: 3px 0 0 1px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 22px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            clip-path: inset(4px 0 0 0);
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-czechia {
+      & .companions-card__countries-icon {
+        padding-top: 1px;
+      }
+
+      @include vp-1023 {
+        margin-left: 2px;
+
+        & .companions-card__countries-name {
+          padding-top: 9px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 42px;
+        }
+      }
+
+      @include vp-767 {
+        margin-left: 0;
+
+        & .companions-card__countries-name {
+          padding: 10px 0 0 1px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            clip-path: none;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-usa {
+      padding-top: 2px;
+
+      & .companions-card__countries-name {
+        padding-top: 2px;
+      }
+
+      @include vp-1023 {
+        & .companions-card__countries-name {
+          padding-top: 7px;
+          padding-left: 2px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 41px;
+        }
+      }
+
+      @include vp-767 {
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-australia {
+      @include vp-1023 {
+        & .companions-card__countries-name {
+          padding-top: 6px;
+        }
+
+        & .companions-card__countries-icon {
+          padding-left: 1px;
+          width: 42px;
+        }
+      }
+
+      @include vp-767 {
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-dominica {
+      & .companions-card__countries-name {
+        padding-top: 2px;
+      }
+
+      @include vp-1023 {
+        & .companions-card__countries-name {
+          margin-left: -2px;
+          padding-top: 5px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 37px;
+
+          & img {
+            clip-path: none;
+          }
+        }
+      }
+
+      @include vp-767 {
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-uk {
+      margin-bottom: 14px;
+
+      @include vp-1023 {
+        margin-bottom: 0;
+
+        & .companions-card__countries-name {
+          padding-top: 9px;
+          padding-left: 3px;
+        }
+
+        & .companions-card__countries-icon {
+          padding-top: 2px;
+          width: 40px;
+        }
+      }
+
+      @include vp-767 {
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-germany {
+      & .companions-card__countries-name {
+        padding-top: 4px;
+      }
+
+      @include vp-1023 {
+        margin-left: 9px;
+
+        & .companions-card__countries-name {
+          padding-top: 7px;
+          padding-left: 1px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 41px;
+        }
+      }
+
+      @include vp-767 {
+        margin-left: 0;
+
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-item--flag-bosnia-herzegovina {
+      & .companions-card__countries-name {
+        padding-top: 4px;
+      }
+
+      @include vp-1023 {
+        margin-left: 9px;
+
+        & .companions-card__countries-name {
+          padding-top: 7px;
+          padding-left: 1px;
+        }
+
+        & .companions-card__countries-icon {
+          width: 41px;
+        }
+      }
+
+      @include vp-767 {
+        margin-left: 0;
+
+        & .companions-card__countries-icon {
+          width: 26px;
+          height: 18px;
+
+          & img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    & .companions-card__countries-name {
+      padding-top: 4px;
+      font-size: 20px;
+      line-height: 20px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: $color-catalina-blue;
+
+      @include vp-767 {
+        font-size: 15px;
+        line-height: 16px;
+      }
+    }
+
+    & .companions-card__buttons-wrapper {
+      padding-bottom: 5px;
+
+      @include vp-1023 {
+        margin-top: 11px;
+        padding: 0 68px 0 219px;
+        width: 100%;
+        align-self: flex-start;
+        grid-column: span 3;
+        order: 2;
+      }
+
+      @include vp-767 {
+        margin: auto 0 9px;
+        padding: 0;
+        order: 3;
+      }
+    }
+
+    & .companions-card__transportation-wrapper {
+      margin: 0 0 0 -3px;
+      padding: 0 80px 14px 0;
+      grid-column: -2/-1;
+
+      @include vp-1023 {
+        margin: 4px 16px 0 auto;
+        padding: 0;
+        align-self: flex-start;
+        justify-self: flex-end;
+        order: 1;
+      }
+
+      @include vp-767 {
+        margin: 0 0 auto;
+        padding: 0 60px 0 0;
+        width: 100%;
+        gap: 16px;
+        order: 2;
+      }
+
+      & > .transportation-list {
+        margin: 0;
+        grid-template-columns: repeat(4, 25px);
+        gap: 8px;
+
+        @include vp-1023 {
+          display: block;
+        }
+
+        @include vp-767 {
+          margin-left: 4px;
+          display: grid;
+          grid-template-columns: repeat(4, 32px);
+          gap: 1px;
+        }
+
+        & > .transportation-list__item {
+          margin-bottom: 0;
+          padding: 1px 3px 0 0;
+          width: 32px;
+          height: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include vp-1023 {
+            margin-bottom: 6.5px;
+            padding: 0 3px 0 0;
+            width: 26px;
+            height: 25px;
+
+            &.transportation-list__item--bicycle {
+              padding: 0 0 0 2px;
+            }
+          }
+
+          @include vp-767 {
+            margin-bottom: 0;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            background-color: $color-accent-main;
+          }
+        }
+
+        & > .transportation-list__item > .transportation-list__item-icon {
+          width: 22px;
+          height: 22px;
+          background-color: $color-transparent;
+
+          @include vp-1023 {
+            width: 100%;
+            height: 100%;
+          }
+
+          @include vp-767 {
+            width: 14px;
+            height: 16px;
+          }
+        }
+
+        & > .transportation-list__item > .transportation-list__item-icon > svg {
+          width: 100%;
+          height: 100%;
+        }
+
+        & > .transportation-list__item--car {
+          padding-right: 1.5px;
+        }
+
+        & > .transportation-list__item--car > .transportation-list__item-icon {
+          width: 22px;
+          height: 20px;
+
+          @include vp-1023 {
+            width: 20px;
+            height: 20px;
+          }
+
+          @include vp-767 {
+            width: 14px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}

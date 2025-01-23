@@ -1,0 +1,367 @@
+.companions {
+  position: relative;
+  padding: 70px 0 119px 0;
+
+  @include vp-1279 {
+    padding: 77px 0 227px 0;
+    border-radius: 0 0 58px 58px;
+  }
+
+  @include vp-1023 {
+    background-color: $color-midnight-express-lighter;
+  }
+
+  @include vp-767 {
+    padding: 38px 0 160px;
+    border-radius: 0 0 29px 31px;
+
+    .container {
+      padding: 0 17px 0 24px;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    top: -63px;
+    right: 0;
+    width: calc(50% + 30px);
+    height: calc(100% + 63px);
+    background-color: $color-accent-second;
+    border-radius: 56px 0 56px 56px;
+    z-index: -10;
+    content: "";
+
+    @include vp-1279 {
+      display: none;
+    }
+
+    @include vp-1023 {
+      width: 100%;
+      height: 180px;
+      display: block;
+      background-color: $color-midnight-express-lighter;
+      border-radius: 0;
+    }
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 629px 690px;
+
+    @include vp-1439 {
+      grid-template-columns: 46% auto;
+    }
+
+    @include vp-1279 {
+      padding: 0 2px 0 0;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__text-wrapper {
+    padding: 25px 100px 40px 12px;
+
+    @include vp-1279 {
+      margin-bottom: 93px;
+      padding: 0;
+    }
+
+    @include vp-767 {
+      margin-bottom: 39px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 108px;
+
+    @include vp-1279 {
+      margin-bottom: 0;
+    }
+
+    & h2 {
+      margin: 0 0 45px;
+      font-size: 95px;
+      line-height: 45px;
+      font-weight: 700;
+      font-variant-caps: all-small-caps;
+      color: $color-midnight-express-lighter;
+
+      @include vp-1279 {
+        margin: 0 0 54px -2px;
+      }
+
+      @include vp-1023 {
+        color: $color-default-white;
+      }
+
+      @include vp-767 {
+        margin: 0 0 19px 4px;
+        font-size: 50px;
+        line-height: 24px;
+      }
+    }
+
+    & p {
+      margin: 0 0 0 1px;
+      font-size: 24px;
+      line-height: 33px;
+      font-weight: 500;
+      color: $color-midnight-express-lighter;
+
+      & > span {
+        margin: 0;
+        display: block;
+        font-size: 24px;
+        line-height: 33px;
+        font-weight: 500;
+        letter-spacing: normal;
+        color: $color-midnight-express-lighter;
+      }
+
+      @include vp-1279 {
+        margin: 0;
+        padding-right: 92px;
+        line-height: 34px;
+
+        & > span {
+          display: inline;
+          line-height: 34px;
+        }
+      }
+
+      @include vp-1023 {
+        color: $color-default-white;
+
+        & > span {
+          color: $color-default-white;
+        }
+      }
+
+      @include vp-767 {
+        margin: 0 0 0 4px;
+        padding-right: 0;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+
+        & > span {
+          padding-right: 51px;
+          display: inline-block;
+          font-size: 14px;
+          line-height: 22px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    & span {
+      margin: 53px 0 0 0;
+      display: block;
+      font-size: 22px;
+      font-weight: 300;
+      letter-spacing: -1.37px;
+      color: $color-midnight-express-lighter;
+
+      @include vp-1279 {
+        margin: 74px 0 0 0;
+        letter-spacing: -1.41px;
+      }
+
+      @include vp-1023 {
+        color: $color-default-white;
+      }
+
+      @include vp-767 {
+        margin: 30px 0 0 0;
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 300;
+        letter-spacing: -0.87px;
+      }
+    }
+  }
+
+  &__button.btn {
+    margin: 0 0 0 2px;
+    padding: 29px 93px 27px 35px;
+
+    &:not(:last-of-type) {
+      margin: 0 12px 14px 2px;
+    }
+
+    & > span {
+      right: 36px;
+    }
+
+    @include vp-1279 {
+      position: absolute;
+      bottom: 69px;
+      left: -4px;
+      right: 0;
+      margin: 0 auto;
+      padding: 28px 63px 28px 31px;
+      width: calc(100% - 153px);
+
+      & > span {
+        right: 19px;
+      }
+    }
+
+    @include vp-767 {
+      left: 0;
+      right: 0;
+      bottom: 41px;
+      margin: 0 auto;
+      padding: 21px 63px 21px 23px;
+      min-width: 270px;
+      width: calc(100% - 51px);
+
+      & span {
+        top: 23px;
+        right: 21px;
+      }
+    }
+  }
+
+  &__cards-wrapper {
+    padding: 0 0 4px 77px;
+
+    @include vp-1439 {
+      padding: 0 0 4px 50px;
+    }
+
+    @include vp-1279 {
+      position: relative;
+      padding: 50px 0;
+
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: -44px;
+        right: 0;
+        width: calc(100% + 90px);
+        height: 100%;
+        background-color: $color-accent-second;
+        content: "";
+      }
+    }
+
+    @include vp-1023 {
+      padding: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+
+    @include vp-767 {
+      padding: 0 6px 0 0;
+    }
+  }
+
+  &__cards-list {
+    margin: 0;
+    padding: 0;
+    width: 600px;
+    min-height: fit-content;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    list-style: none;
+
+    @include vp-1279 {
+      margin: 0 auto;
+      width: 70%;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    @include vp-1023 {
+      width: 100%;
+      gap: 50px 76px;
+    }
+
+    @include vp-767 {
+      gap: 44px 76px;
+    }
+  }
+
+  &__cards-item {
+    width: 285px;
+    min-height: 482px;
+    border-radius: 22px;
+
+    @include vp-1023 {
+      min-height: 482px;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      min-height: 428px;
+    }
+
+    & .companions-card {
+      min-height: 480px;
+
+      @include vp-767 {
+        min-height: 428px;
+      }
+    }
+
+    &:nth-of-type(2n) .companions-card {
+      margin-top: 69px;
+
+      @include vp-1279 {
+        margin-top: 0;
+      }
+
+      & .companions-card__countries {
+        top: -12px;
+      }
+
+      & .companions-card__transportation-wrapper {
+        margin: auto 50px 0 68px;
+
+        @include vp-1023 {
+          margin: auto 60px 0 63px;
+        }
+
+        @include vp-767 {
+          margin: auto 44px 0 56px;
+        }
+      }
+
+      & .transportation-list {
+        gap: 7px;
+
+        @include vp-767 {
+          gap: 6px;
+        }
+      }
+
+      & .transportation-list__item--car {
+        padding-left: 1.5px;
+      }
+    }
+
+    &:nth-of-type(1) .companions-card__text {
+      & h3 {
+        margin-left: -21px;
+      }
+    }
+
+    &:nth-of-type(2) .companions-card__text {
+      & p {
+        padding: 0 0 0 13px;
+      }
+
+      @include vp-1023 {
+        & p {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

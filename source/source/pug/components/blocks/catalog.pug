@@ -1,0 +1,28 @@
+mixin catalog()
+  section.catalog
+    h2.visually-hidden Список попутчиков и их поиск.
+    .container
+      .catalog__list-wrapper
+        +companions-list()
+        .catalog__button-wrapper
+          +btn(class="catalog__button catalog__button--show-more")
+            span.catalog__button-text Показать еще
+            span.catalog__button-icon
+              +icon("icon-plus", 26, 26)
+        .catalog__pagination-wrapper
+          .catalog__pagination
+            ul.catalog__pagination-list
+            .catalog__navigation-buttons
+              .catalog__navigation-button-wrapper
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--prev catalog__navigation-button--is-inactive", id="prev-button")
+                  span.catalog__navigation-button-icon
+                    +icon("icon-pagination-arrow", 13, 20)
+                  span.visually-hidden Перейти на предыдущую страницу.
+              .catalog__navigation-button-wrapper
+                +btn({href: "#"})(class="catalog__navigation-button catalog__navigation-button--next", id="next-button")
+                  span.catalog__navigation-button-icon
+                    +icon("icon-pagination-arrow", 13, 20)
+                  span.visually-hidden Перейти на следующую страницу.
+        .catalog__search-form
+          h2 Подберите идеального попутчика
+          +search-form("catalog")

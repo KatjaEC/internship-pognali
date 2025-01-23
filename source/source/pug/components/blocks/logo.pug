@@ -1,0 +1,5 @@
+mixin logo(path, image, format, classModDesktop, classModMobile, widthMobile, heightMobile, widthTablet, heightTablet, widthDesktop, heightDesktop, altText)
+  picture(class!=attributes.class)
+    source(type="image/svg+xml", media="(min-width: 1024px)", srcset="img/" + path + "/" + image + classModDesktop + format, width= widthDesktop, height= heightDesktop)
+    source(type="image/svg+xml", media="(min-width: 768px)", srcset="img/" + path + "/" + image + classModDesktop + format, width= widthTablet, height= heightTablet)
+    img(src="img/" + path + "/" + image + "-mobile" + classModMobile + "." + format, width= widthMobile, height= heightMobile, alt= altText)&attributes(attributes)

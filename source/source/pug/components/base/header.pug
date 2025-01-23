@@ -1,0 +1,76 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "#",
+        text: "О сервисе"
+      },
+      {
+        href: "#",
+        text: "Направления"
+      },
+      {
+        href: "catalog.html",
+        text: "Попутчики"
+      },
+    ]
+
+  -
+    const contactsLinks = [
+      {
+        href: "tel:+78005558628",
+        classMod: "--phone",
+        icon: "icon-phone",
+        width: 18,
+        height: 18,
+        label: "Позвонить нам.",
+      },
+      {
+        href: "mailto:mail@htmlacademy.ru",
+        classMod: "--mail",
+        icon: "icon-mail",
+        width: 16,
+        height: 14,
+        label: "Написать нам.",
+      },
+    ]
+
+  header.header(class=headerMods)
+    .container
+      if(currentUrl === "index.html")
+        //- lighthouse снимает 10 баллов SEO за <a> без href
+        .header__logo
+          .header__icon
+            +logo("svg", "logo", "svg", "-header-full.", "-header", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
+          .header__icon-mobile
+            +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
+      else
+        a.header__logo(href="index.html", aria-label="Переход на главную страницу.")
+          .header__icon
+            +logo("svg", "logo", "svg", "-header-full.", "-header", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
+          .header__icon-mobile
+            +logo("svg", "logo", "svg", "-footer-full.", "-footer", 96, 15, 168, 42, 202, 50, "Логотип сайта Погнали.")
+      nav.header__nav
+        button.header__nav-toggle(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+          span.header__nav-toggle-icon.header__nav-toggle-icon--menu-is-hidden
+            +icon("icon-menu-tablet", 25, 25)(id="icon-menu-is-hidden")
+          span.header__nav-toggle-icon.header__nav-toggle-icon--menu-is-shown
+            +icon("icon-close", 25, 25)(id="icon-menu-is-shown")
+        .header__nav-wrapper
+          .header__nav-list-wrapper
+            ul.header__nav-list
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                li.header__nav-item
+                  if(activeState)
+                    span.header__nav-link.header__nav-link--is-active(data-hover=link.text)= link.text
+                  else
+                    a.header__nav-link(href=link.href, data-hover=link.text)= link.text
+          .header__nav-contacts-wrapper
+            ul.header__nav-contacts
+              each item in contactsLinks
+                li.header__nav-contacts-item
+                  a.header__nav-contacts-link(href=item.href, class=`header__nav-contacts-link${item.classMod}`, aria-label=item.label)
+                    +icon(item.icon, item.width, item.height)
+          +contacts-list("header")
+          +socials-list("header")

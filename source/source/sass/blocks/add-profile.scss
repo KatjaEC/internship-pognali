@@ -1,0 +1,548 @@
+.add-profile {
+  position: relative;
+  padding: 121px 0 66px;
+
+  @include vp-1279 {
+    padding: 30px 0 66px;
+  }
+
+  @include vp-1023 {
+    padding: 37px 0 57px;
+    background-color: $color-accent-main;
+    border-radius: 0 0 58px 58px;
+
+    &::before {
+      position: absolute;
+      top: -100px;
+      right: 0;
+      width: 100%;
+      height: 200px;
+      background-color: $color-accent-main;
+      z-index: -10;
+      content: "";
+    }
+
+    & .container {
+      padding: 0 38px 0 40px;
+    }
+  }
+
+  @include vp-767 {
+    padding: 36px 0 15px;
+    border-radius: 0 0 29px 31px;
+
+    & .container {
+      padding: 0 23px;
+    }
+  }
+
+  &__wrapper {
+    & h2 {
+      margin: 0 0 104px;
+      padding-left: 87px;
+      font-size: 95px;
+      line-height: 45px;
+      font-weight: 700;
+      font-variant-caps: all-small-caps;
+      color: $color-midnight-express-lighter;
+
+      @include vp-1439 {
+        margin: 0 0 75px;
+        padding-left: 0;
+        line-height: 89px;
+        text-align: center;
+      }
+
+      @include vp-1023 {
+        margin: 0 0 27px -6px;
+        padding-left: 0;
+      }
+
+      @include vp-767 {
+        font-size: 37px;
+        line-height: 28px;
+        color: #272b3b;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(486px, 734px) minmax(194px, 587px);
+
+    @include vp-1023 {
+      padding-right: 2px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 17px;
+      padding-right: 0;
+      display: block;
+    }
+  }
+
+  &__options-wrapper {
+    padding: 62px 0 32px;
+
+    @include vp-1023 {
+      padding: 0;
+    }
+
+    @include vp-767 {
+      margin-bottom: 31px;
+      width: 100%;
+    }
+  }
+
+  &__options-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include vp-1023 {
+      padding: 35px 0 22px;
+    }
+
+    @include vp-767 {
+      padding: 4px 0;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 6px;
+      left: 111px;
+      width: calc(100% - 105px);
+      height: 1px;
+      background-color: #e1e3e9;
+      content: "";
+
+      @include vp-1023 {
+        bottom: 22px;
+        left: 90px;
+        width: calc(100% - 90px);
+      }
+
+      @include vp-767 {
+        left: 0;
+        bottom: 7px;
+        width: calc(100% - 55px);
+      }
+    }
+  }
+
+  &__options-list-item {
+    position: relative;
+    padding: 27px 30px 21px 111px;
+    display: block;
+    min-height: 71px;
+    font-size: 28px;
+    line-height: 28px;
+    color: $color-charcoal;
+
+    @include vp-1023 {
+      padding: 27px 26px 18px 90px;
+    }
+
+    @include vp-767 {
+      padding: 12px 44px 18px 1px;
+      min-height: 35px;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 14px;
+      padding: 24px 14px;
+      width: 73px;
+      height: 71px;
+      font-size: 28px;
+      line-height: 28px;
+      text-align: center;
+      color: $color-default-white;
+      background-color: $color-jordy-blue;
+      border-radius: 50%;
+      content: "";
+
+      @include vp-1023 {
+        top: 4px;
+        left: 1px;
+        padding: 22px 11px 20px 16px;
+        width: 68px;
+        height: 68px;
+      }
+
+      @include vp-767 {
+        top: 3px;
+        left: auto;
+        right: 6px;
+        padding: 10px 8px;
+        width: 37px;
+        height: 35px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 111px;
+      width: calc(100% - 105px);
+      height: 1px;
+      background-color: #e1e3e9;
+      content: "";
+
+      @include vp-1023 {
+        top: 2px;
+        left: 90px;
+        width: calc(100% - 90px);
+      }
+
+      @include vp-767 {
+        top: -2px;
+        left: 0;
+        width: calc(100% - 55px);
+      }
+    }
+
+    &:nth-of-type(1)::before {
+      background-color: $color-picton-blue;
+      content: "1";
+    }
+
+    &:nth-of-type(2) {
+      padding: 20px 30px 30px 111px;
+
+      @include vp-1023 {
+        padding: 20px 26px 18px 90px;
+      }
+
+      &::before {
+        top: 4px;
+        content: "2";
+      }
+
+      @include vp-767 {
+        padding: 12px 44px 18px 1px;
+
+        &::before {
+          top: 3px;
+        }
+      }
+    }
+
+    &:nth-of-type(3) {
+      margin-bottom: 6px;
+
+      &::before {
+        top: 5px;
+        background-color: $color-pale-cornflowep-blue;
+        content: "3";
+      }
+    }
+
+    &:nth-of-type(4)::before {
+      background-color: $color-picton-blue;
+      content: "4";
+    }
+
+    &:nth-of-type(5)::before {
+      content: "5";
+    }
+
+    &:nth-of-type(6)::before {
+      background-color: $color-pale-cornflowep-blue;
+      content: "6";
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+      padding: 10px 30px 44px 111px;
+
+      @include vp-1023 {
+        padding: 15px 26px 21px 90px;
+      }
+
+      @include vp-767 {
+        padding: 12px 44px 18px 1px;
+      }
+    }
+  }
+
+  &__prices-wrapper {
+    margin: 0 0 0 auto;
+    width: 100%;
+
+
+    @include vp-1439 {
+      margin: 0 auto 0 0;
+    }
+
+    @include vp-1023 {
+      margin: 0 2px 0 auto;
+    }
+
+    @include vp-767 {
+      margin: 0 auto;
+      width: calc(100% - 11px);
+    }
+  }
+
+  &__list-wrapper {
+    position: relative;
+    padding: 84px 280px 84px 83px;
+    min-height: 333px;
+    background-color: $color-accent-second;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    @include vp-1439 {
+      padding: 90px 206px 90px 30px;
+    }
+
+    @include vp-1279 {
+      padding: 30px 25px;
+    }
+
+    @include vp-1023 {
+      padding: 24px 27.5px 10px;
+      min-height: 285px;
+    }
+
+    @include vp-767 {
+      padding: 16px 18px 16px 15px;
+      min-height: 113px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+  }
+
+  &__prices-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include vp-1439 {
+      margin: 0 0 20px;
+    }
+
+    @include vp-1279 {
+      margin: 0 0 30px;
+    }
+
+    @include vp-767 {
+      margin: 0;
+    }
+  }
+
+  &__prices-list-item {
+    font-size: 28px;
+    line-height: 28px;
+    color: $color-default-white;
+
+    @include vp-1279 {
+      font-size: 24px;
+      text-align: center;
+    }
+
+    @include vp-1023 {
+      font-weight: 300;
+    }
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 16px;
+      text-align: left;
+    }
+
+    &--free {
+      margin-bottom: 26px;
+      font-size: 41px;
+      font-weight: 700;
+      font-variant-caps: all-small-caps;
+
+      @include vp-1439 {
+        margin-bottom: 30px;
+      }
+
+      @include vp-1279 {
+        margin-bottom: 26px;
+      }
+
+      @include vp-1023 {
+        margin-bottom: 19px;
+        font-size: 28px;
+      }
+
+      @include vp-767 {
+        margin-bottom: 24px;
+        font-size: 20px;
+        line-height: 16px;
+      }
+    }
+
+    &--first-priority {
+      margin-bottom: 12px;
+      padding-left: 30px;
+
+      @include vp-1439 {
+        margin-bottom: 10px;
+        padding-left: 16px;
+      }
+
+      @include vp-1279 {
+        margin-bottom: 10px;
+        padding-left: 0;
+      }
+
+      @include vp-767 {
+        margin-bottom: 4px;
+      }
+    }
+
+    &--custom-color {
+      padding-left: 29px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 12px;
+      }
+
+      @include vp-1439 {
+        padding-left: 16px;
+
+        &:not(:last-of-type) {
+          margin-bottom: 10px;
+        }
+      }
+
+      @include vp-1279 {
+        padding-left: 0;
+      }
+
+      @include vp-767 {
+        &:not(:last-of-type) {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+
+  &__prices-image {
+    position: absolute;
+    top: 62px;
+    right: 45px;
+    width: 201px;
+    height: 202px;
+
+    @include vp-1439 {
+      top: 80px;
+      right: 30px;
+      width: 160px;
+      height: 160px;
+    }
+
+    @include vp-1279 {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin: 0 auto;
+      width: 140px;
+      height: 140px;
+    }
+
+    @include vp-1023 {
+      width: 100px;
+      height: 100px;
+    }
+
+    @include vp-767 {
+      margin: 0 0 0 auto;
+      width: 81px;
+      height: 81px;
+    }
+
+    & img {
+      height: 100%;
+    }
+  }
+
+  &__button-wrapper {
+    margin-top: -9px;
+    max-width: 600px;
+
+    @include vp-767 {
+      margin-top: 0;
+      max-width: 100%;
+    }
+  }
+
+  &__button.btn {
+    position: relative;
+    padding: 26px 20px 24px 107px;
+    min-height: 71px;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 700;
+    color: $color-accent-second;
+    background-color: $color-transparent;
+
+    @include vp-1023 {
+      padding: 21px 20px 24px 89px;
+      color: $color-midnight-express-lighter;
+    }
+
+    @include vp-767 {
+      padding: 10px 18px 10px 23px;
+      min-height: auto;
+      font-size: 16px;
+      line-height: 16px;
+      color: #272b3b;
+    }
+
+    & .add-profile__button-icon {
+      position: absolute;
+      top: 1px;
+      left: 14px;
+      padding: 21.5px 22px;
+      width: 73px;
+      height: 71px;
+      color: $color-accent-second;
+      background-color: #e2e5f2;
+      border-radius: 50%;
+
+      @include vp-1023 {
+        top: -5px;
+        left: 0;
+        padding: 23px 21px 21px;
+        width: 68px;
+        height: 68px;
+
+        & > svg {
+          width: 27px;
+          height: 27px;
+        }
+      }
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin: 0 12px 14px 0;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+mixin destinations()
+  -
+    const destinationsList = [
+      {
+        name: "Таиланд",
+        text: "Джунгли зовут!",
+        image: "countries-thailand",
+        flagIcon: "flag-thailand",
+        usersNumber: "18321",
+        altText: "Вид на пляж в Таиланде сверху.",
+        mods: "",
+      },
+      {
+        name: "Франция",
+        text: "Трэ бьен, манифик!",
+        image: "countries-france",
+        flagIcon: "flag-france",
+        usersNumber: "12518",
+        altText: "Вид на улицу во Франции.",
+        mods: "destinations__slider-item--active",
+      },
+      {
+        name: "Чехия",
+        text: "Закоулки старой Европы",
+        image: "countries-czech",
+        flagIcon: "flag-czechia",
+        usersNumber: "5326",
+        altText: "Вид на город в Чехии.",
+        mods: "",
+      },
+    ]
+
+  section.destinations
+    .container
+      .destinations__wrapper
+        .destinations__text-wrapper
+          .destinations__text
+            h2 Направления
+            p Мы&nbsp;не&nbsp;продаем туры и&nbsp;ничего не&nbsp;рекламируем.
+              span Люди сами пишут о&nbsp;странах, куда хотели&nbsp;бы отправиться и&nbsp;чем можно там заняться.
+          +btn({href: "catalog.html", text: "Показать все"})(class="btn--primary destinations__button")
+            span.destinations__button-icon
+              +icon("arrow-filled", 14, 14)
+        .destinations__slider-wrapper
+          ul.destinations__slider-list
+            each item in destinationsList
+              li.destinations__slider-item(class=`${item.mods}`)
+                .destinations__slider-item-content
+                  h3!= item.name
+                  p!= item.text
+                  .destinations__slider-item-stats
+                    span.destinations__slider-item-icon
+                      +icon("icon-user", 20, 20)
+                    span!= item.usersNumber
+                .destinations__slider-images
+                  .destinations__slider-flag-image
+                    +picture("content", item.flagIcon, "jpg", 70, 47, "Флаг страны.")
+                  .destinations__slider-photo
+                    +picture-semi-adaptive("slides", item.image, "jpg", 203, 140, 270, 110, item.altText)

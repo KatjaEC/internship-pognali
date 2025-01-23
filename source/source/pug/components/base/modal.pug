@@ -1,0 +1,37 @@
+mixin modal(mods)
+  -
+    const ratesList = [
+      {
+        text: "Реклама у блоггера",
+        rate: "300 000 руб./пост",
+      },
+      {
+        text: "Накрутка подписчиков",
+        rate: "от 1 руб./шт.",
+      },
+      {
+        text: "Лайки от ботов",
+        rate: "от 20 коп./лайк",
+      },
+      {
+        text: "Ваш продакт-плейсмент ",
+        rate: "Индивидуально",
+      },
+    ]
+
+  .modal.modal--preload(class=mods)&attributes(attributes)
+    .modal__wrapper
+      .modal__overlay(data-close-modal)
+      .modal__content
+        if block
+          block
+        .modal__text-wrapper
+          h2 Бизнес-тарифы
+          .modal__rates-wrapper
+            ul.modal__rates-list
+              each item in ratesList
+                li.modal__rates-item
+                  p
+                    span!= item.text
+                    span!= item.rate
+        +btn({type: "button", text: "Закрыть окно"})(class="modal__close-button", data-close-modal)

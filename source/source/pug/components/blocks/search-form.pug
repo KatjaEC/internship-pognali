@@ -1,0 +1,164 @@
+mixin search-form(className)
+  -
+    const filtersList = [
+      {
+        title: "Хобби",
+        options: [
+          {
+            subtitle: "Спортзал",
+            id: "gym",
+            attribute: "checked",
+          },
+          {
+            subtitle: "Кальян",
+            id: "hookah",
+            attribute: "",
+          },
+          {
+            subtitle: "Диван",
+            id: "couch",
+            attribute: "",
+          },
+        ],
+        mods: "--hobby",
+        hiddenClass: "catalog__group-wrapper--is-hidden",
+        buttonStatusMods: "",
+      },
+      {
+        title: "Музыка",
+        options: [
+          {
+            subtitle: "Тяжелый рок",
+            id: "hard-rock",
+            attribute: "checked",
+          },
+          {
+            subtitle: "Русский рэп",
+            id: "russian-rap",
+            attribute: "",
+          },
+          {
+            subtitle: "Евроденс",
+            id: "eurodance",
+            attribute: "",
+          },
+        ],
+        mods: "--music",
+        buttonStatusMods: "--is-pressed",
+        hiddenClass: "",
+      },
+      {
+        title: "Еда",
+        options: [
+          {
+            subtitle: "Мясоед",
+            id: "meat",
+            attribute: "checked",
+          },
+          {
+            subtitle: "Сидит на ПП",
+            id: "healthy",
+            attribute: "",
+          },
+          {
+            subtitle: "Веган-сыроед",
+            id: "raw-vegan",
+            attribute: "",
+          },
+        ],
+        mods: "--food",
+        hiddenClass: "catalog__group-wrapper--is-hidden",
+        buttonStatusMods: "",
+      },
+      {
+        title: "Транспорт",
+        options: [
+          {
+            text: "Авиаперелет",
+            icon: "icon-plane",
+            width: 23,
+            height: 22,
+            mods: "plane",
+            attribute: "checked",
+          },
+          {
+            text: "Автотранспорт",
+            icon: "icon-bus",
+            width: 20,
+            height: 22,
+            mods: "car",
+            attribute: "checked",
+          },
+          {
+            text: "Велосипед",
+            icon: "icon-bicycle",
+            width: 25,
+            height: 25,
+            mods: "bicycle",
+            attribute: "",
+          },
+          {
+            text: "Пешком",
+            icon: "icon-run",
+            width: 22,
+            height: 24,
+            mods: "on-foot",
+            attribute: "checked",
+          },
+        ],
+        mods: "--transport",
+        buttonStatusMods: "--is-pressed",
+        hiddenClass: "",
+      },
+      {
+        title: "Левел",
+        options: [],
+        minLength: "0",
+        maxLength: "100",
+        currentMaxValue: 100,
+        currentMinValue: 30,
+        idMin: "level-min-input",
+        idMax: "level-max-input",
+        mods: "--level",
+        buttonStatusMods: "--is-pressed",
+        hiddenClass: "",
+      },
+    ]
+
+  div(class=`${className}__form-wrapper`)
+    form(action="https://echo.htmlacademy.ru/", method="get")
+      each item in filtersList
+        fieldset
+          legend
+            +btn({text: item.title, type: "button"})(class=`${className}__form-button ${className}__form-button${item.mods} ${className}__form-button${item.buttonStatusMods}`)
+              span(class=`${className}__form-icon`)
+                +icon("arrow-down-filled", 10, 6)
+          if(item.title !== "Левел")
+            div(class=`${className}__group-wrapper ${className}__group-wrapper${item.mods} ${item.hiddenClass}`)
+              if(item.title !== "Транспорт")
+                ul(class=`${className}__group-list ${className}__group-list${item.mods}`)
+                  each subitem in item.options
+                    if(subitem.attribute)
+                      li(class=`${className}__group-item`)
+                        +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)(checked)
+                          +icon("icon-checkmark", 11, 12)
+                    else
+                      li(class=`${className}__group-item`)
+                        +filter-checkbox(className, subitem.subtitle, subitem.id, subitem.id)
+                          +icon("icon-checkmark", 11, 12)
+              else
+                ul(class="transportation-list")
+                  each subitem in item.options
+                    if(subitem.attribute)
+                      li(class=`transportation-list__item transportation-list__item--${subitem.mods}`)
+                        +custom-input("transportation-list__checkbox", {hiddenClass: true, isChecked: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods}, `${subitem.text}.`)
+                          +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
+                    else
+                      li(class=`transportation-list__item transportation-list__item--${subitem.mods}`)
+                        +custom-input("transportation-list__checkbox", {hiddenClass: true, inputType: "checkbox", inputId: subitem.mods, inputName: subitem.mods}, `${subitem.text}.`)
+                          +transportation-icon("transportation-list", subitem.icon, subitem.width, subitem.height, subitem.text)(class=`${className}__group-icon ${className}__group-icon--${subitem.mods}`)
+          else
+            div(class=`${className}__group-list ${className}__group-list${item.mods}`, id="range-slider")
+              +range-input(className, item.idMin, item.idMax, item.idMin, item.idMax, item.minLength, item.maxLength, item.currentMinValue, item.currentMaxValue)
+      div(class=`${className}__form-button-wrapper`)
+        +btn({text: "Показать", type: "submit"})(class=`${className}__form-button ${className}__submit-button`)

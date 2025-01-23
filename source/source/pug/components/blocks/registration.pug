@@ -1,0 +1,39 @@
+mixin registration()
+  -
+    const optionsList = [
+      {
+        text: "Базовое размещение",
+        price: "Бесплатно",
+      },
+      {
+        text: "Вывод на первых позициях",
+        price: "99 руб./мес",
+      },
+      {
+        text: "Кастомный цвет карточки",
+        price: "59 руб./мес",
+      },
+    ]
+
+  section.registration
+    h2.visually-hidden Регистрация на сайте.
+    .container
+      .registration__wrapper
+        .registration__text
+          p Заинтересовались?
+          p Зарегистрируйтесь, это быстро и&nbsp;бесплатно!
+          p Уже&nbsp;зарегистрированы? Тогда скорее
+            a(href="#", class="registration__login-link")!= "авторизуйтесь"
+            | .
+        .registration__form-wrapper
+          form
+            div(class="registration__form-input")
+              input(type="email", placeholder="E-mail", name="user-mail", id="user-mail", pattern="[^@\s]+@[^@\s]+\.[^@\s]+", required)
+              label(for="user-mail")
+            +btn({type: "submit", text: "Регистрация"})(class="btn--primary registration__button")
+              span.registration__button-icon
+                +icon("arrow-filled", 14, 16)
+        .registration__contacts-wrapper
+          .registration__contacts-heading
+            p Остались вопросы? Мы&nbsp;с&nbsp;радостью на них ответим!
+          +contacts-list("registration")
